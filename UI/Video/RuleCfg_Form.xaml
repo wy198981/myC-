@@ -1,0 +1,43 @@
+﻿<src:WindowBase x:Class="UI.Video.RuleCfg_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="规则配置" Height="627" Width="949" Style="{DynamicResource WindowStyle}" Loaded="WindowBase_Loaded" Closed="WindowBase_Closed" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <WindowsFormsHost Name="wfhPicVideo" HorizontalAlignment="Left" Height="491" VerticalAlignment="Top" Width="616" Margin="30,45,0,0">
+            <wf:PictureBox x:Name="picBoxVideo"  Dock="Fill" SizeMode="StretchImage" BackColor="Black" MouseDown="picBoxVideo_MouseDown" MouseMove="picBoxVideo_MouseMove" MouseUp="picBoxVideo_MouseUp">
+            </wf:PictureBox>
+        </WindowsFormsHost>
+        <Label Content="规则名称" HorizontalAlignment="Left" Height="auto" Margin="655,45,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtRuleName" HorizontalAlignment="Left" Height="26" Margin="723,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" IsEnabled="False"/>
+        <Label Content="车牌宽度限制" HorizontalAlignment="Left" Height="auto" Margin="655,94,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtMinWidth" HorizontalAlignment="Left" Height="26" Margin="741,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <Label Content="-" HorizontalAlignment="Left" Height="auto" Margin="795,94,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtMaxWidth" HorizontalAlignment="Left" Height="26" Margin="815,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <Label Content="(45-400)" HorizontalAlignment="Left" Height="26" Margin="874,94,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="相同车牌触发间隔时间" HorizontalAlignment="Left" Height="auto" Margin="655,142,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtTimes" HorizontalAlignment="Left" Height="26" Margin="790,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <Label Content="(0-255)" HorizontalAlignment="Left" Height="auto" Margin="874,142,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="车辆通过方向" HorizontalAlignment="Left" Height="auto" Margin="655,188,0,0" VerticalAlignment="Top" Width="auto"/>
+        <ComboBox Name="cmbDir" HorizontalAlignment="Left" Height="26" Margin="742,188,0,0" VerticalAlignment="Top" Width="132" Background="{x:Null}">
+            <ComboBoxItem>双向</ComboBoxItem>
+            <ComboBoxItem>由上至下</ComboBoxItem>
+            <ComboBoxItem>由下至上</ComboBoxItem>
+        </ComboBox>
+        <Label Content="预设省份" HorizontalAlignment="Left" Height="auto" Margin="655,235,0,0" VerticalAlignment="Top" Width="auto"/>
+        <ComboBox Name="cmbSF" HorizontalAlignment="Left" Height="26" Margin="742,235,0,0" VerticalAlignment="Top" Width="132" Background="{x:Null}"/>
+        <src:ButtonSfm Name="btnAddRule" Content="添加线圈" HorizontalAlignment="Left" Height="26" Margin="677,290,0,0" VerticalAlignment="Top" Width="108" Click="btnAddRule_Click"/>
+        <src:ButtonSfm Name="btnDeleRule" Content="删除线圈" HorizontalAlignment="Left" Height="26" Margin="815,290,0,0" VerticalAlignment="Top" Width="108" Click="btnDeleRule_Click"/>
+        <src:ButtonSfm Name="btnTest" Content="调试模式" HorizontalAlignment="Left" Height="26" Margin="815,340,0,0" VerticalAlignment="Top" Width="108" Click="btnTest_Click"/>
+        <src:ButtonSfm Name="btnSave" Content="保存设置" HorizontalAlignment="Left" Height="26" Margin="677,340,0,0" VerticalAlignment="Top" Width="108" Click="btnSave_Click"/>
+        <CheckBox Name="chkDraw" Content="是" HorizontalAlignment="Left" Height="17" Margin="816,511,0,0" VerticalAlignment="Top" Width="54" Visibility="Collapsed"/>
+        <CheckBox Name="chkEnable" Content="是" HorizontalAlignment="Left" Height="20" Margin="816,477,0,0" VerticalAlignment="Top" Width="44" Visibility="Collapsed"/>
+        <Label Content="是否检测" HorizontalAlignment="Left" Height="auto" Margin="742,473,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+        <Label Content="是否绘制" HorizontalAlignment="Left" Height="auto" Margin="742,506,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+        <WindowsFormsHost Name="wfhPic1" HorizontalAlignment="Left" Height="79" VerticalAlignment="Top" Width="152" Margin="713,385,0,0" Visibility="Collapsed">
+            <wf:PictureBox x:Name="pictureBox1"  Dock="Fill" SizeMode="StretchImage" BackColor="Black"/>
+        </WindowsFormsHost>
+
+    </Grid>
+</src:WindowBase>

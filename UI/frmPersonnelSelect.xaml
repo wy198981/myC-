@@ -1,0 +1,26 @@
+﻿<SFMControls:WindowBase x:Class="UI.frmPersonnelSelect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="查询条件" Height="389" Width="420" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <CheckBox Name="ckbUserNO" Content="人员编号   含有" HorizontalAlignment="Left" Height="20" Margin="35,22,0,0" VerticalAlignment="Top" Width="auto" Click="ckbUserNO_Click"/>
+        <CheckBox Name="ckbUserName" Content="人员姓名   含有" HorizontalAlignment="Left" Height="20" Margin="35,57,0,0" VerticalAlignment="Top" Width="auto" Click="ckbUserName_Click"/>
+        <CheckBox Name="ckbDepartment" Content="部门名称   含有" HorizontalAlignment="Left" Height="20" Margin="35,96,0,0" VerticalAlignment="Top" Width="auto" Click="ckbDepartment_Click"/>
+        <CheckBox Name="ckbHomeAddress" Content="家庭住址   含有" HorizontalAlignment="Left" Height="20" Margin="35,137,0,0" VerticalAlignment="Top" Width="auto" Click="ckbHomeAddress_Click"/>
+        <CheckBox Name="ckbIDCard" Content="身份证号   含有" HorizontalAlignment="Left" Height="20" Margin="35,180,0,0" VerticalAlignment="Top" Width="auto" Click="ckbIDCard_Click"/>
+        <CheckBox Name="ckbMobNumber" Content="手机号码   含有" HorizontalAlignment="Left" Height="20" Margin="35,219,0,0" VerticalAlignment="Top" Width="auto" Click="ckbMobNumber_Click"/>
+        <CheckBox Name="ckbCPH" Content="车牌号码   含有" HorizontalAlignment="Left" Height="20" Margin="35,254,0,0" VerticalAlignment="Top" Width="auto" Click="ckbCPH_Click"/>
+        <TextBox Name="txtUserNO" HorizontalAlignment="Left" Height="20" Margin="165,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" KeyDown="txtUserNO_KeyDown"/>
+        <TextBox Name="txtUserName" HorizontalAlignment="Left" Height="20" Margin="165,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" KeyDown="txtUserName_KeyDown"/>
+        <TextBox Name="txtDeptName" HorizontalAlignment="Left" Height="20" Margin="165,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" KeyDown="txtDeptName_KeyDown"/>
+        <TextBox Name="txtHomeAddress" HorizontalAlignment="Left" Height="20" Margin="165,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" KeyDown="txtHomeAddress_KeyDown"/>
+        <TextBox Name="txtIDCard" HorizontalAlignment="Left" Height="20" Margin="165,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" KeyDown="txtIDCard_KeyDown"/>
+        <TextBox Name="txtMobNumber" HorizontalAlignment="Left" Height="20" Margin="165,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox Name="txtCPH" HorizontalAlignment="Left" Height="20" Margin="165,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <src:ButtonSfm Name="btnSave" Content="确定" HorizontalAlignment="Left" Height="24" Margin="297,294,0,0" VerticalAlignment="Top" Width="86" Click="btnSave_Click"/>
+
+    </Grid>
+</SFMControls:WindowBase>

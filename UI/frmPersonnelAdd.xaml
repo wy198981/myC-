@@ -1,0 +1,173 @@
+﻿<SFMControls:WindowBase x:Class="UI.frmPersonnelAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+        Title="人员信息" Height="528" Width="700"  ResizeMode="NoResize" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" Loaded="WindowBase_Loaded">
+    <Grid>
+        <Label Content="人员编号:" HorizontalAlignment="Left" Height="auto" Margin="39,18,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="籍    贯:" HorizontalAlignment="Left" Height="auto" Margin="39,361,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="家庭地址:" HorizontalAlignment="Left" Height="auto" Margin="39,392,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="手机号码:" HorizontalAlignment="Left" Height="auto" Margin="39,299,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="证件号码:" HorizontalAlignment="Left" Height="auto" Margin="39,330,0,0" VerticalAlignment="Top" Width="auto"/>
+        <!--<Label Content="车场车位:" HorizontalAlignment="Left" Height="auto" Margin="310,173,0,0" VerticalAlignment="Top" Width="auto"/>-->
+        <!--<Label Content="车辆颜色:" HorizontalAlignment="Left" Height="auto" Margin="310,142,0,0" VerticalAlignment="Top" Width="auto"/>-->
+        <!--<Label Content="车辆类型:" HorizontalAlignment="Left" Height="auto" Margin="310,111,0,0" VerticalAlignment="Top" Width="auto"/>-->
+        <Label Content="车牌号码:" HorizontalAlignment="Left" Height="auto" Margin="310,80,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="现任职位:" HorizontalAlignment="Left" Height="auto" Margin="310,49,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="部门名称:" HorizontalAlignment="Left" Height="auto" Margin="310,18,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="联系电话:" HorizontalAlignment="Left" Height="auto" Margin="39,268,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="车位个数:" HorizontalAlignment="Left" Height="auto" Margin="39,240,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="身份证号:" HorizontalAlignment="Left" Height="auto" Margin="39,209,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="婚    否:" HorizontalAlignment="Left" Height="auto" Margin="39,173,0,0" VerticalAlignment="Top" Width="61"/>
+        <Label Content="人员姓名:" HorizontalAlignment="Left" Height="auto" Margin="39,49,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="出生日期:" HorizontalAlignment="Left" Height="auto" Margin="39,80,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="入职日期:" HorizontalAlignment="Left" Height="auto" Margin="39,111,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="性    别:" HorizontalAlignment="Left" Height="auto" Margin="39,142,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox Name="txtUserNO" HorizontalAlignment="Left" Height="auto" Margin="105,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" KeyDown="txtUserNO_KeyDown"/>
+        <TextBox Name="txtUserName" HorizontalAlignment="Left" Height="auto" Margin="105,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <DatePicker Name="dpBirthDate" HorizontalAlignment="Left" Height="26" Margin="105,81,0,0" VerticalAlignment="Top" Width="148" SelectedDate="{x:Static sys:DateTime.Now}"/>
+        <DatePicker Name="dpWorkDate" HorizontalAlignment="Left" Height="26" Margin="105,112,0,0" VerticalAlignment="Top" Width="148" SelectedDate="{x:Static sys:DateTime.Now}"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="105,146,0,0" VerticalAlignment="Top" Width="148">
+            <Grid>
+                <RadioButton Name="rbtMan" Content="男" HorizontalAlignment="Left" Height="auto" Margin="21,3,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                <RadioButton Name="rbtWoman" Content="女" HorizontalAlignment="Left" Height="auto" Margin="81,3,0,0" VerticalAlignment="Top" Width="auto"/>
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="105,177,0,0" VerticalAlignment="Top" Width="148">
+            <Grid>
+                <RadioButton Name="rbtMarried" Content="已婚" HorizontalAlignment="Left" Height="auto" Margin="21,3,0,0" VerticalAlignment="Top" Width="auto"/>
+                <RadioButton Name="rbtUnmarried" Content="未婚" HorizontalAlignment="Left" Height="auto" Margin="81,3,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+            </Grid>
+        </Border>
+        <ComboBox Name="cmbDeptName" HorizontalAlignment="Left" Height="auto" Margin="376,20,0,0" VerticalAlignment="Top" Width="148"/>
+        <ComboBox Name="cmbJob" HorizontalAlignment="Left" Height="auto" Margin="376,53,0,0" VerticalAlignment="Top" Width="148" IsEditable="True">
+            <ComboBoxItem>总经理</ComboBoxItem>
+            <ComboBoxItem>副总</ComboBoxItem>
+            <ComboBoxItem>经理</ComboBoxItem>
+            <ComboBoxItem>主任</ComboBoxItem>
+            <ComboBoxItem>助理</ComboBoxItem>
+            <ComboBoxItem>财务</ComboBoxItem>
+            <ComboBoxItem>操作员</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="cmbCPH" HorizontalAlignment="Left" Height="auto" Margin="376,84,0,0" VerticalAlignment="Top" Width="148" IsEditable="True">
+            <ComboBoxItem>京</ComboBoxItem>
+            <ComboBoxItem>津</ComboBoxItem>
+            <ComboBoxItem>冀</ComboBoxItem>
+            <ComboBoxItem>晋</ComboBoxItem>
+            <ComboBoxItem>蒙</ComboBoxItem>
+            <ComboBoxItem>辽</ComboBoxItem>
+            <ComboBoxItem>吉</ComboBoxItem>
+            <ComboBoxItem>黑</ComboBoxItem>
+            <ComboBoxItem>沪</ComboBoxItem>
+            <ComboBoxItem>苏</ComboBoxItem>
+            <ComboBoxItem>浙</ComboBoxItem>
+            <ComboBoxItem>皖</ComboBoxItem>
+            <ComboBoxItem>闽</ComboBoxItem>
+            <ComboBoxItem>赣</ComboBoxItem>
+            <ComboBoxItem>鲁</ComboBoxItem>
+            <ComboBoxItem>豫</ComboBoxItem>
+            <ComboBoxItem>鄂</ComboBoxItem>
+            <ComboBoxItem>湘</ComboBoxItem>
+            <ComboBoxItem>粤</ComboBoxItem>
+            <ComboBoxItem>桂</ComboBoxItem>
+            <ComboBoxItem>琼</ComboBoxItem>
+            <ComboBoxItem>渝</ComboBoxItem>
+            <ComboBoxItem>川</ComboBoxItem>
+            <ComboBoxItem>贵</ComboBoxItem>
+            <ComboBoxItem>云</ComboBoxItem>
+            <ComboBoxItem>藏</ComboBoxItem>
+            <ComboBoxItem>陕</ComboBoxItem>
+            <ComboBoxItem>甘</ComboBoxItem>
+            <ComboBoxItem>青</ComboBoxItem>
+            <ComboBoxItem>宁</ComboBoxItem>
+            <ComboBoxItem>新</ComboBoxItem>
+            <ComboBoxItem>港</ComboBoxItem>
+            <ComboBoxItem>澳</ComboBoxItem>
+            <ComboBoxItem>台</ComboBoxItem>
+            <ComboBoxItem>警</ComboBoxItem>
+            <ComboBoxItem>军</ComboBoxItem>
+            <ComboBoxItem>空</ComboBoxItem>
+            <ComboBoxItem>海</ComboBoxItem>
+            <ComboBoxItem>北</ComboBoxItem>
+            <ComboBoxItem>沈</ComboBoxItem>
+            <ComboBoxItem>兰</ComboBoxItem>
+            <ComboBoxItem>济</ComboBoxItem>
+            <ComboBoxItem>南</ComboBoxItem>
+            <ComboBoxItem>广</ComboBoxItem>
+            <ComboBoxItem>成</ComboBoxItem>
+        </ComboBox>
+        <!--<ComboBox Name="cmbCarType" HorizontalAlignment="Left" Height="auto" Margin="376,115,0,0" VerticalAlignment="Top" Width="148"  IsEditable="True">
+            <ComboBoxItem>富康</ComboBoxItem>
+            <ComboBoxItem>尼桑</ComboBoxItem>
+            <ComboBoxItem>红旗</ComboBoxItem>
+            <ComboBoxItem>奔驰</ComboBoxItem>
+            <ComboBoxItem>宝马</ComboBoxItem>
+            <ComboBoxItem>捷达</ComboBoxItem>
+            <ComboBoxItem>奥迪</ComboBoxItem>
+            <ComboBoxItem>卡迪拉客</ComboBoxItem>
+            <ComboBoxItem>劳斯莱斯</ComboBoxItem>
+            <ComboBoxItem>本田</ComboBoxItem>
+            <ComboBoxItem>凌肯</ComboBoxItem>
+            <ComboBoxItem>三菱</ComboBoxItem>
+            <ComboBoxItem>丰田</ComboBoxItem>
+            <ComboBoxItem>蓝鸟</ComboBoxItem>
+            <ComboBoxItem>汽车</ComboBoxItem>
+            <ComboBoxItem>摩托车</ComboBoxItem>
+            <ComboBoxItem>富豪</ComboBoxItem>
+            <ComboBoxItem>吉普</ComboBoxItem>
+            <ComboBoxItem>东风</ComboBoxItem>
+            <ComboBoxItem>解放</ComboBoxItem>
+            <ComboBoxItem>斯泰尔</ComboBoxItem>
+            <ComboBoxItem>桑塔纳</ComboBoxItem>
+            <ComboBoxItem>其它</ComboBoxItem>
+        </ComboBox>-->
+        <!--<TextBox Name="txtColor" HorizontalAlignment="Left" Height="auto" Margin="376,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>-->
+        <!--<TextBox Name="cmdCarPlace" HorizontalAlignment="Left" Height="auto" Margin="376,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>-->
+
+        <WindowsFormsHost Name="wfhVideo3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Height="179" Margin="555,20,0,0">
+            <wf:PictureBox x:Name="ptrPerson"  Dock="Fill" BackColor="Black" SizeMode="StretchImage" Click="ptrPerson_Click">
+            </wf:PictureBox>
+        </WindowsFormsHost>
+        <WindowsFormsHost x:Name="wfhVideo3_Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="205" Margin="376,211,0,0">
+            <wf:PictureBox x:Name="ptrCar"  Dock="Fill" BackColor="Black" SizeMode="StretchImage"/>
+        </WindowsFormsHost>
+        <TextBox Name="txtIDCard" HorizontalAlignment="Left" Height="auto" Margin="105,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" KeyDown="txtIDCard_KeyDown" InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox Name="txtCarPosCount" HorizontalAlignment="Left" Height="auto" Margin="105,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" KeyDown="txtCarPosCount_KeyDown"/>
+        <TextBox Name="txtTelephone" HorizontalAlignment="Left" Height="auto" Margin="105,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" KeyDown="txtTelephone_KeyDown"/>
+        <TextBox Name="txtPhone" HorizontalAlignment="Left" Height="auto" Margin="105,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" KeyDown="txtPhone_KeyDown"/>
+        <TextBox Name="txtCredentials" HorizontalAlignment="Left" Height="auto" Margin="105,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" KeyDown="txtCredentials_KeyDown"/>
+        <TextBox Name="txtNativePlace" HorizontalAlignment="Left" Height="auto" Margin="105,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <TextBox Name="txtHomeAddress" HorizontalAlignment="Left" Height="auto" Margin="105,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <SFMControls:ButtonSfm Name="btnSave" Content="保存" HorizontalAlignment="Left" Height="30" Margin="39,430,0,0" VerticalAlignment="Top" Width="101" Click="btnSave_Click"/>
+        <SFMControls:ButtonSfm Name="btnUpdate" Content="修改" HorizontalAlignment="Left" Height="30" Margin="149,430,0,0" VerticalAlignment="Top" Width="101" IsEnabled="False"/>
+        <SFMControls:ButtonSfm Name="btnCarPic" Content="车辆图片" HorizontalAlignment="Left" Height="30" Margin="256,430,0,0" VerticalAlignment="Top" Width="101" Click="btnCarPic_Click"/>
+        <SFMControls:ButtonSfm Name="btnPeoplePic" Content="人员图片" HorizontalAlignment="Left" Height="30" Margin="368,430,0,0" VerticalAlignment="Top" Width="101" Click="btnPeoplePic_Click"/>
+        <SFMControls:ButtonSfm Name="btVedio" Content="摄像机拍照" HorizontalAlignment="Left" Height="30" Margin="479,430,0,0" VerticalAlignment="Top" Width="101" Click="btVedio_Click"/>
+        <SFMControls:ButtonSfm Name="btnColose" Content="退出" HorizontalAlignment="Left" Height="30" Margin="591,430,0,0" VerticalAlignment="Top" Width="101" Click="btnColose_Click"/>
+        <GroupBox Header="摄像头" HorizontalAlignment="Left" Height="400" Margin="707,18,0,0" VerticalAlignment="Top" Width="399">
+            <Grid>
+                <WindowsFormsHost Name="wfhCarmera">
+                    <wf:PictureBox x:Name="ptrCarmera"  Dock="Fill" BackColor="Black" SizeMode="StretchImage">
+                    </wf:PictureBox>
+                </WindowsFormsHost>
+            </Grid>
+        </GroupBox>
+        <Button Name="btnPhotograph" Content="拍照" HorizontalAlignment="Left" Height="30" Margin="792,430,0,0" VerticalAlignment="Top" Width="110" Click="btnPhotograph_Click"/>
+        <Button Name="btnExitPhotograph" Content="退出拍照" HorizontalAlignment="Left" Height="30" Margin="925,430,0,0" VerticalAlignment="Top" Width="110" Click="btnExitPhotograph_Click"/>
+        <GroupBox Header="摄像头列表" HorizontalAlignment="Left" Height="398" Margin="1120,18,0,0" VerticalAlignment="Top" Width="173">
+            <Grid>
+                <ListView Name="listView1" Margin="0,0,0,104" MouseDoubleClick="listView1_MouseDoubleClick">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID"  DisplayMemberBinding="{Binding Path=ID}"/>
+                            <GridViewColumn Header="设备名称" DisplayMemberBinding="{Binding Path=Name}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock HorizontalAlignment="Left" Height="79" Margin="0,283,0,0" TextWrapping="Wrap" Text="注意:选择摄像头列表中的设备,双击就可以调用您选择的摄像头设备了。" VerticalAlignment="Top" Width="161"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</SFMControls:WindowBase>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="UI.ParkingHoliday"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="节假日设置(仅用于深圳收费)" Height="429" Width="690" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <GroupBox Header="假日设置" HorizontalAlignment="Left" Height="337" Margin="10,10,0,0" VerticalAlignment="Top" Width="315">
+            <Grid>
+                <Label Content="假日列表:" HorizontalAlignment="Left" Height="auto" Margin="10,9,0,0" VerticalAlignment="Top" Width="auto"/>
+                <ListBox Name="lstHoliday" HorizontalAlignment="Left" Height="266" Margin="10,39,0,0" VerticalAlignment="Top" Width="139"/>
+                <Label Content="日期:" HorizontalAlignment="Left" Height="auto" Margin="143,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <DatePicker Name="dtHoliday" HorizontalAlignment="Left" Margin="185,10,0,0" VerticalAlignment="Top" Width="105" SelectedDate="{x:Static sys:DateTime.Now}"/>
+                <Button Name="btnAddHoliday" Content="添  加" HorizontalAlignment="Left" Height="26" Margin="189,76,0,0" VerticalAlignment="Top" Width="93" Click="btnAddHoliday_Click"/>
+                <Button Name="btnDeleteHoliday" Content="删  除" HorizontalAlignment="Left" Height="26" Margin="189,120,0,0" VerticalAlignment="Top" Width="93" Click="btnDeleteHoliday_Click"/>
+                <TextBlock Text="请添加除星期六和星期日以外的日期，星期六和星期日默认为假日。" HorizontalAlignment="Left" Height="75" Margin="172,187,0,0" VerticalAlignment="Top" Width="110" TextWrapping="Wrap"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="工作日设置" HorizontalAlignment="Left" Height="337" Margin="365,10,0,0" VerticalAlignment="Top" Width="298">
+            <Grid>
+                <Label Content="工作日列表:" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <ListBox Name="lstWork" HorizontalAlignment="Left" Height="264" Margin="10,41,0,0" VerticalAlignment="Top" Width="132"/>
+                <Button Name="btnAddWorkDay" Content="添  加" HorizontalAlignment="Left" Height="26" Margin="183,75,0,0" VerticalAlignment="Top" Width="93" Click="btnAddWorkDay_Click"/>
+                <Button Name="btnDeleteWorkDay" Content="删  除" HorizontalAlignment="Left" Height="26" Margin="183,118,0,0" VerticalAlignment="Top" Width="93" Click="btnDeleteWorkDay_Click"/>
+                <Label Content="日期:" HorizontalAlignment="Left" Height="auto" Margin="129,9,0,0" VerticalAlignment="Top" Width="auto"/>
+                <DatePicker Name="dtWork" HorizontalAlignment="Left" Height="26" Margin="171,10,0,0" VerticalAlignment="Top" Width="105"  SelectedDate="{x:Static sys:DateTime.Now}"/>
+                <TextBlock Text="请添加需要上班的星期六或星期日（例如国庆前的双休日如果要上班，则需在此添加）" HorizontalAlignment="Left" Height="83" Margin="165,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

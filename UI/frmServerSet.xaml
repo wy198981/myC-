@@ -1,0 +1,15 @@
+﻿<SFMControls:WindowBase x:Class="UI.frmServerSet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+         xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="服务参数设置" Height="227" Width="362" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="IP地址：" HorizontalAlignment="Left" Height="28" Margin="38,25,0,0" VerticalAlignment="Top" Width="71"/>
+        <Label Content="端口号：" HorizontalAlignment="Left" Height="24" Margin="39,69,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox Name="txtIP" HorizontalAlignment="Left" Height="28" Margin="133,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" KeyDown="txtIP_KeyDown"/>
+        <TextBox Name="txtPort" HorizontalAlignment="Left" Height="24" Margin="133,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" KeyDown="txtPort_KeyDown"/>
+        <SFMControls:ButtonSfm Content="保    存" HorizontalAlignment="Left" Height="30" Margin="219,117,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click"/>
+    </Grid>
+</SFMControls:WindowBase>

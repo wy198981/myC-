@@ -1,0 +1,13 @@
+﻿<SFMControls:WindowBase x:Class="UI.frmCamPoto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+        Title="人员图片预览" Height="554" Width="800" Style="{DynamicResource WindowStyle}" WindowStartupLocation="CenterScreen" Loaded="WindowBase_Loaded">
+    <Grid>
+        <WindowsFormsHost x:Name="wfhVideo3_Copy">
+            <wf:PictureBox x:Name="ptrPerson"  Dock="Fill" BackColor="Black" SizeMode="StretchImage" Click="ptrPerson_Click"/>
+        </WindowsFormsHost>
+    </Grid>
+</SFMControls:WindowBase>

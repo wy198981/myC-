@@ -1,0 +1,24 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingChangeShifts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="换班登录" Height="213" Width="557" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="操作姓名:" HorizontalAlignment="Left" Height="auto" Margin="69,17,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="操作密码:" HorizontalAlignment="Left" Height="auto" Margin="69,57,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="操作编号:" HorizontalAlignment="Left" Height="auto" Margin="69,103,0,0" VerticalAlignment="Top" Width="auto"/>
+        <ComboBox Name="cmbUserNO" HorizontalAlignment="Left" Height="23" Margin="169,19,0,0" VerticalAlignment="Top" Width="148" SelectionChanged="cmbUserNO_SelectionChanged" Background="{x:Null}"/>
+        <SFMControls:ButtonSfm Name="btnLogin" Content="登        录" HorizontalAlignment="Left" Height="23" Margin="366,19,0,0" VerticalAlignment="Top" Width="125" Click="btnLogin_Click"/>
+        <SFMControls:ButtonSfm Name="btnGiveUp" Content="放        弃" HorizontalAlignment="Left" Height="22" Margin="366,61,0,0" VerticalAlignment="Top" Width="125" Click="btnGiveUp_Click"/>
+        <SFMControls:ButtonSfm Name="btnPrint" Content="打印换班报表" HorizontalAlignment="Left" Height="23" Margin="366,103,0,0" VerticalAlignment="Top" Width="125" Click="btnPrint_Click"/>
+        <Label Name="lblUserName" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="487,19,0,0" VerticalAlignment="Top" Width="auto" Visibility="Hidden"/>
+        <PasswordBox Name="txtPassWord" HorizontalAlignment="Left" Height="auto" Margin="169,61,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label Name="lblUserNo" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="178,103,0,0" VerticalAlignment="Top" Width="auto"/>
+        <RichTextBox Name="rtbPrint" HorizontalAlignment="Left" Height="100" Margin="29,83,0,-38" VerticalAlignment="Top" Width="100" Visibility="Collapsed">
+         
+        </RichTextBox>
+
+    </Grid>
+</SFMControls:WindowBase>

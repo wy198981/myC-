@@ -1,0 +1,21 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingReadRecord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="提取记录" Height="88" Width="775" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowStyle="None" Closed="Window_Closed" AllowsTransparency="True">
+    <Grid>
+        <ProgressBar x:Name="pgbShow" HorizontalAlignment="Left" Height="25" Margin="10,36,0,0" VerticalAlignment="Top" Width="747"/>
+        <TextBlock Name="tbkLoding" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" TextWrapping="NoWrap" Text="正在加载..." VerticalAlignment="Top" Width="auto"/>
+        <TextBlock HorizontalAlignment="Left" Height="auto" Margin="104,11,0,0" TextWrapping="NoWrap" Text="车道名称:" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblLaneName" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="160,5,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBlock HorizontalAlignment="Left" Height="auto" Margin="278,11,0,0" TextWrapping="NoWrap" Text="车道IP:" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblLaneIP" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="321,5,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBlock HorizontalAlignment="Left" Height="auto" Margin="464,11,0,0" TextWrapping="NoWrap" Text="车道机号:" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblLaneNumber" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="529,5,0,0" VerticalAlignment="Top" Width="88"/>
+        <TextBlock HorizontalAlignment="Left" Height="auto" Margin="641,11,0,0" TextWrapping="NoWrap" Text="记录数:" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblRecordCount" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="685,5,0,0" VerticalAlignment="Top" Width="72"/>
+
+    </Grid>
+</SFMControls:WindowBase>

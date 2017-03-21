@@ -1,0 +1,36 @@
+﻿<src:WindowBase
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="UI.Login"
+        Title="登录" Style="{DynamicResource WindowStyle}" Height="349" Width="417" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" FontSize="15" Closed="WindowBase_Closed" Icon="Resources/Park.ico" HeaderFontSize="24">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="52*"></ColumnDefinition>
+            <ColumnDefinition Width="104*"></ColumnDefinition>
+            <ColumnDefinition Width="120*"></ColumnDefinition>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="用户姓名:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Grid.Column="1" Grid.Row="1" Margin="13,10"/>
+        <Label Content="用户密码:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Grid.Row="2" Grid.Column="1" Margin="13,10"/>
+        <PasswordBox x:Name="txtPwd" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Width="178" FontSize="15" Grid.Column="2" Grid.Row="2"  Background="Transparent" Grid.ColumnSpan="2" Margin="15,12"/>
+        <Label Content="工作站名:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Height="auto" Grid.Row="3" Grid.Column="1" Margin="13,9"/>
+        <SFMControls:ButtonSfm x:Name="btnLogin" Content="登      录" HorizontalAlignment="Center" VerticalAlignment="Center" Width="280" Click="btnLogin_Click" Grid.Column="1" Grid.Row="4"  Grid.ColumnSpan="3" Margin="16,7,16,8"/>
+        <ComboBox x:Name="cbbStationId" HorizontalAlignment="Center" VerticalAlignment="Center" Width="178" FontSize="15" Height="auto" Grid.Column="2" Grid.Row="3"  Background="Transparent" Grid.ColumnSpan="2" Margin="15,11"/>
+        <CheckBox Name="chkParkSet" Content="登陆进入车场设置" HorizontalAlignment="Right" Height="20"  VerticalAlignment="Center" Width="114" Grid.Row="2" Margin="0,38,14,35" FontSize="12" Grid.ColumnSpan="2" Grid.RowSpan="2" Visibility="Hidden"/>
+        <ComboBox x:Name="cbbUserName" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="178" Background="Transparent" FontSize="15" Grid.ColumnSpan="2" Margin="15,11"/>
+        <SFMControls:ButtonSfm  Name="btnSet" Content="服务参数设置" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="280" Grid.ColumnSpan="3" Click="btnSet_Click" Margin="16,8,16,7"/>
+        <SFMControls:ButtonSfm  Name="btnParkSet" Content="车场设置" Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center" Width="280" Grid.ColumnSpan="3" Visibility="Visible" Click="btnParkSet_Click" Margin="16,7"/>
+    </Grid>
+</src:WindowBase>

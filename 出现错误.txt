@@ -1,0 +1,38 @@
+03-21 15:06:36.138 12939-12939/com.example.administrator.mydistributedparkingos E/AndroidRuntime: FATAL EXCEPTION: main
+                                                                                                  Process: com.example.administrator.mydistributedparkingos, PID: 12939
+                                                                                                  java.lang.RuntimeException: Unable to start activity ComponentInfo{com.example.administrator.mydistributedparkingos/com.example.administrator.myparkingos.ui.onlineMonitorPage.ParkingMonitoringActivity}: java.lang.NullPointerException
+                                                                                                      at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2195)
+                                                                                                      at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2245)
+                                                                                                      at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:3738)
+                                                                                                      at android.app.ActivityThread.access$900(ActivityThread.java:135)
+                                                                                                      at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1202)
+                                                                                                      at android.os.Handler.dispatchMessage(Handler.java:102)
+                                                                                                      at android.os.Looper.loop(Looper.java:136)
+                                                                                                      at android.app.ActivityThread.main(ActivityThread.java:5017)
+                                                                                                      at java.lang.reflect.Method.invokeNative(Native Method)
+                                                                                                      at java.lang.reflect.Method.invoke(Method.java:515)
+                                                                                                      at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:794)
+                                                                                                      at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:610)
+                                                                                                      at dalvik.system.NativeStart.main(Native Method)
+                                                                                                   Caused by: java.lang.NullPointerException
+                                                                                                      at android.support.v4.app.BackStackRecord.run(BackStackRecord.java:775)
+                                                                                                      at android.support.v4.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1677)
+                                                                                                      at android.support.v4.app.FragmentController.execPendingActions(FragmentController.java:388)
+                                                                                                      at android.support.v4.app.FragmentActivity.onStart(FragmentActivity.java:604)
+                                                                                                      at android.support.v7.app.AppCompatActivity.onStart(AppCompatActivity.java:178)
+                                                                                                      at com.example.administrator.myparkingos.ui.onlineMonitorPage.ParkingMonitoringActivity.onStart(ParkingMonitoringActivity.java:1135)
+                                                                                                      at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1171)
+                                                                                                      at android.app.Activity.performStart(Activity.java:5250)
+                                                                                                      at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2168)
+                                                                                                      at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2245)?
+                                                                                                      at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:3738)?
+                                                                                                      at android.app.ActivityThread.access$900(ActivityThread.java:135)?
+                                                                                                      at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1202)?
+                                                                                                      at android.os.Handler.dispatchMessage(Handler.java:102)?
+                                                                                                      at android.os.Looper.loop(Looper.java:136)?
+                                                                                                      at android.app.ActivityThread.main(ActivityThread.java:5017)?
+                                                                                                      at java.lang.reflect.Method.invokeNative(Native Method)?
+                                                                                                      at java.lang.reflect.Method.invoke(Method.java:515)?
+                                                                                                      at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:794)?
+                                                                                                      at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:610)?
+                                                                                                      at dalvik.system.NativeStart.main(Native Method)?

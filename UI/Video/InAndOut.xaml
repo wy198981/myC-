@@ -1,0 +1,184 @@
+﻿<src:WindowBase x:Class="UI.Video.InAndOut"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="输入输出" Height="533" Width="989" Style="{DynamicResource WindowStyle}" Loaded="WindowBase_Loaded" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
+    <Grid>
+        <TabControl>
+            <TabItem Header="输出配置">
+                <Grid>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="333" Margin="25,43,0,0" Stroke="Black" VerticalAlignment="Top" Width="918"/>
+                    <Path Data="M25,93.163333 L669,94.163333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="25,93.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="918"/>
+                    <Path Data="M192,42 L191,336" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="331.837" Margin="191,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2"/>
+                    <Path Data="M105,93.163 L105,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="282.837" Margin="105,93.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M106,128.16333 L670,129.16333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="106,133.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="837"/>
+                    <Path Data="M105,164.16333 L670,164.16333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="105,172.16,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+                    <Path Data="M105,198.16333 L670,197.16333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="105,213.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+                    <Path Data="M106,234.16333 L670,236.16333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="25,255.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="918"/>
+                    <Path Data="M105,293.16333 L670,292.16333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="105,297.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+                    <Label Content="信号输出" HorizontalAlignment="Left" Height="auto" Margin="36,159,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="信号输入" HorizontalAlignment="Left" Height="auto" Margin="36,305,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="开关量/电平2" HorizontalAlignment="Left" Height="auto" Margin="108,305,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="白名单内" HorizontalAlignment="Left" Height="auto" Margin="121,100,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="白名单外" HorizontalAlignment="Left" Height="auto" Margin="121,140,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="无车牌" HorizontalAlignment="Left" Height="auto" Margin="127,182,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="黑名单" HorizontalAlignment="Left" Height="auto" Margin="127,223,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="开关量/电平1" HorizontalAlignment="Left" Height="auto" Margin="108,265,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="293.837" Margin="287,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="331.837" Margin="287,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="331.837" Margin="384,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="331.837" Margin="474,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="331.837" Margin="566,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="331.837" Margin="663,44.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <src:ButtonSfm Name="btnOutSet" Content="设   置" HorizontalAlignment="Left" Height="28" Margin="856,395,0,0" VerticalAlignment="Top" Width="87" Click="btnOutSet_Click"/>
+                    <Label Content="开关量输出1" HorizontalAlignment="Left" Height="auto" Margin="200,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="开关量输出2" HorizontalAlignment="Left" Height="auto" Margin="297,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="电平输出1" HorizontalAlignment="Left" Height="auto" Margin="583,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="电平输出2" HorizontalAlignment="Left" Height="auto" Margin="678,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="RS485-1" HorizontalAlignment="Left" Height="auto" Margin="776,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="RS485-2" HorizontalAlignment="Left" Height="auto" Margin="873,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk1"  HorizontalAlignment="Left" Height="auto" Margin="231,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk2" HorizontalAlignment="Left" Height="auto" Margin="332,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk3" HorizontalAlignment="Left" Height="auto" Margin="425,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk4" HorizontalAlignment="Left" Height="auto" Margin="513,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk5" HorizontalAlignment="Left" Height="auto" Margin="608,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk6" HorizontalAlignment="Left" Height="auto" Margin="704,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk7" HorizontalAlignment="Left" Height="auto" Margin="800,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk8" HorizontalAlignment="Left" Height="auto" Margin="895,107,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk9" HorizontalAlignment="Left" Height="auto" Margin="231,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk10" HorizontalAlignment="Left" Height="auto" Margin="332,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk11" HorizontalAlignment="Left" Height="auto" Margin="425,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk12" HorizontalAlignment="Left" Height="auto" Margin="513,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk13" HorizontalAlignment="Left" Height="auto" Margin="608,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk14" HorizontalAlignment="Left" Height="auto" Margin="704,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk15" HorizontalAlignment="Left" Height="auto" Margin="800,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk16" HorizontalAlignment="Left" Height="auto" Margin="895,148,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk17" HorizontalAlignment="Left" Height="auto" Margin="231,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk18" HorizontalAlignment="Left" Height="auto" Margin="332,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk19" HorizontalAlignment="Left" Height="auto" Margin="425,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk20" HorizontalAlignment="Left" Height="auto" Margin="513,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk21" HorizontalAlignment="Left" Height="auto" Margin="608,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk22" HorizontalAlignment="Left" Height="auto" Margin="704,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk23" HorizontalAlignment="Left" Height="auto" Margin="800,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk24" HorizontalAlignment="Left" Height="auto" Margin="895,189,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk25" HorizontalAlignment="Left" Height="auto" Margin="231,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk26" HorizontalAlignment="Left" Height="auto" Margin="332,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk27" HorizontalAlignment="Left" Height="auto" Margin="425,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk28" HorizontalAlignment="Left" Height="auto" Margin="513,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk29" HorizontalAlignment="Left" Height="auto" Margin="608,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk30" HorizontalAlignment="Left" Height="auto" Margin="704,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk31" HorizontalAlignment="Left" Height="auto" Margin="800,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk32" HorizontalAlignment="Left" Height="auto" Margin="895,230,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="330.837" Margin="759,45.163,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Path Data="M287,44.163333 L287,337" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="333" Margin="855,43,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <CheckBox Name="chk33" HorizontalAlignment="Left" Height="auto" Margin="231,272,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk34" HorizontalAlignment="Left" Height="auto" Margin="332,272,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk35" HorizontalAlignment="Left" Height="auto" Margin="425,272,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Path Data="M105,293.16333 L670,292.16333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="105,337,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+                    <CheckBox Name="chk36" HorizontalAlignment="Left" Height="auto" Margin="513,272,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk37" HorizontalAlignment="Left" Height="auto" Margin="608,272,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk38" HorizontalAlignment="Left" Height="auto" Margin="704,272,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk39" HorizontalAlignment="Left" Height="auto" Margin="231,313,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk40" HorizontalAlignment="Left" Height="auto" Margin="332,313,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk41" HorizontalAlignment="Left" Height="auto" Margin="425,313,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk42" HorizontalAlignment="Left" Height="auto" Margin="513,313,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk43" HorizontalAlignment="Left" Height="auto" Margin="608,313,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk44" HorizontalAlignment="Left" Height="auto" Margin="704,313,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk45" HorizontalAlignment="Left" Height="auto" Margin="231,352,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk46" HorizontalAlignment="Left" Height="auto" Margin="332,352,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk47" HorizontalAlignment="Left" Height="auto" Margin="425,352,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk48" HorizontalAlignment="Left" Height="auto" Margin="513,352,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk49" HorizontalAlignment="Left" Height="auto" Margin="608,352,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <CheckBox Name="chk50" HorizontalAlignment="Left" Height="auto" Margin="704,352,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="开关量/电平3" HorizontalAlignment="Left" Height="auto" Margin="106,344,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="开关量输出3" HorizontalAlignment="Left" Height="auto" Margin="393,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="开关量输出4" HorizontalAlignment="Left" Height="auto" Margin="481,57,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="串口参数">
+                <Grid>
+                    <GroupBox Header="串口1参数" HorizontalAlignment="Left" Height="248" Margin="197,60,0,0" VerticalAlignment="Top" Width="277">
+                        <Grid>
+                            <Label Content="波特率" HorizontalAlignment="Left" Height="auto" Margin="10,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Label Content="校验位" HorizontalAlignment="Left" Height="auto" Margin="10,70,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Label Content="停止位" HorizontalAlignment="Left" Height="auto" Margin="10,122,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Label Content="数据位" HorizontalAlignment="Left" Height="auto" Margin="10,172,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <ComboBox Name="cmbBound" HorizontalAlignment="Left" Height="29" Margin="75,21,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            
+                            </ComboBox>
+                            <ComboBox Name="cmbParity" HorizontalAlignment="Left" Height="29" Margin="75,70,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                            <ComboBox Name="cmbStop" HorizontalAlignment="Left" Height="29" Margin="75,122,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                            <ComboBox Name="cmbDataBit" HorizontalAlignment="Left" Height="29" Margin="75,172,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+
+                    <src:ButtonSfm Name="btnSerialPortSet" Content="设   置" HorizontalAlignment="Left" Height="29" Margin="447,346,0,0" VerticalAlignment="Top" Width="93" Click="btnSerialPortSet_Click"/>
+                    <GroupBox Header="串口2参数" HorizontalAlignment="Left" Height="248" Margin="514,60,0,0" VerticalAlignment="Top" Width="277">
+                        <Grid>
+                            <Label Content="波特率" HorizontalAlignment="Left" Height="auto" Margin="10,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Label Content="校验位" HorizontalAlignment="Left" Height="auto" Margin="10,70,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Label Content="停止位" HorizontalAlignment="Left" Height="auto" Margin="10,122,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Label Content="数据位" HorizontalAlignment="Left" Height="auto" Margin="10,172,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <ComboBox Name="cmbBound1" HorizontalAlignment="Left" Height="29" Margin="75,21,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                            <ComboBox Name="cmbParity1" HorizontalAlignment="Left" Height="29" Margin="75,70,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                            <ComboBox Name="cmbStop1" HorizontalAlignment="Left" Height="29" Margin="75,122,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                            <ComboBox Name="cmbDataBit1" HorizontalAlignment="Left" Height="29" Margin="75,172,0,0" VerticalAlignment="Top" Width="180" Background="{x:Null}">
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <ComboBox Name="cmbSerialPort" HorizontalAlignment="Left" Height="24" Margin="610,331,0,0" VerticalAlignment="Top" Width="172" Visibility="Collapsed"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="白名单">
+                <Grid>
+                    <GroupBox Header="白名单启用条件" HorizontalAlignment="Left" Height="81" Margin="30,33,0,0" VerticalAlignment="Top" Width="704">
+                        <Grid>
+                            <RadioButton Name="rbtOffineAuto" Content="脱机自动启用" HorizontalAlignment="Left" Height="auto" Margin="26,19,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <RadioButton Name="rbtStart" Content="启用" HorizontalAlignment="Left" Height="auto" Margin="201,19,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <RadioButton Name="rbtStop" Content="不启用" HorizontalAlignment="Left" Height="auto" Margin="331,19,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <src:ButtonSfm Name="btnSetWriteList" Content="设   置" HorizontalAlignment="Left" Height="26" Margin="507,14,0,0" VerticalAlignment="Top" Width="88" Click="btnSetWriteList_Click"/>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="白名单模糊匹配" HorizontalAlignment="Left" Height="216" Margin="30,143,0,0" VerticalAlignment="Top" Width="704">
+                        <Grid>
+                            <Label Content="模糊查询方式:" HorizontalAlignment="Left" Height="auto" Margin="32,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <RadioButton Name="rbtAllMatch" Content="精确匹配(车牌号完全匹配)" HorizontalAlignment="Left" Height="auto" Margin="32,44,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <RadioButton Name="rbtPartMatch" Content="相似字符匹配(包括:0-D,8-Q,E-F)" HorizontalAlignment="Left" Height="auto" Margin="32,80,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <RadioButton Name="rbtFuccyMatch" Content="普通字符模糊匹配(允许误识别长度:" HorizontalAlignment="Left" Height="auto" Margin="32,118,0,0" VerticalAlignment="Top" Width="auto" Click="rbtFuccyMatch_Click"/>
+                            <CheckBox Name="chkIgnore" Content="忽略汉字" HorizontalAlignment="Left" Height="auto" Margin="32,157,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <Border Name="bdLenSelect" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="322,110,0,0" VerticalAlignment="Top" Width="158" IsEnabled="False">
+                                <Grid>
+                                    <RadioButton Name="rbtLen1" Content="1" HorizontalAlignment="Left" Height="21" Margin="10,5,0,0" VerticalAlignment="Top" Width="27"/>
+                                    <RadioButton Name="rbtLen2" Content="2" HorizontalAlignment="Left" Height="21" Margin="67,5,0,0" VerticalAlignment="Top" Width="27"/>
+                                    <RadioButton Name="rbtLen3" Content="3" HorizontalAlignment="Left" Height="21" Margin="119,5,0,0" VerticalAlignment="Top" Width="27"/>
+                                </Grid>
+                            </Border>
+                            <Label Content=")" HorizontalAlignment="Left" Height="auto" Margin="487,112,0,0" VerticalAlignment="Top" Width="auto"/>
+                            <src:ButtonSfm Name="btnWrite" Content="设   置" HorizontalAlignment="Left" Height="26" Margin="511,153,0,0" VerticalAlignment="Top" Width="88" Click="btnWrite_Click"/>
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="车牌识别触发延迟">
+                <Grid>
+                    <Label Content="触发延迟:" HorizontalAlignment="Left" Height="28" Margin="233,135,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <TextBox Name="txtDelay" HorizontalAlignment="Left" Height="28" Margin="308,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
+                    <Label Content="毫秒" HorizontalAlignment="Left" Height="28" Margin="514,135,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <src:ButtonSfm Name="btnDelay" Content="设  置" HorizontalAlignment="Left" Height="26" Margin="563,136,0,0" VerticalAlignment="Top" Width="87" Click="btnDelay_Click"/>
+                    <Label Content="温馨提示:" HorizontalAlignment="Left" Height="24" Margin="233,192,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="仅延迟外部触发时的车牌识别结果输出时间，触发时间范围【9,9999】" HorizontalAlignment="Left" Height="auto" Margin="308,223,0,0" VerticalAlignment="Top" Width="auto"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</src:WindowBase>

@@ -1,0 +1,17 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingMthCPH"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="请输入车牌" Height="219" Width="361" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="车牌号码:" HorizontalAlignment="Left" Height="auto" Margin="41,25,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="出口名称:" HorizontalAlignment="Left" Height="auto" Margin="41,68,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblCPH" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="122,25,0,0" VerticalAlignment="Top" Width="auto"/>
+        <SFMControls:ButtonSfm Name="btnOK" Content="确    定" HorizontalAlignment="Left" Height="29" Margin="60,108,0,0" VerticalAlignment="Top" Width="69" Click="btnOK_Click"/>
+        <SFMControls:ButtonSfm Name="btnCancel" Content="取    消" HorizontalAlignment="Left" Height="29" Margin="200,108,0,0" VerticalAlignment="Top" Width="71" Click="btnCancel_Click"/>
+        <Label Name="lblGateName" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="122,68,0,0" VerticalAlignment="Top" Width="auto"/>
+
+    </Grid>
+</SFMControls:WindowBase>

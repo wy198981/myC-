@@ -1,0 +1,14 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingDownCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="ParkingDownCard" Height="95" Width="468" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid>
+        <ProgressBar x:Name="pgbShow"  HorizontalAlignment="Left" Height="29" Margin="10,41,0,0" VerticalAlignment="Top" Width="440"/>
+        <Label Name="lblShow" Content="有效车牌下载" HorizontalAlignment="Left" Height="auto" Margin="63,10,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblCount" Content="总数" HorizontalAlignment="Left" Height="auto" Margin="233,10,0,0" VerticalAlignment="Top" Width="auto"/>
+
+    </Grid>
+</SFMControls:WindowBase>

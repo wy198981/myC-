@@ -1,0 +1,26 @@
+﻿<src:WindowBase x:Class="UI.Video.SystemState"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"      
+        Title="系统维护" Height="354" Width="640"  Style="{DynamicResource WindowStyle}" Loaded="WindowBase_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox Header="恢复出厂设置" HorizontalAlignment="Left" Height="111" Margin="38,23,0,0" VerticalAlignment="Top" Width="569">
+            <Grid>
+                <Label Content="所有设置均恢复,IP地址也将恢复,也可能连不上设备" HorizontalAlignment="Left" Height="auto" Margin="35,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <Label Content="所有设置均恢复,IP地址也将恢复,也可能连不上设备" HorizontalAlignment="Left" Height="auto" Margin="35,44,0,0" VerticalAlignment="Top" Width="auto"/>
+                <src:ButtonSfm Name="btnPartSet" Content="部分恢复" HorizontalAlignment="Left" Height="26" Margin="455,47,0,0" VerticalAlignment="Top" Width="79" Click="btnPartSet_Click"/>
+                <src:ButtonSfm Name="btnAllSet" Content="全部恢复" HorizontalAlignment="Left" Height="26" Margin="455,10,0,0" VerticalAlignment="Top" Width="79" Click="btnAllSet_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="程序升级" HorizontalAlignment="Left" Height="111" Margin="38,149,0,0" VerticalAlignment="Top" Width="569">
+            <Grid>
+                <Label Content="选择本地文件:" HorizontalAlignment="Left" Height="auto" Margin="35,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <TextBox Name="txtFileName" HorizontalAlignment="Left" Height="29" Margin="155,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+                <Label Content="升级状态:" HorizontalAlignment="Left" Height="auto" Margin="69,46,0,0" VerticalAlignment="Top" Width="auto"/>
+                <ProgressBar HorizontalAlignment="Left" Height="29" Margin="155,46,0,0" VerticalAlignment="Top" Width="263"/>
+                <src:ButtonSfm Name="btnRead" Content="浏览" HorizontalAlignment="Left" Height="29" Margin="456,10,0,0" VerticalAlignment="Top" Width="77" Click="btnRead_Click"/>
+                <src:ButtonSfm Name="btnUpdate" Content="升级" HorizontalAlignment="Left" Height="29" Margin="456,46,0,0" VerticalAlignment="Top" Width="77" Click="btnUpdate_Click"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</src:WindowBase>

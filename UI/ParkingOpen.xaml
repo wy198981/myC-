@@ -1,0 +1,83 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingOpen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="电脑开闸" Height="222" Width="489" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="车辆编号:" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="车牌号码:" HorizontalAlignment="Left" Height="auto" Margin="10,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtCardNO" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="111111"/>
+        <Label Content="车辆类型:" Grid.Column="3" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,12" VerticalAlignment="Center" Width="64"/>
+        <ComboBox Name="cmbCardType" Grid.Column="4" HorizontalAlignment="Left" Height="auto" Margin="14,12,0,0" VerticalAlignment="Top" Width="124" Background="{x:Null}"/>
+        <Label Content="开闸事由:" Grid.Column="3" HorizontalAlignment="Left" Height="auto" Margin="10,11,0,11" Grid.Row="1" VerticalAlignment="Center" Width="auto"/>
+        <ComboBox Name="cmbKZ" Grid.Column="4" HorizontalAlignment="Left" Height="auto" Margin="14,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="124" IsEditable="True">
+            <ComboBoxItem>无</ComboBoxItem>
+            <ComboBoxItem>没有识别</ComboBoxItem>
+            <ComboBoxItem>特殊车辆</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="cmbCarNumber" Grid.Column="1" HorizontalAlignment="Left" Height="auto" Margin="10,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="128" IsEditable="True" TextBoxBase.TextChanged="cmbCarNumber_TextChanged" KeyDown="cmbCarNumber_KeyDown">
+            <ComboBoxItem>京</ComboBoxItem>
+            <ComboBoxItem>津</ComboBoxItem>
+            <ComboBoxItem>冀</ComboBoxItem>
+            <ComboBoxItem>晋</ComboBoxItem>
+            <ComboBoxItem>蒙</ComboBoxItem>
+            <ComboBoxItem>辽</ComboBoxItem>
+            <ComboBoxItem>吉</ComboBoxItem>
+            <ComboBoxItem>黑</ComboBoxItem>
+            <ComboBoxItem>沪</ComboBoxItem>
+            <ComboBoxItem>苏</ComboBoxItem>
+            <ComboBoxItem>浙</ComboBoxItem>
+            <ComboBoxItem>皖</ComboBoxItem>
+            <ComboBoxItem>闽</ComboBoxItem>
+            <ComboBoxItem>赣</ComboBoxItem>
+            <ComboBoxItem>鲁</ComboBoxItem>
+            <ComboBoxItem>豫</ComboBoxItem>
+            <ComboBoxItem>鄂</ComboBoxItem>
+            <ComboBoxItem>湘</ComboBoxItem>
+            <ComboBoxItem>粤</ComboBoxItem>
+            <ComboBoxItem>桂</ComboBoxItem>
+            <ComboBoxItem>琼</ComboBoxItem>
+            <ComboBoxItem>渝</ComboBoxItem>
+            <ComboBoxItem>川</ComboBoxItem>
+            <ComboBoxItem>贵</ComboBoxItem>
+            <ComboBoxItem>云</ComboBoxItem>
+            <ComboBoxItem>藏</ComboBoxItem>
+            <ComboBoxItem>陕</ComboBoxItem>
+            <ComboBoxItem>甘</ComboBoxItem>
+            <ComboBoxItem>青</ComboBoxItem>
+            <ComboBoxItem>宁</ComboBoxItem>
+            <ComboBoxItem>新</ComboBoxItem>
+            <ComboBoxItem>港</ComboBoxItem>
+            <ComboBoxItem>澳</ComboBoxItem>
+            <ComboBoxItem>台</ComboBoxItem>
+            <ComboBoxItem>警</ComboBoxItem>
+            <ComboBoxItem>军</ComboBoxItem>
+            <ComboBoxItem>空</ComboBoxItem>
+            <ComboBoxItem>海</ComboBoxItem>
+            <ComboBoxItem>北</ComboBoxItem>
+            <ComboBoxItem>沈</ComboBoxItem>
+            <ComboBoxItem>兰</ComboBoxItem>
+            <ComboBoxItem>济</ComboBoxItem>
+            <ComboBoxItem>南</ComboBoxItem>
+            <ComboBoxItem>广</ComboBoxItem>
+            <ComboBoxItem>成</ComboBoxItem>
+        </ComboBox>
+        <SFMControls:ButtonSfm Name="btnOK" Content="确定" HorizontalAlignment="Left" Height="30" Margin="28,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="96" Grid.Column="1" Click="btnOK_Click"/>
+        <SFMControls:ButtonSfm Name="btnCancel" Content="放弃" Grid.Column="3" HorizontalAlignment="Left" Height="30" Margin="26,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="96" Grid.ColumnSpan="2" Click="btnCancel_Click"/>
+
+    </Grid>
+</SFMControls:WindowBase>

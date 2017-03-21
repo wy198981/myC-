@@ -1,0 +1,29 @@
+﻿<SFMControls:WindowBase x:Class="UI.WhiteList_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="白名单" Height="621.888" Width="800" Loaded="WindowBase_Loaded" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <src:ButtonSfm x:Name="changebt" Content="修改" HorizontalAlignment="Left" Margin="64,19,0,0" VerticalAlignment="Top" Width="80" Click="changebt_Click"/>
+        <src:ButtonSfm x:Name="deletebt" Content="删除" HorizontalAlignment="Left" Margin="173,19,0,0" VerticalAlignment="Top" Width="80" Click="deletebt_Click"/>
+        <src:ButtonSfm x:Name="button1" Content="删除所有" HorizontalAlignment="Left" Margin="278,19,0,0" VerticalAlignment="Top" Width="80" Click="button1_Click"/>
+        <TextBox x:Name="searchtext" HorizontalAlignment="Left" Height="23" Margin="425,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <src:ButtonSfm x:Name="searchbt" Content="查询" HorizontalAlignment="Left" Margin="550,19,0,0" VerticalAlignment="Top" Width="80" Click="searchbt_Click"/>
+        <DataGrid x:Name="dgList" Margin="10,69,10,55" HorizontalGridLinesBrush="#FFE0E0E0" VerticalGridLinesBrush="#FFE0E0E0" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=CardNO}" ClipboardContentBinding="{x:Null}" Header="车牌 ID"/>
+                <DataGridTextColumn Binding="{Binding Path=CPH}" ClipboardContentBinding="{x:Null}" Header="车牌号"/>
+                <DataGridTextColumn Binding="{Binding Path=EndDate}" ClipboardContentBinding="{x:Null}" Header="过期时间"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path=IsEnabled}" ClipboardContentBinding="{x:Null}" Header="是否启用"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path=IsAlarm}" ClipboardContentBinding="{x:Null}" Header="是否报警"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblStep" Content="0 / 0" Margin="0,0,0,10" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <src:ButtonSfm x:Name="button2" Content="上一页" HorizontalAlignment="Right" Margin="0,0,70,8" VerticalAlignment="Bottom" Click="button2_Click"/>
+        <src:ButtonSfm x:Name="button3" Content="下一页" HorizontalAlignment="Right" Margin="0,0,10,8" VerticalAlignment="Bottom" Click="button3_Click"/>
+        <src:ButtonSfm x:Name="addbt" Content="添加" HorizontalAlignment="Left" Margin="670,19,0,0" VerticalAlignment="Top" Width="67" Click="addbt_Click" Visibility="Hidden"/>
+
+    </Grid>
+</SFMControls:WindowBase>

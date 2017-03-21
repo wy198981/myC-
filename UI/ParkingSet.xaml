@@ -1,0 +1,1449 @@
+﻿<src:WindowBase x:Name="windowBase" x:Class="UI.ParkingSet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:core="clr-namespace:System;assembly=mscorlib" 
+        xmlns:cvt="clr-namespace:UI"
+        Title="车场设置" Style="{DynamicResource WindowStyle}" Height="820" Width="1350" FontSize="14" FontFamily="Arial,SimSun" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Closing="Window_Closing" BorderBrush="#FFA6A6A6"  Icon="Resources/Park.ico">
+    <Window.Resources>
+        <cvt:ItosConverter x:Key="cvtDate"/>
+        <cvt:IOConverter x:Key="cvtIO"/>
+        <cvt:JHConverter x:Key="cvtJH"/>
+        <cvt:BSConverter x:Key="cvtBS"/>
+        <cvt:XYConverter x:Key="cvtXY"/>
+        <cvt:CIPConverter x:Key="cvtCIP"/>
+        <cvt:VideoTypeConverter x:Key="cvtVideoType"/>
+        <cvt:PersonVideoConverter x:Key="cvtPersonVideo"/>
+    </Window.Resources>
+
+    <Viewbox Stretch="Fill">
+        <Grid Width="1350" Height="820">
+            <TabControl TabStripPlacement="Left" Margin="0,0,0,47" Background="{x:Null}" BorderBrush="#FFC3D2E5">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem" BasedOn="{StaticResource TabItemStyleBase}">
+                        <Setter Property="Width" Value="150"/>
+                        <Setter Property="Height" Value="40"/>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem x:Name="tbCheDaoSet" Header="车道设置" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Name="spCheDao" Orientation="Horizontal" Grid.Row="0">
+
+                            <SFMControls:ButtonSfm Name="btnAddCheDao" Content="添加车道"  Width="110" ItemName="BtnAdd" FormName="车道设置" Click="btnAddCheDao_Click" Margin="10,0,0,0"/>
+                            <SFMControls:ButtonSfm Name="btnDeleteCheDao" Content="删除车道" Width="110" ItemName="BtnDelete" FormName="车道设置" Click="btnDeleteCheDao_Click" Margin="10,0,0,0"/>
+                        </StackPanel>
+
+                        <DataGrid x:Name="dgLane" Grid.Row="1" ItemsSource="{Binding}"  AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Left"  BeginningEdit="dgLane_BeginningEdit" CellEditEnding="dgLane_CellEditEnding" BorderThickness="0" Background="{x:Null}">
+                            <DataGrid.Columns>
+                                <DataGridComboBoxColumn Header="车道类型" ItemsSource="{x:Static cvt:BinModel.lstInOut}" TextBinding="{Binding InOut, Converter={StaticResource cvtIO}, Mode=TwoWay}"/>
+                                <DataGridTextColumn x:Name="dgtxtLane" Header="车道名称" Binding="{Binding InOutName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <DataGridComboBoxColumn Header="控制机号" ItemsSource="{x:Static cvt:BinModel.lstCtrlNumber}" SelectedItemBinding="{Binding CtrlNumber,Mode=TwoWay}"/>
+                                <DataGridComboBoxColumn Header="开闸机号" Visibility="Hidden" IsReadOnly="True"/>
+                                <DataGridComboBoxColumn Header="开闸方式" ItemsSource="{x:Static cvt:BinModel.lstOpenType}" TextBinding="{Binding OpenType, Converter={StaticResource cvtDate}, Mode=TwoWay}" Visibility="Collapsed"/>
+                                <DataGridComboBoxColumn Header="车像抓拍" x:Name="dcboCameraIP" ItemsSource="{x:Static cvt:BinModel.lstCameraIP}" TextBinding="{Binding CameraIP, Converter={StaticResource cvtCIP}, Mode=TwoWay}"/>
+                                <DataGridComboBoxColumn x:Name="dcboPersonID" Header="副相机抓拍" Visibility="Hidden" SelectedValueBinding="{Binding PersonVideo}"/>
+                                <DataGridComboBoxColumn Header="大小车场" ItemsSource="{x:Static cvt:BinModel.lstBigSmall}" TextBinding="{Binding BigSmall, Converter={StaticResource cvtBS}, Mode=TwoWay}"/>
+                                <DataGridCheckBoxColumn Header="是否在线" Binding="{Binding OnLine, Mode=TwoWay}"/>
+                                <DataGridCheckBoxColumn Header="备用1" Binding="{Binding CheckPortID, Mode=TwoWay}"/>
+                                <DataGridCheckBoxColumn Header="备用2" Binding="{Binding HasOutCard, Mode=TwoWay}"/>
+                                <DataGridComboBoxColumn Header="通讯协议" ItemsSource="{x:Static cvt:BinModel.lstXieYi}" TextBinding="{Binding XieYi, Converter={StaticResource cvtXY}, Mode=TwoWay}"/>
+                                <DataGridTextColumn Header="控制机IP" Binding="{Binding IP,Mode=TwoWay}"/>
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID,Mode=TwoWay}" Visibility="Hidden" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="视频图像设置" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <GroupBox Header="图像视频设置" HorizontalAlignment="Left" Height="108" Margin="10,6,0,0" VerticalAlignment="Top" Width="834">
+                            <Grid>
+                                <CheckBox x:Name="chkEnableNetVideo" Content="启用网络视频" HorizontalAlignment="Left" Height="auto" Margin="38,20,0,0" VerticalAlignment="Top" Width="auto" Click="chkEnableNetVideo_Click"/>
+                                <CheckBox x:Name="chkVideo4" Content="启用四路视频" HorizontalAlignment="Left" Height="auto" Margin="38,58,0,0" VerticalAlignment="Top" Width="auto" Click="chkVideo4_Click"/>
+                                <CheckBox x:Name="chkPersonVideo" Content="启用副摄像机抓拍" HorizontalAlignment="Left" Height="auto" Margin="193,58,0,0" VerticalAlignment="Top" Width="auto"  Click="chkPersonVideo_Click" Background="{x:Null}"/>
+                                <CheckBox x:Name="chkZJZP" Content="证件抓拍" HorizontalAlignment="Left" Height="auto" Margin="407,58,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <src:ButtonSfm x:Name="cmdSelectNetCameraSet" Content="网络摄像机设置" HorizontalAlignment="Left" Margin="193,12.05,0,0" VerticalAlignment="Top" Width="152" FormName="网络摄像机设置" ItemName="CmdView" Click="cmdSelectNetCameraSet_Click"/>
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="图片设置" HorizontalAlignment="Left" Height="171" Margin="10,128,0,0" VerticalAlignment="Top" Width="834">
+                            <Grid>
+                                <Label Content="图像保存路径" HorizontalAlignment="Left" Height="auto" Margin="35,12,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="txtImgSavePath" HorizontalAlignment="Left" Height="auto" Margin="144,14,0,0" Text="D:\" VerticalAlignment="Top" Width="346" TextWrapping="NoWrap"  HorizontalScrollBarVisibility="Auto"/>
+
+                                <src:ButtonSfm x:Name="btnImgSavePath" Content="浏览" HorizontalAlignment="Left" Margin="504,9.05,0,0" VerticalAlignment="Top" Width="101" Click="btnImgSavePath_Click"/>
+                                <CheckBox x:Name="chkImageAutoDel" Content="每天" HorizontalAlignment="Left" Height="auto" Margin="38,66,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox x:Name="cboImageAutoDelTime" HorizontalAlignment="Left" Height="auto" Margin="94,63,0,0" VerticalAlignment="Top" Width="50" IsEditable="True" KeyDown="ComboBox_KeyDown">
+                                    <ComboBoxItem Content="0"/>
+                                    <ComboBoxItem IsSelected="True" Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                </ComboBox>
+                                <Label Content="点自动删除" HorizontalAlignment="Left" Height="auto" Margin="152,61,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox x:Name="cboImageSaveDays" HorizontalAlignment="Left" Height="auto" Margin="247,63,0,0" VerticalAlignment="Top" Width="63" IsEditable="True" KeyDown="cboImageSaveDays_KeyDown">
+                                    <ComboBoxItem IsSelected="True" Content="30"/>
+                                    <ComboBoxItem Content="60"/>
+                                    <ComboBoxItem Content="90"/>
+                                    <ComboBoxItem Content="120"/>
+                                </ComboBox>
+                                <Label Content="天以前的图片" HorizontalAlignment="Left" Height="auto" Margin="324,61,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="ckbCPHPhoto" Content="显示车牌小图" HorizontalAlignment="Left" Height="auto" Margin="38,110,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Name="grpCamera" Header="网络摄像机设置" HorizontalAlignment="Left" Height="288" Margin="10,323,0,0" VerticalAlignment="Top" Width="834">
+                            <Grid Name="gdNetCamera">
+
+                                <DataGrid Name="dgvVideo" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="680" ItemsSource="{Binding}" CanUserAddRows="False" BeginningEdit="dgvVideo_BeginningEdit" CellEditEnding="dgvVideo_CellEditEnding" AutoGenerateColumns="False" Margin="18,14,0,0">
+                                    <DataGrid.Columns>
+
+                                        <!--<DataGridComboBoxColumn x:Name="dcboVideoType" Header="设备类型" Width="auto" ItemsSource="{x:Static cvt:BinModel.lstVideoType}" TextBinding="{Binding VideoType, Converter={StaticResource cvtVideoType}, Mode=TwoWay}"/>-->
+
+                                        <!--<DataGridComboBoxColumn x:Name="dcboVideoType" Header="设备类型" Width="auto">
+                                        <DataGridComboBoxColumn.ElementStyle>
+                                            <Style TargetType="ComboBox">
+                                                <Setter Property="ItemsSource" Value="{Binding Path=BinModel.lstVideoType,ElementName=this}"/>
+                                                <Setter Property="SelectedValue" Value="{Binding Path=VideoType}"/>
+                                                <Setter Property="DisplayMemberPath" Value="{Binding Path=VideoType}"></Setter>
+                                                <Setter Property="IsEditable" Value="True"></Setter>
+                                            </Style>
+                                        </DataGridComboBoxColumn.ElementStyle>
+                                    </DataGridComboBoxColumn>-->
+
+                                        <DataGridTemplateColumn Header="设备类型" Width="auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding VideoType}" IsEnabled="False"></TextBlock>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                            <DataGridTemplateColumn.CellEditingTemplate>
+                                                <DataTemplate>
+                                                    <ComboBox x:Name="cboValue" ItemsSource="{x:Static cvt:BinModel.lstVideoType}" Width="200" SelectedItem="{Binding VideoType,Mode=TwoWay}" Text="{Binding VideoType}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellEditingTemplate>
+                                        </DataGridTemplateColumn>
+
+
+                                        <DataGridTextColumn Header="相机IP" Binding="{Binding VideoIP}"  Width="2*"/>
+                                        <DataGridTextColumn Header="端口号" Binding="{Binding VideoPort}" Width="*"/>
+                                        <DataGridTextColumn Header="用户名" Binding="{Binding VideoUserName}" Width="*"/>
+                                        <DataGridTextColumn Header="密码" Binding="{Binding VideoPassWord}" Width="*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                <SFMControls:ButtonSfm Name="btnAddCamera" Content="添  加" HorizontalAlignment="Left" Margin="712,45,0,0" VerticalAlignment="Top" Width="100" Click="btnAddCamera_Click" FormName="网络摄像机设置" ItemName="BtnAdd"/>
+                                <SFMControls:ButtonSfm Name="btnDelCamera" Content="删  除" HorizontalAlignment="Left" Margin="712,108,0,0" VerticalAlignment="Top" Width="100" Click="btnDelCamera_Click" FormName="网络摄像机设置" ItemName="BtnDelete"/>
+                                <SFMControls:ButtonSfm Name="btnSaveCamera" Content="确  定" HorizontalAlignment="Left" Margin="712,174,0,0" VerticalAlignment="Top" Width="100" Click="btnSaveCamera_Click" FormName="网络摄像机设置" ItemName="BtnUpdate"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="设备管理" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+
+                        <TabControl Name="tbDeviceManagement" SelectionChanged="tbDeviceManagement_SelectionChanged" Background="{x:Null}" BorderBrush="#FFC3D2E5" BorderThickness="0,1,1,0">
+                            <TabItem Header="摄像机管理" Background="{x:Null}">
+                                <Grid>
+
+                                    <!--<WindowsFormsHost Name="wfhVideo0" Height="306" Width="408" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="59">
+                                    <wf:PictureBox x:Name="picNetVideo0"  Dock="Fill" BackColor="Black" SizeMode="StretchImage" MouseDoubleClick="picNetVideo0_MouseDoubleClick">
+
+                                    </wf:PictureBox>
+
+                                </WindowsFormsHost>-->
+
+                                    <WindowsFormsHost HorizontalAlignment="Left" Height="301" VerticalAlignment="Top" Width="461">
+                                        <wf:PictureBox x:Name="pictureBox1"  Dock="Fill" SizeMode="StretchImage" BackColor="Black">
+                                        </wf:PictureBox>
+                                    </WindowsFormsHost>
+
+                                    <WindowsFormsHost HorizontalAlignment="Left" Height="263" Margin="0,380,0,0" VerticalAlignment="Top" Width="461">
+                                        <wf:PictureBox x:Name="pictureBox2"  Dock="Fill" SizeMode="StretchImage" BackColor="Black">
+                                        </wf:PictureBox>
+                                    </WindowsFormsHost>
+
+
+
+                                    <!--<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="77" Margin="0,1,0,0" VerticalAlignment="Top" Width="198" Visibility="Collapsed">
+                                    <Grid>
+
+                                    </Grid>
+                                </Border>-->
+
+                                    <GroupBox Header="查找/修改IP" HorizontalAlignment="Left" Height="298" Margin="478,5,0,0" VerticalAlignment="Top" Width="468">
+                                        <Grid>
+                                            <TreeView Name="tvwShowIP" HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="420" MouseDoubleClick="tvwShowIP_MouseDoubleClick" SelectedItemChanged="tvwShowIP_SelectedItemChanged"/>
+                                            <src:ButtonSfm Name="btnSearchDev" Content="查找" HorizontalAlignment="Left" Margin="37,153,0,0" VerticalAlignment="Top" Width="72" Click="btnSearchDev_Click"/>
+                                            <src:ButtonSfm Name="btnStopSearchDev" Content="停止" HorizontalAlignment="Left" Margin="170,153,0,0" VerticalAlignment="Top" Width="72" Click="btnStopSearchDev_Click"/>
+                                            <src:ButtonSfm Name="btnNetCfg" Content="修改IP" HorizontalAlignment="Left" Margin="316,153,0,0" VerticalAlignment="Top" Width="72" Click="btnNetCfg_Click"/>
+                                            <Label Content="温馨提示:" HorizontalAlignment="Left" Height="auto" Margin="19,188,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <TextBlock HorizontalAlignment="Left" Height="40" Margin="56,222,0,0" TextWrapping="Wrap" Text="  选中需要修改的IP，点击【修改IP】,输入新IP地址，点击【确认】即可。" VerticalAlignment="Top" Width="342"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="登陆设备" HorizontalAlignment="Left" Height="154" Margin="478,316,0,0" VerticalAlignment="Top" Width="472">
+                                        <Grid>
+                                            <Label Content="设备IP" HorizontalAlignment="Left" Height="auto" Margin="18,12,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <Label Content="端口:" HorizontalAlignment="Left" Height="auto" Margin="240,12,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <Label Content="用户名:" HorizontalAlignment="Left" Height="auto" Margin="19,53,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <Label Content="密码:" HorizontalAlignment="Left" Height="auto" Margin="244,53,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <TextBox Name="txtLoginIP" HorizontalAlignment="Left" Height="auto" Margin="81,13,0,0" TextWrapping="Wrap" Text="192.168.168.168" VerticalAlignment="Top" Width="144"/>
+                                            <TextBox Name="txtLoginPort" HorizontalAlignment="Left" Height="auto" Margin="296,13,0,0" TextWrapping="Wrap" Text="80" VerticalAlignment="Top" Width="133"/>
+
+                                            <TextBox Name="txtLoginUserName" HorizontalAlignment="Left" Height="auto" Margin="81,57,0,0" TextWrapping="Wrap" Text="admin" VerticalAlignment="Top" Width="145"/>
+
+                                            <src:ButtonSfm Name="btnOpenDev" Content="打开" HorizontalAlignment="Left" Margin="41,94,0,0" VerticalAlignment="Top" Width="69" Click="btnOpenDev_Click"/>
+                                            <src:ButtonSfm Name="btnCloseDev" Content="关闭" HorizontalAlignment="Left" Margin="173,94,0,0" VerticalAlignment="Top" Width="71" Click="btnCloseDev_Click"/>
+                                            <src:ButtonSfm Name="btnUpdateIP" Content="修改IP" HorizontalAlignment="Left" Margin="319,94,0,0" VerticalAlignment="Top" Width="77" Click="btnUpdateIP_Click"/>
+                                            <PasswordBox Name="txtLoginPwd" HorizontalAlignment="Left" Height="auto" Margin="296,55,0,0" VerticalAlignment="Top" Width="133" Password="admin"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Name="grpNetSet" Header="网络参数设置" HorizontalAlignment="Left" Height="293" Margin="970,8,0,0" VerticalAlignment="Top" Width="192">
+                                        <Grid>
+                                            <Label Content="IP地址" HorizontalAlignment="Left" Height="auto" Margin="10,0,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <TextBox Name="txtNetIP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,33,0,206" TextWrapping="Wrap" Text="192.168.1.101" Width="160" Height="auto"/>
+                                            <Label Content="子网掩码" HorizontalAlignment="Left" Height="auto" Margin="10,75,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <TextBox Name="txtNetMask" HorizontalAlignment="Left" Height="auto" Margin="10,106,0,0" TextWrapping="Wrap" Text="255.255.255.0" VerticalAlignment="Top" Width="160"/>
+                                            <Label Content="默认网关" HorizontalAlignment="Left" Height="auto" Margin="10,152,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <TextBox Name="txtNetGateway" HorizontalAlignment="Left" Height="auto" Margin="10,187,0,0" TextWrapping="Wrap" Text="192.168.1.1" VerticalAlignment="Top" Width="160"/>
+
+                                            <src:ButtonSfm Name="btnSaveIP" Content="确定" HorizontalAlignment="Left" Margin="82,226.883,0,0" VerticalAlignment="Top" Width="88" Click="btnSaveIP_Click"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <Label Name="lblPlate" HorizontalAlignment="Left" Height="28" Margin="10,306,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <Label Name="lblCPHWidth" HorizontalAlignment="Left" Height="28" Margin="10,348,0,0" VerticalAlignment="Top" Width="auto" />
+                                    <GroupBox Header="补光灯调节" HorizontalAlignment="Left" Height="96" Margin="478,475,0,0" VerticalAlignment="Top" Width="472">
+                                        <Grid>
+                                            <RadioButton Name="radledauto" Content="智能" HorizontalAlignment="Left" Height="auto" Margin="57,10,0,0" VerticalAlignment="Top" Width="auto" Click="radledauto_Click"/>
+                                            <RadioButton Name="radledon" Content="常亮" HorizontalAlignment="Left" Height="auto" Margin="177,10,0,0" VerticalAlignment="Top" Width="auto" Click="radledon_Click"/>
+                                            <RadioButton Name="radledoff" Content="常灭" HorizontalAlignment="Left" Height="auto" Margin="286,10,0,0" VerticalAlignment="Top" Width="auto" Click="radledoff_Click"/>
+                                            <Slider Name="ledbar" HorizontalAlignment="Left" Margin="29,38,0,0" VerticalAlignment="Top" Width="407" Maximum="6" SmallChange="1" Value="2" MouseLeftButtonDown="ledbar_MouseLeftButtonDown"/>
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <src:ButtonSfm Name="btnManual" Content="手动识别" HorizontalAlignment="Left" Margin="377,325,0,0" VerticalAlignment="Top" Width="84" Click="btnManual_Click"/>
+                                    <Label Name="lblWidth" HorizontalAlignment="Left" Height="30" Margin="391,1,0,0" VerticalAlignment="Top" Width="70"/>
+                                    <GroupBox Header="参数配置" HorizontalAlignment="Left" Height="297" Margin="970,316,0,0" VerticalAlignment="Top" Width="192">
+                                        <Grid>
+                                            <src:ButtonSfm Name="btnBaseConfig"  Content="基本配置" HorizontalAlignment="Left" Height="27" Margin="24,12,0,0" VerticalAlignment="Top" Width="130" Click="btnBaseConfig_Click"/>
+                                            <src:ButtonSfm Name="btnInOut" Content="输入输出" HorizontalAlignment="Left" Height="27" Margin="24,53,0,0" VerticalAlignment="Top" Width="130" Click="btnInOut_Click"/>
+                                            <src:ButtonSfm Name="btnVideoSet" Content="线圈配置" HorizontalAlignment="Left" Height="27" Margin="24,100,0,0" VerticalAlignment="Top" Width="130" Click="btnVideoSet_Click"/>
+                                            <src:ButtonSfm Name="btnVideoCfg" Content="视频配置" HorizontalAlignment="Left" Height="27" Margin="24,146,0,0" VerticalAlignment="Top" Width="130" Click="btnVideoCfg_Click"/>
+                                            <src:ButtonSfm Name="btnOsd" Content="OSD配置" HorizontalAlignment="Left" Height="27" Margin="24,191,0,0" VerticalAlignment="Top" Width="130" Click="btnOsd_Click"/>
+                                            <src:ButtonSfm Name="btnSysPreserve" Content="系统维护" HorizontalAlignment="Left" Height="27" Margin="24,234,0,0" VerticalAlignment="Top" Width="130" Click="btnSysPreserve_Click"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="远近调节" HorizontalAlignment="Left" Height="54" Margin="176,306,0,0" VerticalAlignment="Top" Width="99">
+                                        <Grid>
+                                            <src:ButtonSfm Name="btnPosAdd" Content="+" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="38" Margin="4,0,0,0" MouseDown="btnPosAdd_MouseDown" MouseUp="btnPosAdd_MouseUp"/>
+                                            <src:ButtonSfm Name="btnPosReduce" Content="-" HorizontalAlignment="Left" Height="28"  VerticalAlignment="Top" Width="38" Margin="47,0,0,0" MouseDown="btnPosReduce_MouseDown" MouseUp="btnPosReduce_MouseUp"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Header="清晰度调节" HorizontalAlignment="Left" Height="54" Margin="280,306,0,0" VerticalAlignment="Top" Width="92">
+                                        <Grid>
+                                            <src:ButtonSfm Name="btnDefinitionAdd" Content="+" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="37" Margin="7,0,0,0" MouseDown="btnDefinitionAdd_MouseDown" MouseUp="btnDefinitionAdd_MouseUp"/>
+                                            <src:ButtonSfm Name="btnDefinitionReduce" Content="-" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="36" Margin="49,0,0,0" MouseDown="btnDefinitionReduce_MouseDown" MouseUp="btnDefinitionReduce_MouseUp"/>
+                                        </Grid>
+                                    </GroupBox>
+
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem  Header="控制主板管理" Name="cmdCtrlSearch" Background="{x:Null}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="1056*"/>
+                                        <ColumnDefinition Width="181*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <DataGrid x:Name="dgDevice" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionChanged="dgDevice_SelectionChanged" Background="{x:Null}" Grid.Column="0" LoadingRow="dgDevice_LoadingRow" BorderThickness="0,1,1,0">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding DeviceNo}" Header="机号"/>
+                                            <DataGridTextColumn Binding="{Binding DeviceType}" Header="类型"/>
+                                            <DataGridTextColumn Binding="{Binding IPAddress}" Header="IP地址"/>
+                                            <DataGridTextColumn Binding="{Binding Subnetwork}" Header="子网掩码"/>
+                                            <DataGridTextColumn Binding="{Binding Gateway}" Header="网关"/>
+                                            <DataGridTextColumn Binding="{Binding ServerPort}" Header="服务器端口"/>
+                                            <DataGridTextColumn Binding="{Binding ClientPort}" Header="客户端端口"/>
+                                            <DataGridTextColumn Binding="{Binding MAC}" Header="物理地址"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <src:ButtonSfm Content="搜索" x:Name="btnSearchDevice" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="130" Click="btnSearchDevice_Click"/>
+                                    <Label Content="机号" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31.117" Width="42"/>
+                                    <ComboBox x:Name="cbbDevNo" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="125" SelectedValuePath="{Binding View.FocusedRowData.CellData/Value, ElementName=GridControl1}" Background="{x:Null}" Grid.Column="1" Height="27.117"/>
+                                    <Label Content="IP" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="1" Margin="10,202,0,0" Width="24.493" Height="31.117"/>
+                                    <TextBox x:Name="txtIPSearch" HorizontalAlignment="Left" Margin="10,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Grid.Column="1" Height="27.117"/>
+                                    <Label Content="子网掩码" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31.117" Width="74"/>
+                                    <TextBox x:Name="txtSubnet" HorizontalAlignment="Left" Margin="10,341,0,0" TextWrapping="Wrap" Text="" Width="125" VerticalAlignment="Top" Grid.Column="1" Height="27.117"/>
+                                    <!--<Label Content="网关" HorizontalAlignment="Right"  Grid.Column="1" Margin="0,419,84,174" Width="46"/>-->
+
+                                    <TextBox x:Name="txtGateway" HorizontalAlignment="Left" Margin="10,454,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Grid.Column="1" Height="27.117"/>
+                                    <SFMControls:ButtonSfm x:Name="btnChangeDevInfo" Content="修改" HorizontalAlignment="Left" Margin="10,522,0,0" VerticalAlignment="Top" Width="130" Grid.Column="1" Click="btnChangeDevInfo_Click"/>
+                                    <Label Content="网关" Grid.Column="1" HorizontalAlignment="Left" Height="31.117" Margin="10,421,0,0" VerticalAlignment="Top" Width="42"/>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="参数加载" Background="{x:Null}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="186*"/>
+                                        <ColumnDefinition Width="659*"/>
+                                        <ColumnDefinition Width="350*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <DataGrid x:Name="dgvChargeCheDao" HorizontalAlignment="Left"  VerticalAlignment="Top"  AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}" HeadersVisibility="Column"  CellEditEnding="dgvChargeCheDao_CellEditEnding" Background="{x:Null}">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="选择" CanUserReorder="False">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox x:Name="chkSelect" HorizontalAlignment="Center" VerticalAlignment="Center" Click="CheckBox_Click"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTextColumn Header="车道" Width="*" Binding="{Binding InOutName}" IsReadOnly="True"/>
+                                            <DataGridTextColumn Header="机号" Width="150" Binding="{Binding CtrlNumber}" Visibility="Hidden"/>
+                                            <DataGridTextColumn Header="IP" Width="150" Binding="{Binding IP}" Visibility="Hidden"/>
+                                            <DataGridTextColumn Header="协议" Width="150" Binding="{Binding XieYi}" Visibility="Hidden"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <GroupBox Header="车道控制机参数" HorizontalAlignment="Left" Height="270" VerticalAlignment="Top"  Grid.Column="1" Width="643" Margin="0,1,0,0">
+                                        <Grid x:Name="gdCtrlSet">
+                                            <RadioButton x:Name="rbIN" Content="入口" HorizontalAlignment="Left" Height="auto" Margin="49,10,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                            <RadioButton x:Name="rbOUT" Content="出口" HorizontalAlignment="Left" Height="auto" Margin="198,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckbQTmpAutoKZ" Content="启动临时车脱机功能" HorizontalAlignment="Left" Height="auto" Margin="49,40,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckb8" Content="临时车确定开闸" HorizontalAlignment="Left" Height="auto" Margin="265,40,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckbQAutoKZ" Content="白牌车自动开闸" HorizontalAlignment="Left" Height="auto" Margin="49,73,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckb11" Content="月租车确定开闸" HorizontalAlignment="Left" Height="auto" Margin="265,73,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckbTmpChinese" Content="临时车显示播报汉字" HorizontalAlignment="Left" Height="auto" Margin="49,147,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckb6" Content="场内小车场" HorizontalAlignment="Left" Height="auto" Margin="265,109,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckbMthNo" Content="月租车在线开闸" HorizontalAlignment="Left" Height="auto" Margin="49,186,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckb27" Content="U盘下载清空所有车辆信息" HorizontalAlignment="Left" Height="auto" Margin="265,147,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckb20" Content="非法开闸记录" HorizontalAlignment="Left" Height="auto" Margin="49,220,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckb17" Content="道闸关到位" HorizontalAlignment="Left" Height="auto" Margin="265,186,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="ckbChanelTJ" Content="取消计费型相机脱机计费功能" HorizontalAlignment="Left" Height="auto" Margin="265,219,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                                            <src:ButtonSfm x:Name="btnRead" Content="参数读取" HorizontalAlignment="Left" Margin="503,34.558,0,0" VerticalAlignment="Top" Width="120" Click="btnRead_Click" FormName="控制板参数设置" ItemName="BtnRead"/>
+                                            <src:ButtonSfm x:Name="btnLoad" Content="参数加载" HorizontalAlignment="Left" Margin="503,103.558,0,0" VerticalAlignment="Top" Width="120" Click="btnLoad_Click" FormName="控制板参数设置" ItemName="BtnLoad"/>
+                                            <src:ButtonSfm x:Name="btnFormart" Content="格式化" HorizontalAlignment="Left" Margin="503,164,0,0" VerticalAlignment="Top" Width="120" Click="btnFormart_Click" FormName="控制板参数设置" ItemName="BtnFormat"/>
+                                            <Label x:Name="lblString" HorizontalAlignment="Left" Height="auto" Margin="331,5,0,0" VerticalAlignment="Top" Width="auto" Foreground="Red" />
+                                            <CheckBox x:Name="chb0AutoKZ" Content="0牌车自动开闸" HorizontalAlignment="Left" Height="auto" Margin="49,109,0,0" VerticalAlignment="Top" Width="auto"/>
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <GroupBox Header="控制板功能类型" HorizontalAlignment="Left" Height="108" Margin="0,281,0,0" VerticalAlignment="Top" Width="643" Grid.Column="1">
+                                        <Grid>
+                                            <Label Content="选择功能类型文件:" HorizontalAlignment="Left" Height="auto" Margin="13,26,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <ProgressBar Name="progressBar2" HorizontalAlignment="Left" Margin="165,26,0,0" VerticalAlignment="Top" Width="316" Height="28"/>
+
+                                            <SFMControls:ButtonSfm Name="btnReadIO" Content="浏览" HorizontalAlignment="Left" Margin="503,7,0,0" VerticalAlignment="Top" Width="111" Click="btnReadIO_Click"/>
+                                            <SFMControls:ButtonSfm Name="btnReadKZJType" Content="读取" HorizontalAlignment="Left" Margin="503,41,0,0" VerticalAlignment="Top" Width="111" Click="btnReadKZJType_Click"/>
+                                            <Label Name="lblKZJType" HorizontalAlignment="Left" Height="auto" Margin="275,48,0,0" VerticalAlignment="Top" Width="auto"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Grid.Column="1" Header="加载时间" HorizontalAlignment="Left" Height="97" Margin="1,481,0,0" VerticalAlignment="Top" Width="642">
+                                        <Grid>
+                                            <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="16,23,0,0" VerticalAlignment="Top" Width="151" SelectedDateChanged="dpDate_SelectedDateChanged" Focusable="False"/>
+                                            <Label x:Name="lblTime" Content="Time" HorizontalAlignment="Left" Margin="189,21,0,0" VerticalAlignment="Top" Width="135"/>
+                                            <Label x:Name="lblWeekDay" Content="WeekDay" HorizontalAlignment="Left" Margin="342,21,0,0" VerticalAlignment="Top" Width="107"/>
+
+                                            <SFMControls:ButtonSfm x:Name="btnReadTime" Content="读取时间" HorizontalAlignment="Left" Margin="503,-1,0,0" VerticalAlignment="Top" Width="113" Click="btnReadTime_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="btnLoadTime" Content="加载时间" HorizontalAlignment="Left" Margin="503,36,0,0" VerticalAlignment="Top" Width="113" Click="btnLoadTime_Click"/>
+                                        </Grid>
+                                    </GroupBox>
+
+
+                                    <DataGrid x:Name="dgDeviceTime" IsReadOnly="True" Background="{x:Null}" Grid.Column="2" BorderThickness="1,1,0,0" Margin="0">
+                                        <DataGrid.VerticalGridLinesBrush>
+                                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                                        </DataGrid.VerticalGridLinesBrush>
+                                        <DataGrid.HorizontalGridLinesBrush>
+                                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                                        </DataGrid.HorizontalGridLinesBrush>
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding InOutName}" Header="车道"/>
+                                            <DataGridTextColumn Binding="{Binding Time, StringFormat=yyyy-MM-dd HH:mm:ss}" Header="时间"/>
+                                            <DataGridTextColumn Binding="{Binding Msg}" Header="信息"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <GroupBox Grid.Column="1" Header="清空控制机所有记录" HorizontalAlignment="Left" Height="72" Margin="1,398,0,0" VerticalAlignment="Top" Width="642">
+                                        <Grid HorizontalAlignment="Left" Width="675" Margin="0,0,-2,0">
+                                            <!--<Label Content="清空控制机所有记录" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,10,0,0"/>-->
+
+                                            <src:ButtonSfm x:Name="btnClearData" Content="清空" HorizontalAlignment="Left" Margin="503,7,0,0" VerticalAlignment="Top" Width="111" Click="btnClearData_Click"/>
+                                        </Grid>
+                                    </GroupBox>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="车牌识别设置" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <GroupBox Header="开闸方式设置" HorizontalAlignment="Left" Height="279" Margin="41,17,0,0" VerticalAlignment="Top" Width="780">
+                            <Grid>
+                                <CheckBox x:Name="ckb0AutoKZ" Content="临时车出场收费0元自动开闸" HorizontalAlignment="Left" Height="auto" Margin="21,182,0,0" VerticalAlignment="Top" Width="auto" RenderTransformOrigin="0.479,2.155"/>
+                                <CheckBox x:Name="ckbFree" Content="军警车自动放行" HorizontalAlignment="Left" Height="auto" Margin="297,182,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="ckbFree0" Content="0牌车自动放行" HorizontalAlignment="Left" Height="auto" Margin="297,221,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="ckbNOCPH" Content="无牌车入场自动开闸" HorizontalAlignment="Left" Height="auto" Margin="21,221,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="ckbTempCanNotInSmall" Content="临时车禁止驶入小车场" HorizontalAlignment="Left" Height="auto" Margin="490,221,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10" VerticalAlignment="Top" Width="613" Orientation="Horizontal">
+                                    <Label Content="临时车入场开闸方式" HorizontalAlignment="Left" Height="auto" Margin="3" VerticalAlignment="Top" Width="auto"/>
+                                    <RadioButton x:Name="optInAutoOpenModel0" Content="自动开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                    <RadioButton x:Name="optInAutoOpenModel1" Content="确认开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto"/>
+                                    <RadioButton x:Name="optInAutoOpenModel2" Content="不开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox x:Name="checkBox7" Content="取卡" HorizontalAlignment="Left" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,51,0,0" VerticalAlignment="Top" Width="628" Orientation="Horizontal">
+                                    <Label Content="临时车出场开闸方式" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Margin="3"/>
+                                    <RadioButton x:Name="optOutAutoOpenModel0" Content="自动开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto"/>
+                                    <RadioButton x:Name="optOutAutoOpenModel1" Content="确认开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                    <RadioButton x:Name="optOutAutoOpenModel2" Content="不开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto"/>
+
+
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,97,0,0" VerticalAlignment="Top" Width="634" Orientation="Horizontal">
+                                    <Label Content="月租车入场开闸方式" Height="auto" Margin="3" VerticalAlignment="Top" Width="auto"/>
+                                    <RadioButton x:Name="optInAutoOpenMoth0" Content="自动开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                    <RadioButton x:Name="optInAutoOpenMoth1" Content="确认开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Height="auto" Margin="10,138,0,0" VerticalAlignment="Top" Width="634" Orientation="Horizontal">
+                                    <Label Content="月租车出场开闸方式" Height="auto" Margin="3" VerticalAlignment="Top" Width="auto"/>
+                                    <RadioButton x:Name="optOutAutoOpenMoth0" Content="自动开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                    <RadioButton x:Name="optOutAutoOpenMoth1" Content="确认开闸" Height="auto" Margin="8" VerticalAlignment="Top" Width="auto"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="车牌识别参数" HorizontalAlignment="Left" Height="226" Margin="41,316,0,0" VerticalAlignment="Top" Width="780">
+                            <Grid>
+                                <CheckBox x:Name="chkAutoPlateEn" Content="启动车牌自动识别" HorizontalAlignment="Left" Height="auto" Margin="21,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <Label Content="车牌对比精度" HorizontalAlignment="Left" Height="auto" Margin="21,38,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton x:Name="db0" Content="模糊对比(4位)" HorizontalAlignment="Left" Height="auto" Margin="153,43,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton x:Name="db1" Content="一般对比(5位)" HorizontalAlignment="Left" Height="auto" Margin="336,43,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton x:Name="db2" Content="精确对比(6位)" HorizontalAlignment="Left" Height="auto" Margin="527,43,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                <CheckBox x:Name="ckbDeleteImg" Content="是否删除原图" HorizontalAlignment="Left" Height="auto" Margin="182,76,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <ComboBox x:Name="cboSameCphDelay" HorizontalAlignment="Left" Height="auto" Margin="440,74,0,0" VerticalAlignment="Top" Width="61" Background="{x:Null}" IsEditable="True" KeyDown="cboSameCphDelay_KeyDown">
+                                    <ComboBoxItem Content="0"/>
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem IsSelected="True" Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                </ComboBox>
+                                <Label Content="秒内，识别相同车牌不处理" HorizontalAlignment="Left" Height="auto" Margin="506,72,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="chkCarShow1" Content="出入场不加水印" HorizontalAlignment="Left" Height="auto" Margin="352,76,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <Label Content="识别的车牌有效时间" HorizontalAlignment="Left" Height="auto" Margin="336,113,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <ComboBox x:Name="cboCphDelay1" HorizontalAlignment="Left" Height="auto" Margin="527,115,0,0" VerticalAlignment="Top" Width="58" Visibility="Collapsed">
+                                    <ComboBoxItem IsSelected="True" Content="10"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="60"/>
+                                    <ComboBoxItem Content="120"/>
+                                    <ComboBoxItem Content="180"/>
+                                    <ComboBoxItem Content="300"/>
+                                </ComboBox>
+                                <Label Content="秒" HorizontalAlignment="Left" Height="auto" Margin="590,112,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <Label Content="一个车道两个相机" HorizontalAlignment="Left" Height="auto" Margin="19,72,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox x:Name="combo5cwjh" HorizontalAlignment="Left" Height="auto" Margin="162,74,0,0" VerticalAlignment="Top" Width="73" IsEditable="True" KeyDown="combo5cwjh_KeyDown"/>
+                                <Label Content="秒内,车牌不处理" HorizontalAlignment="Left" Height="auto" Margin="240,72,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="chkOneKeyShortCut" Content="临时车显示播报汉字" HorizontalAlignment="Left" Height="auto" Margin="21,161,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="ckbTempDown" Content="临时车不脱机下载" HorizontalAlignment="Left" Height="auto" Margin="240,161,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="ckbMinutes" Content="                   秒后自动关闭弹出确认窗体" HorizontalAlignment="Left" Height="auto" Margin="21,113,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <Label Content="默认省份" HorizontalAlignment="Left" Height="auto" Margin="437,110,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                                <ComboBox x:Name="cboLocalProvince" HorizontalAlignment="Left" Height="auto" Margin="518,112,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.438,0.466" Background="{x:Null}">
+                                    <ComboBoxItem Content="京"/>
+                                    <ComboBoxItem Content="津"/>
+                                    <ComboBoxItem Content="冀"/>
+                                    <ComboBoxItem Content="晋"/>
+                                    <ComboBoxItem Content="蒙"/>
+                                    <ComboBoxItem Content="辽"/>
+                                    <ComboBoxItem Content="吉"/>
+                                    <ComboBoxItem Content="黑"/>
+                                    <ComboBoxItem Content="沪"/>
+                                    <ComboBoxItem Content="苏"/>
+                                    <ComboBoxItem Content="浙"/>
+                                    <ComboBoxItem Content="皖"/>
+                                    <ComboBoxItem Content="闽"/>
+                                    <ComboBoxItem Content="赣"/>
+                                    <ComboBoxItem Content="鲁"/>
+                                    <ComboBoxItem Content="豫"/>
+                                    <ComboBoxItem Content="鄂"/>
+                                    <ComboBoxItem Content="湘"/>
+                                    <ComboBoxItem IsSelected="True" Content="粤"/>
+                                    <ComboBoxItem Content="桂"/>
+                                    <ComboBoxItem Content="琼"/>
+                                    <ComboBoxItem Content="渝"/>
+                                    <ComboBoxItem Content="川"/>
+                                    <ComboBoxItem Content="贵"/>
+                                    <ComboBoxItem Content="云"/>
+                                    <ComboBoxItem Content="藏"/>
+                                    <ComboBoxItem Content="陕"/>
+                                    <ComboBoxItem Content="甘"/>
+                                    <ComboBoxItem Content="青"/>
+                                    <ComboBoxItem Content="宁"/>
+                                    <ComboBoxItem Content="新"/>
+                                </ComboBox>
+                                <CheckBox x:Name="ckbClientS" Content="只下载脱机车牌" HorizontalAlignment="Left" Height="auto" Margin="410,115,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <ComboBox x:Name="cmbMinutes" HorizontalAlignment="Left" Height="auto" Margin="39,110,0,0" VerticalAlignment="Top" Width="80" Background="{x:Null}" IsEditable="True" KeyDown="cmbMinutes_KeyDown">
+                                    <ComboBoxItem IsSelected="True" Content="5"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="60"/>
+                                    <ComboBoxItem Content="90"/>
+                                    <ComboBoxItem Content="120"/>
+                                    <ComboBoxItem Content="180"/>
+                                    <ComboBoxItem Content="200"/>
+                                    <ComboBoxItem Content="300"/>
+                                    <ComboBoxItem Content="360"/>
+                                    <ComboBoxItem Content="600"/>
+                                </ComboBox>
+
+                                <CheckBox Name="ckbUpdateJiHao" Content="自动修改显示屏机号" HorizontalAlignment="Left" Height="auto" Margin="440,161,0,0" VerticalAlignment="Top" Width="auto" Visibility="Visible"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="在线参数设置" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        
+                        <GroupBox Name="grpParkIng" Header="车场满位指定车类禁止入场" HorizontalAlignment="Left" Height="111" Margin="42,464,0,0" VerticalAlignment="Top" Width="806">
+                            <Grid>
+                                <RadioButton Name="optFullMonth" Content="固定车禁止入场" HorizontalAlignment="Left" Height="auto" Margin="24,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton Name="optFullTemp" Content="临时车禁止入场" HorizontalAlignment="Left" Height="auto" Margin="271,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton Name="optFullStore" Content="储值车禁止入场" HorizontalAlignment="Left" Height="auto" Margin="494,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton Name="optFullAllNoIn" Content="所有车禁止入场" HorizontalAlignment="Left" Height="auto" Margin="24,48,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton Name="optFullAllIn" Content="满位后所有车可以入场" HorizontalAlignment="Left" Height="auto" Margin="271,48,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+
+                            </Grid>
+                        </GroupBox>
+                       
+                        <GroupBox Name="gpID1In1Out" Header="请选择需一进一出的车辆类型" HorizontalAlignment="Left" Height="231" Margin="870,23,0,0" VerticalAlignment="Top" Width="267">
+                            <Grid>
+                                <ListView Name="lvwID1In1Out" SelectionMode="Multiple" Background="{x:Null}" ItemsSource="{Binding}">
+                                    <ListView.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="10" BorderThickness="5">
+                                                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+                                                    <ItemsPresenter />
+                                                </ScrollViewer>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </ListView.Template>
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel IsItemsHost="True"/>
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="{x:Type ListViewItem}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                                        <Border Name="bdColor" CornerRadius="5" Background="#FF8DB6FD" Width="65" Height="auto" Margin="5">
+                                                            <Label Content="{Binding CardType}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"/>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="bdColor" Property="Background" Value="#FF7B81FD" />
+                                                            </Trigger>
+                                                            <Trigger Property="IsSelected" Value="True">
+                                                                <Setter TargetName="bdColor" Property="Background" Value="#FF0F62F3" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                </ListView>
+                                <CheckBox Name="chkAllSelect" Content="全选" HorizontalAlignment="Left" Height="20" Margin="195,173,0,0" VerticalAlignment="Top" Width="50" Click="chkAllSelect_Click"/>
+
+                            </Grid>
+                        </GroupBox>
+
+                        <src:ButtonSfm Name="btnIDOneInOneOut" Content=">>" HorizontalAlignment="Left" Margin="674,151,0,0" VerticalAlignment="Top" Width="40" Click="btnIDOneInOneOut_Click" Height="31"/>
+                        <GroupBox Header="在线参数设置" HorizontalAlignment="Left" Height="276" Margin="41,23,0,0" VerticalAlignment="Top" Width="807">
+                            <Grid>
+                                <Label Content="加载时间间隔" HorizontalAlignment="Left" Height="auto" Margin="24,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox Name="cboLoadTimeInterval" HorizontalAlignment="Left" Height="auto" Margin="139,25,0,0" VerticalAlignment="Top" Width="51" KeyDown="cboLoadTimeInterval_KeyDown" Background="{x:Null}" IsEditable="True">
+                                    <ComboBoxItem IsSelected="True">20</ComboBoxItem>
+                                    <ComboBoxItem>30</ComboBoxItem>
+                                    <ComboBoxItem>40</ComboBoxItem>
+                                    <ComboBoxItem>50</ComboBoxItem>
+                                    <ComboBoxItem>60</ComboBoxItem>
+                                </ComboBox>
+                                <Label Content="分钟" HorizontalAlignment="Left" Height="auto" Margin="195,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkExitOnlineByPwd" Content="凭密码退出在线监控" HorizontalAlignment="Left" Height="auto" Margin="259,113,0,0" VerticalAlignment="Top" Width="auto" Click="chkExitOnlineByPwd_Click"/>
+                                <ComboBox Name="cboExitPassType" HorizontalAlignment="Left" Height="auto" Margin="604,23,0,0" VerticalAlignment="Top" Width="150" Visibility="Collapsed">
+                                    <ComboBoxItem IsSelected="True">系统登录密码</ComboBoxItem>
+                                    <ComboBoxItem>车场设置密码</ComboBoxItem>
+                                </ComboBox>
+                                <CheckBox Name="chkShowGateState" Content="软件控制道闸开关" HorizontalAlignment="Left" Height="auto" Margin="24,71,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkExHandle" Content="车辆异常处理/无卡放行" HorizontalAlignment="Left" Height="auto" Margin="501,67,0,0" VerticalAlignment="Top" Width="auto" Visibility="Hidden"/>
+                                <CheckBox Name="chkSoftOpenNoPlate" Content="软件开闸不输入车牌" HorizontalAlignment="Left" Height="auto" Margin="261,67,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkFullNoIn" Content="车辆满位禁止入场" HorizontalAlignment="Left" Height="auto" Margin="24,211,0,0" VerticalAlignment="Top" Width="auto" Click="chkFullNoIn_Click"/>
+                                
+                                <CheckBox Name="chkForbidSamePos" Content="月租车限制同车位入场" HorizontalAlignment="Left" Height="auto" Margin="24,159,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkCheDui" Content="启用车队模式(道闸常开)" HorizontalAlignment="Left" Height="auto" Margin="489,67,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkCheckPortFirst" Content="检测卡优先提取记录" HorizontalAlignment="Left" Height="auto" Margin="377,270,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <CheckBox Name="chkbAutoPrePlate" Content="临时卡自动弹出预置窗口" HorizontalAlignment="Left" Height="auto" Margin="377,226,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <CheckBox Name="chkSumMoneyHide" Content="在线监控不显示累计金额" HorizontalAlignment="Left" Height="auto" Margin="24,113,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkDisplayTime" Content="显示时钟" HorizontalAlignment="Left" Height="auto" Margin="377,322,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <CheckBox Name="chkShowBoxCardNum" Content="显示发卡机卡向内卡片数量" HorizontalAlignment="Left" Height="auto" Margin="42,359,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <CheckBox Name="chkIDOneInOneOut" Content="车辆限制重复进场或出场" HorizontalAlignment="Left" Height="auto" Margin="489,159,0,0" VerticalAlignment="Top" Width="auto" Click="chkIDOneInOneOut_Click"/>
+                                <Label Content="通讯延时" HorizontalAlignment="Left" Height="auto" Margin="259,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox Name="cboVideoShift" HorizontalAlignment="Left" Height="auto" Margin="339,23,0,0" VerticalAlignment="Top" Width="51" Background="{x:Null}" IsEditable="True" KeyDown="cboVideoShift_KeyDown">
+                                    <ComboBoxItem IsSelected="True">5</ComboBoxItem>
+                                    <ComboBoxItem>15</ComboBoxItem>
+                                    <ComboBoxItem>30</ComboBoxItem>
+                                    <ComboBoxItem>60</ComboBoxItem>
+                                    <ComboBoxItem>90</ComboBoxItem>
+                                </ComboBox>
+                                <Label Content="秒钟" HorizontalAlignment="Left" Height="auto" Margin="396,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                                
+                                <CheckBox x:Name="chkFreeCardNoInPlace" Content="免费车不计入车位数" HorizontalAlignment="Left" Height="auto" Margin="259,159,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox x:Name="chkDetailLog" Content="保存详细日志" HorizontalAlignment="Left" Height="auto" Margin="489,113,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox x:Name="cboPromptDelayed" HorizontalAlignment="Left" Height="auto" Margin="489,23,0,0" VerticalAlignment="Top" Width="51" Background="{x:Null}" IsEditable="True" KeyDown="cboPromptDelayed_KeyDown">
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem IsSelected="True" Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                </ComboBox>
+                                <Label Content="秒自动关闭提示框" HorizontalAlignment="Left" Height="auto" Margin="545,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkFullComfirmOpen" Content="满位确定开闸" HorizontalAlignment="Left" Height="auto" Margin="259,209,0,0" VerticalAlignment="Top" Width="auto" IsEnabled="False"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="剩余车位设置" HorizontalAlignment="Left" Height="133" Margin="42,316,0,0" VerticalAlignment="Top" Width="806">
+                            <Grid>
+                                <RadioButton x:Name="rbtSumCarPlace" Content="显示总剩余车位,车位总数" HorizontalAlignment="Left" Height="auto" Margin="24,21,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                <Label Content="个" HorizontalAlignment="Left" Height="auto" Margin="306,18,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="txtCar" HorizontalAlignment="Left" Height="auto" Margin="244,20,0,0" TextWrapping="NoWrap"  HorizontalScrollBarVisibility="Auto" Text="999" VerticalAlignment="Top" Width="60" KeyDown="txtCar_KeyDown"/>
+                                <RadioButton x:Name="rbtTempCarPlace" Content="仅显示临时车剩余车位,临时车车位" HorizontalAlignment="Left" Height="auto" Margin="410,21,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="txtTempCarPlaceNum" HorizontalAlignment="Left" Height="auto" Margin="692,18,0,0" TextWrapping="NoWrap"  HorizontalScrollBarVisibility="Auto" Text="999" VerticalAlignment="Top" Width="60" KeyDown="txtTempCarPlaceNum_KeyDown"/>
+                                <Label Content="个" HorizontalAlignment="Left" Height="auto" Margin="757,16,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton x:Name="rbtMonthCarPlace" Content="仅显示月租车剩余车位,固定车车位" HorizontalAlignment="Left" Height="auto" Margin="24,65,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="TxtMonthCarPlaceNum" HorizontalAlignment="Left" Height="auto" Margin="302,63,0,0" TextWrapping="NoWrap"  HorizontalScrollBarVisibility="Auto" Text="999" VerticalAlignment="Top" Width="60" KeyDown="TxtMonthCarPlaceNum_KeyDown"/>
+                                <Label Content="个" HorizontalAlignment="Left" Height="auto" Margin="367,62,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <RadioButton x:Name="rbtMoneyCarPlace" Content="仅显示储值车剩余车位,储值车车位" HorizontalAlignment="Left" Height="auto" Margin="410,66,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="txtMoneyCarPlaceNum" HorizontalAlignment="Left" Height="auto" Margin="693,63,0,0" TextWrapping="NoWrap"  HorizontalScrollBarVisibility="Auto" Text="999" VerticalAlignment="Top" Width="60" KeyDown="txtMoneyCarPlaceNum_KeyDown"/>
+                                <Label Content="个" HorizontalAlignment="Left" Height="auto" Margin="757,60,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                            </Grid>
+                        </GroupBox>
+                        
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="脱机参数设置" Name="cmdOfflineManage" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="auto" MinWidth="275"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <DataGrid x:Name="dgChannelOffline"  Background="{x:Null}" BorderThickness="0,1,1,0">
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="选择"/>
+                                <DataGridTextColumn Binding="{Binding CtrlNumber}" ClipboardContentBinding="{x:Null}" Header="机号" IsReadOnly="True" Visibility="Collapsed"/>
+                                <DataGridTextColumn Binding="{Binding InOutName}" ClipboardContentBinding="{x:Null}" Header="名称" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding IP}" ClipboardContentBinding="{x:Null}" Header="IP" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <TabControl Grid.Column="1" Background="{x:Null}" BorderBrush="#FFC3D2E5" BorderThickness="0,1,1,0">
+                            <TabItem Header="脱机参数" Background="{x:Null}">
+                                <Grid>
+                                    <CheckBox x:Name="ckbTmpCarAutoOpenGate" Content="入口临时车脱机自动开闸" HorizontalAlignment="Left" Margin="55,29,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="ckbDisableInCharge" Content="取消计费型相机脱机计费功能" HorizontalAlignment="Left" Margin="55,68,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="ckbWhiteCarAutoOpen" Content="白牌车和0牌车自动开闸" HorizontalAlignment="Left" Margin="22,89,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+                                    <CheckBox x:Name="ckbTmpCarShowChinese" Content="临时车显示播报汉字" HorizontalAlignment="Left" Margin="22,130,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+                                    <CheckBox x:Name="ckbMthCarNoOpen" Content="月租车在线不开闸" HorizontalAlignment="Left" Margin="22,167,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+                                    <SFMControls:ButtonSfm x:Name="btnReadParam" Content="读取" HorizontalAlignment="Left" Margin="55,233,0,0" VerticalAlignment="Top" Width="75" Click="btnReadParam_Click"/>
+                                    <SFMControls:ButtonSfm x:Name="btnSetParam" Content="设置" HorizontalAlignment="Left" Margin="184,233,0,0" VerticalAlignment="Top" Width="75" Click="btnSetParam_Click"/>
+                                    <Label x:Name="lblVersion" Content="" HorizontalAlignment="Left" Margin="22,293,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="lblVersion0" Content="" HorizontalAlignment="Left" Margin="22,324,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="lblVersion1" Content="" HorizontalAlignment="Left" Margin="22,355,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="lblVersion2" Content="" HorizontalAlignment="Left" Margin="22,386,0,0" VerticalAlignment="Top"/>
+                                </Grid>
+                            </TabItem>
+
+                            <TabItem Header="配置脱机IP" Background="{x:Null}">
+                                <Grid>
+                                    <Label Content="出口车道" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                                    <DataGrid x:Name="dgOutChannel" HorizontalAlignment="Left" Width="426" Background="{x:Null}" BorderThickness="0,1,1,0">
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="选择"/>
+                                            <DataGridTextColumn Binding="{Binding CtrlNumber}" ClipboardContentBinding="{x:Null}" Header="机号" IsReadOnly="True" Visibility="Collapsed"/>
+                                            <DataGridTextColumn Binding="{Binding InOutName}" ClipboardContentBinding="{x:Null}" Header="名称" IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding IP}" ClipboardContentBinding="{x:Null}" Header="IP" IsReadOnly="True"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <CheckBox Content="全选" HorizontalAlignment="Left" Margin="431,36,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                                    <src:ButtonSfm Content="设置" HorizontalAlignment="Left" Margin="431,79,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                                </Grid>
+                            </TabItem>
+
+                        </TabControl>
+
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="收费设置" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+
+                        <TabControl  x:Name="tcControlSet" SelectionChanged="tcControlSet_SelectionChanged" Background="{x:Null}" BorderBrush="#FFC3D2E5" BorderThickness="0,1,1,0">
+                            <TabItem Header="收费标准" Background="{x:Null}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" MinWidth="272"></ColumnDefinition>
+                                        <ColumnDefinition Width="41*"></ColumnDefinition>
+                                        <ColumnDefinition Width="59*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <DataGrid x:Name="dgChargeLane" CanUserAddRows="False" CanUserDeleteRows="False" VerticalGridLinesBrush="#FFE3E3E3" Background="{x:Null}" BorderThickness="0,1,1,0">
+                                        <DataGrid.HorizontalGridLinesBrush>
+
+                                            <SolidColorBrush Color="#FFE3E3E3"/>
+                                        </DataGrid.HorizontalGridLinesBrush>
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="选择"/>
+                                            <DataGridTextColumn Binding="{Binding CtrlNumber}" Header="机号" IsReadOnly="True" Visibility="Collapsed"/>
+                                            <DataGridTextColumn Binding="{Binding InOutName}" Header="车道" IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding IP}" Header="IP" IsReadOnly="True" Visibility="Collapsed"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <Label Content="车类型" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Grid.Column="1" Height="31"/>
+                                    <ComboBox x:Name="cbbCardType" SelectedValuePath="" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top" Width="201" SelectionChanged="cbbCardType_SelectionChanged" Background="{x:Null}" Grid.Column="1" Height="27"/>
+                                    <Label Content="每日最高收费限额" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1" Height="31"/>
+                                    <src:NumericBox x:Name="numTopSF" HorizontalAlignment="Left" Margin="220,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="97" KeyUp="numTopSF_KeyUp" Grid.Column="1" Height="27"/>
+                                    <Label Content="过0点加收过夜费" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1" Height="31"/>
+                                    <src:NumericBox x:Name="numFreeMinute" HorizontalAlignment="Left" Margin="220,139,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="97" Grid.Column="1" Height="27"/>
+                                    <Label Content="免费分钟" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1" Height="31"/>
+                                    <src:NumericBox x:Name="numOverNightCharge" HorizontalAlignment="Left" Margin="220,95,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="97" Grid.Column="1" Height="27"/>
+                                    <Label Content="免费分钟不计费" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1" Height="31"/>
+                                    <CheckBox x:Name="ckbFreeMinuteNoCharge" Content="             " HorizontalAlignment="Left" Margin="220,182,0,0" VerticalAlignment="Top" Width="97" Grid.Column="1" Height="21"/>
+                                    <GroupBox Header="计费方式" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" Width="307" Grid.Column="1" Height="152">
+                                        <Grid Margin="0">
+                                            <StackPanel>
+                                                <RadioButton x:Name="rdbHour" Content="按小时计费" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rdbHour_Checked"/>
+                                                <RadioButton x:Name="rdbDayNight" Content="分白天夜间段计费" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rdbDayNight_Checked"/>
+                                                <RadioButton x:Name="rdbTimeUnit" Content="按设定时间计费" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rdbTimeUnit_Checked"/>
+                                                <RadioButton x:Name="rdbByCount" Content="按次计费(不计时)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rdbByCount_Checked"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <DataGrid x:Name="dgCharge"  Background="{x:Null}" Grid.Column="2" BorderThickness="1,1,0,0">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Binding="{Binding Hours}" ClipboardContentBinding="{x:Null}" Header="小时"/>
+                                            <DataGridTextColumn Binding="{Binding JE}" ClipboardContentBinding="{x:Null}" Header="收费"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <src:ButtonSfm x:Name="btnReadSF" Content="读取" HorizontalAlignment="Left" Margin="170,435,0,0" VerticalAlignment="Top" Width="120" Click="btnReadSF_Click" Grid.Column="1"/>
+                                    <src:ButtonSfm x:Name="btnSetSF" Content="设置" HorizontalAlignment="Left" Margin="170,495,0,0" VerticalAlignment="Top" Width="120" Click="btnSetSF_Click" Grid.Column="1"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="收费相关设置" Background="{x:Null}">
+                                <Grid>
+                                    <CheckBox Name="ckbMore" Content="多车位多车" HorizontalAlignment="Left" Height="auto" Margin="640,169,0,0" VerticalAlignment="Top" Width="auto" Click="ckbMore_Click"/>
+                                    <StackPanel Name="spMoreCar" Height="58" Margin="832,159,129,0" VerticalAlignment="Top">
+                                        <RadioButton Name="rbtNoIn" Content="禁止入场" HorizontalAlignment="Left" Height="auto" Margin="2" Width="auto" IsChecked="True"/>
+                                        <RadioButton Name="rbtByTemp" Content="按临时车收费" HorizontalAlignment="Left" Height="auto" Margin="2" Width="auto"/>
+                                    </StackPanel>
+
+                                    <CheckBox Name="chkshibiedazhe" Content="车牌识别打折" HorizontalAlignment="Left" Height="auto" Margin="42,169,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox Name="chkCenterCharge" Content="中央收费" HorizontalAlignment="Left" Height="auto" Margin="223,169,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox Name="chkOutCharge" Content="出口收费" HorizontalAlignment="Left" Height="auto" Margin="377,169,0,0" VerticalAlignment="Top" Width="auto"/>
+
+
+                                    <Label Content="收费模式" HorizontalAlignment="Left" Height="auto" Margin="42,22,0,0" VerticalAlignment="Top" Width="auto"/>
+
+
+                                    <src:ButtonSfm x:Name="btnHolidaySet" Content="节假日设置" HorizontalAlignment="Left" Height="30" Margin="394,24,0,0" VerticalAlignment="Top" Width="104" Click="btnHolidaySet_Click" Visibility="Collapsed"/>
+                                    <ComboBox x:Name="cboXsNum" HorizontalAlignment="Left" Height="30" Margin="270,24,0,0" VerticalAlignment="Top" Width="107" Background="{x:Null}" Visibility="Collapsed">
+                                        <ComboBoxItem IsSelected="True" Content="1位小数"/>
+                                        <ComboBoxItem Content="2位小数"/>
+                                    </ComboBox>
+
+                                    <CheckBox x:Name="chkXsd" Content="收费有小数点" HorizontalAlignment="Left" Height="auto" Margin="42,71,0,0" VerticalAlignment="Top" Width="auto"/>
+
+
+                                    <ComboBox x:Name="cboChargeSTD" HorizontalAlignment="Left" Height="30" Margin="121,24,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cboChargeSTD_SelectionChanged" IsEnabled="False" Background="{x:Null}">
+                                        <ComboBoxItem IsSelected="True" Content="标准收费"/>
+                                        <ComboBoxItem Content="深圳收费"/>
+                                        <ComboBoxItem Content="非标收费"/>
+                                        <ComboBoxItem Content="北京收费"/>
+                                        <ComboBoxItem Content="广州收费"/>
+                                        <ComboBoxItem Content="南京收费"/>
+                                    </ComboBox>
+
+                                    <CheckBox Content="临时车入场可预置车牌卡类" HorizontalAlignment="Left" Height="28" Margin="416,71,0,0" VerticalAlignment="Top" Width="263" Visibility="Collapsed"/>
+                                    <CheckBox x:Name="chkFreeCar" Content="可进出免费车辆" HorizontalAlignment="Left" Height="28" Margin="214,71,0,0" VerticalAlignment="Top" Width="163" Visibility="Hidden"/>
+
+                                    <CheckBox x:Name="chkTempFree" Content="临时车出场可选择免费原因" HorizontalAlignment="Left" Height="auto" Margin="377,27,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <GroupBox  HorizontalAlignment="Left" Height="77" Margin="42,222,0,0" VerticalAlignment="Top" Width="825" Header="储值车和临时车有最高收费限额">
+                                        <Grid>
+                                            <CheckBox x:Name="chkTopSF" Content="                                                                             多次进出收费有最高限额" HorizontalAlignment="Left" Height="auto" Margin="10,11,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <ComboBox x:Name="cmbZGType" HorizontalAlignment="Left" Height="Auto" Margin="38,10,0,0" VerticalAlignment="Top" Width="181" Background="{x:Null}">
+                                                <ComboBoxItem IsSelected="True" Content="临时车"/>
+                                                <ComboBoxItem Content="储值车"/>
+                                                <ComboBoxItem Content="临时车和储值车"/>
+                                            </ComboBox>
+                                            <ComboBox x:Name="cmbStopTimeType" HorizontalAlignment="Left" Height="Auto" Margin="224,10,0,0" VerticalAlignment="Top" Width="136" Background="{x:Null}">
+                                                <ComboBoxItem Content="0到24点"/>
+                                                <ComboBoxItem IsSelected="true" Content="停车24小时"/>
+                                            </ComboBox>
+
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <CheckBox x:Name="chkDiscount" Content="收费可打折" HorizontalAlignment="Left" Height="auto" Margin="223,71,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox x:Name="chkSetTempMoney" Content="出场可更改收费金额" HorizontalAlignment="Left" Height="auto" Margin="42,125,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox x:Name="chkMonthChargeRule" Content="月租车规则自定义" HorizontalAlignment="Left" Height="auto" Margin="640,125,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox x:Name="chkIDOutCancel" Content="出场可取消收费" HorizontalAlignment="Left" Height="auto" Margin="223,125,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox x:Name="chkVoiceSF" Content="播报收费语音" HorizontalAlignment="Left" Height="auto" Margin="640,71,0,0" VerticalAlignment="Top" Width="auto"/>
+                                    <CheckBox x:Name="chkModiTempType" Content="临时车收费可更改车类型" HorizontalAlignment="Left" Height="auto" Margin="377,71,0,0" VerticalAlignment="Top" Width="auto" Click="chkModiTempType_Click"/>
+                                    <GroupBox x:Name="grpMonthOutDeal" Header="月租车过期处理方式" HorizontalAlignment="Left" Height="68" Margin="42,313,0,0" VerticalAlignment="Top" Width="825">
+                                        <Grid>
+                                            <RadioButton x:Name="chkYkJZRC" Content="月租车过期禁止入出场" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                                            <RadioButton x:Name="chkYkGqSf" Content="月租车过期按临时车收费" HorizontalAlignment="Left" Height="auto" Margin="234,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <RadioButton x:Name="chkYkDay" Content="过期" HorizontalAlignment="Left" Height="auto" Margin="482,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <ComboBox x:Name="cmbMothDay" HorizontalAlignment="Left" Height="auto" Margin="540,6,0,0" VerticalAlignment="Top" Width="43" Background="{x:Null}" IsEditable="True" KeyDown="cmbMothDay_KeyDown">
+                                                <ComboBoxItem Content="1"/>
+                                                <ComboBoxItem Content="2"/>
+                                                <ComboBoxItem Content="3"/>
+                                                <ComboBoxItem Content="4"/>
+                                                <ComboBoxItem IsSelected="True" Content="5"/>
+                                            </ComboBox>
+                                            <Label Content="天禁止入出场" HorizontalAlignment="Left" Height="auto" Margin="598,4,0,0" VerticalAlignment="Top" Width="132"/>
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <GroupBox x:Name="grpMonthChargeRule" Header="月租车规则自定义" HorizontalAlignment="Left" Height="254" Margin="42,395,0,0" VerticalAlignment="Top" Width="397">
+                                        <Grid x:Name="gdMonthChargeRule">
+
+                                            <DataGrid x:Name="dgvMonthChargeRule" HorizontalAlignment="Left" Height="194" VerticalAlignment="Top" Width="246" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" Background="{x:Null}" Margin="12,14,0,0" BorderThickness="0,1,0,0">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="车辆类型"  Binding="{Binding CardType, Mode=TwoWay}" Width="100" MaxWidth="100"/>
+                                                    <DataGridTextColumn Header="月数"  Binding="{Binding FreeMinute, Mode=TwoWay}" Width="50" MaxWidth="50"/>
+                                                    <DataGridTextColumn Header="金额(元)"  Binding="{Binding JE, Mode=TwoWay}" Width="*" MaxWidth="200"/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                            <ComboBox x:Name="cboMonthRuleType" HorizontalAlignment="Left" Height="auto" Margin="274,14,0,0" VerticalAlignment="Top" Width="105" Background="{x:Null}"/>
+                                            <src:ButtonSfm x:Name="btnAddMonthRule" Content="添加" HorizontalAlignment="Left" Margin="274,60,0,0" VerticalAlignment="Top" Width="105" Click="btnAddMonthRule_Click" ItemName="btnAdd" FormName="月租车规则自定义" />
+                                            <src:ButtonSfm x:Name="btnDelMonthRule" Content="删除" HorizontalAlignment="Left" Margin="274,111,0,0" VerticalAlignment="Top" Width="105" Click="btnDelMonthRule_Click" ItemName="btnDel" FormName="月租车规则自定义" />
+                                            <src:ButtonSfm x:Name="btnSaveMonthRule" Content="保存" HorizontalAlignment="Left" Margin="274,164,0,0" VerticalAlignment="Top" Width="105" Click="btnSaveMonthRule_Click" ItemName="btnCancel" FormName="月租车规则自定义" />
+
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <GroupBox x:Name="grpFreeReason" Header="免费原因设置" HorizontalAlignment="Left" Height="254" Margin="461,395,0,0" VerticalAlignment="Top" Width="292">
+                                        <Grid x:Name="gdFreeReason">
+
+                                            <DataGrid x:Name="dgvFreeReason" HorizontalAlignment="Left" Height="133" Margin="10,81,0,0" VerticalAlignment="Top" Width="257" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" BorderThickness="0,1,0,0">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="免费原因" Binding="{Binding ItemDetail, Mode=TwoWay}" Width="*"/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+
+                                            <src:ButtonSfm x:Name="btnAddFreeReason" Content="添加" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="66" Click="btnAddFreeReason_Click" FormName="免费原因设置" ItemName="BtnAdd"/>
+                                            <src:ButtonSfm x:Name="btnDelFreeReason" Content="删除" HorizontalAlignment="Left" Margin="106,8,0,0" VerticalAlignment="Top" Width="66" Click="btnDelFreeReason_Click" FormName="免费原因设置" ItemName="BtnDelete"/>
+                                            <TextBox x:Name="txtFreeReason" HorizontalAlignment="Left" Height="auto" Margin="10,47,0,0" VerticalAlignment="Top" Width="257"/>
+
+                                            <src:ButtonSfm x:Name="btnSaveFreeReason" Content="保存" HorizontalAlignment="Left" Margin="201,8,0,0" VerticalAlignment="Top" Width="66" Click="btnSaveFreeReason_Click" FormName="免费原因设置" ItemName="BtnUpdate"/>
+                                        </Grid>
+                                    </GroupBox>
+
+
+                                    <src:ButtonSfm x:Name="btnSelectFreeReason" Content="免费原因设置" HorizontalAlignment="Left" Margin="640,21.558,0,0" VerticalAlignment="Top" Width="174" Click="btnSelectFreeReason_Click" FormName="免费原因设置" ItemName="CmdView"/>
+                                    <src:ButtonSfm x:Name="btnSelectMonthRule" Content="月租车规则自定义" HorizontalAlignment="Left" Margin="832,119.558,0,0" VerticalAlignment="Top" Width="174" Click="btnSelectMonthRule_Click" FormName="月租车规则自定义" ItemName="CmdView"/>
+                                    <CheckBox Name="ckbCarYellowTmp" Content="黄牌车按                     收费" HorizontalAlignment="Left" Height="21" Margin="377,124,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                                    <src:ButtonSfm Name="btnMonthToTmp" Content="月租车按临时车收费" HorizontalAlignment="Left" Margin="832,65.558,0,0" VerticalAlignment="Top" Width="174" Click="btnMonthToTmp_Click"/>
+                                    <GroupBox Name="grpMonthToTmp" Header="月租车按临时车收费" HorizontalAlignment="Left" Height="254" Margin="777,395,0,0" VerticalAlignment="Top" Width="355">
+                                        <Grid>
+                                            <ComboBox Name="cmbMonth" HorizontalAlignment="Left" Height="auto" Margin="10,26,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}"/>
+                                            <Label Content="出场按" HorizontalAlignment="Left" Height="31" Margin="113,22,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <ComboBox Name="cmbTmp" HorizontalAlignment="Left" Height="auto" Margin="177,26,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}"/>
+                                            <Label Content="收费" HorizontalAlignment="Left" Height="auto" Margin="284,22,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                                            <DataGrid Name="dgMonthToTmp" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="192" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="0,1,0,0" Height="133.833" Background="{x:Null}">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="车辆类型" Width="*" Binding="{Binding MthType}"/>
+                                                    <DataGridTextColumn Header="收费类型" Width="*" Binding="{Binding ChargeType}"/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+
+                                            <src:ButtonSfm Name="btnAddMonthToTmp" Content="添加" HorizontalAlignment="Left" Margin="217,84,0,0" VerticalAlignment="Top" Width="109" Click="btnAddMonthToTmp_Click"/>
+                                            <src:ButtonSfm Name="btnDelMonthToTmp" Content="删除" HorizontalAlignment="Left" Margin="217,131,0,0" VerticalAlignment="Top" Width="109" Click="btnDelMonthToTmp_Click"/>
+                                            <src:ButtonSfm Name="btnSaveMonthToTmp" Content="确认" HorizontalAlignment="Left" Margin="217,175,0,0" VerticalAlignment="Top" Width="109" Click="btnSaveMonthToTmp_Click"/>
+
+                                        </Grid>
+                                    </GroupBox>
+
+                                    <ComboBox Name="cmbCarYellowTmpType" HorizontalAlignment="Left" Height="auto" Margin="463,121,0,0" VerticalAlignment="Top" Width="91" Background="{x:Null}"/>
+                                    <!--<CheckBox Name="chkScanPay" Content="启用扫码支付" HorizontalAlignment="Left" Height="auto" Margin="240,71,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>-->
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="扫码支付" HorizontalAlignment="Left" Background="{x:Null}">
+                                <Grid>
+                                    <CheckBox Name="chkScanPay" Content="启用扫码支付" HorizontalAlignment="Left" Height="auto"  VerticalAlignment="Top" Width="auto" Margin="41,24,0,0" Click="chkScanPay_Click"/>
+
+                                    <GroupBox x:Name="gpbScan" Header="扫码支付设置" HorizontalAlignment="Left" Height="306" Margin="41,92,0,0" VerticalAlignment="Top" Width="1023">
+                                        <Grid>
+                                            <GroupBox Header="微信" HorizontalAlignment="Left" Height="163" Margin="27,10,0,0" VerticalAlignment="Top" Width="480">
+                                                <Grid>
+                                                    <Label Content="支付APPID" HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                                    <TextBox x:Name="txtWXAppID" HorizontalAlignment="Left" Height="auto" Margin="128,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+                                                    <Label Content="商户号" HorizontalAlignment="Left" Height="37" Margin="10,50,0,0" VerticalAlignment="Top" Width="auto"/>
+                                                    <TextBox x:Name="txtWXMCHID" HorizontalAlignment="Left" Height="auto" Margin="128,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+                                                    <Label Content="支付密钥" HorizontalAlignment="Left" Height="31" Margin="10,92,0,0" VerticalAlignment="Top" Width="auto"/>
+                                                    <TextBox x:Name="txtWXKEY" HorizontalAlignment="Left" Height="auto" Margin="128,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+
+                                                </Grid>
+                                            </GroupBox>
+
+
+                                            <GroupBox Header="支付宝" HorizontalAlignment="Left" Height="163" Margin="547,10,0,0" VerticalAlignment="Top" Width="439">
+                                                <Grid>
+                                                    <Label Content="APPID" HorizontalAlignment="Left" Height="auto" Margin="26,16,0,0" VerticalAlignment="Top" Width="auto"/>
+                                                    <Label Content="PID" HorizontalAlignment="Left" Height="auto" Margin="26,79,0,0" VerticalAlignment="Top" Width="auto"/>
+                                                    <TextBox x:Name="txtZFBAppID" HorizontalAlignment="Left" Height="auto" Margin="134,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264"/>
+                                                    <TextBox x:Name="txtZFBPID" HorizontalAlignment="Left" Height="auto" Margin="134,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264"/>
+
+                                                </Grid>
+                                            </GroupBox>
+                                            <Label Content="请选择需要上传的密钥文件:" HorizontalAlignment="Left" Height="auto" Margin="27,192,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <TextBox Name="txtFileName" HorizontalAlignment="Left" Height="31" Margin="256,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498" IsEnabled="False"/>
+
+                                            <src:ButtonSfm Name="btnFileName" Content="浏览" HorizontalAlignment="Left" Margin="786,191.5,0,0" VerticalAlignment="Top" Width="90" Click="btnFileName_Click"/>
+                                            <src:ButtonSfm Name="btnUpload" Content="上传" HorizontalAlignment="Left" Margin="910,191.5,0,0" VerticalAlignment="Top" Width="76" Click="btnUpload_Click"/>
+                                            <Label Name="lblShow" HorizontalAlignment="Center" Height="31"  VerticalAlignment="Bottom" Width="auto" Foreground="Red"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <!--<CheckBox Name="chkshibiedazhe" Content="车牌识别打折" HorizontalAlignment="Left" Height="auto" Margin="55,33,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <CheckBox Name="chkCenterCharge" Content="中央收费" HorizontalAlignment="Left" Height="auto" Margin="211,33,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                                <CheckBox Name="chkOutCharge" Content="出口收费" HorizontalAlignment="Left" Height="auto" Margin="328,33,0,0" VerticalAlignment="Top" Width="auto"/>-->
+                                    <!--<CheckBox Name="ckbMore" Content="多车位多车" HorizontalAlignment="Left" Height="auto" Margin="55,86,0,0" VerticalAlignment="Top" Width="auto" Click="ckbMore_Click"/>
+                                <StackPanel Name="spMoreCar" Height="58" Margin="157,84,804,0" VerticalAlignment="Top">
+                                    <RadioButton Name="rbtNoIn" Content="禁止入场" HorizontalAlignment="Left" Height="auto" Margin="2" Width="auto" IsChecked="True"/>
+                                    <RadioButton Name="rbtByTemp" Content="按临时车收费" HorizontalAlignment="Left" Height="auto" Margin="2" Width="auto"/>
+
+                                </StackPanel>-->
+                                </Grid>
+                            </TabItem>
+
+
+                        </TabControl>
+
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="语音/显示设置" Background="{x:Null}" Margin="0" VerticalAlignment="Bottom" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="auto" MinWidth="179"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <DataGrid x:Name="dgChannel" CanUserAddRows="False" CanUserDeleteRows="False" VerticalGridLinesBrush="#FFE3E3E3" Background="{x:Null}" BorderThickness="0,1,1,0">
+                            <DataGrid.HorizontalGridLinesBrush>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                            </DataGrid.HorizontalGridLinesBrush>
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="选择"/>
+                                <DataGridTextColumn Binding="{Binding CtrlNumber}" Header="机号" IsReadOnly="True" Visibility="Collapsed"/>
+                                <DataGridTextColumn Binding="{Binding InOutName}" Header="车道" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding IP}" Header="IP" IsReadOnly="True" Visibility="Collapsed"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--<GridSplitter Width="5" Grid.Column="0" />-->
+
+
+                        <TabControl Name="tbVoice" Background="{x:Null}" Grid.Column="1" Grid.ColumnSpan="1" SelectionChanged="tbVoice_SelectionChanged" BorderBrush="#FFC3D2E5" BorderThickness="0,1,1,0">
+                            <TabControl.Resources>
+                                <Style TargetType="TabItem" BasedOn="{StaticResource TabItemStyleBase}">
+                                    <Setter Property="Height" Value="40"/>
+                                </Style>
+                            </TabControl.Resources>
+                            <TabItem Header="语音显示相关设置" Background="{x:Null}">
+                                <Grid>
+                                    <GroupBox Header="语音显示屏设置" HorizontalAlignment="Left" Height="241" Margin="33,18,0,0" VerticalAlignment="Top" Width="807">
+                                        <Grid>
+                                            <CheckBox x:Name="chkCtrlShowPlate" Content="语音播报并显示车牌" HorizontalAlignment="Left" Height="auto" Margin="20,10,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                            <CheckBox x:Name="chkCtrlShowStayTime" Content="控制机播报并显示停车时间" HorizontalAlignment="Left" Height="auto" Margin="20,14,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="chkCtrlShowInfo" Content="控制机显示发布信息" HorizontalAlignment="Left" Height="auto" Margin="20,56,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="chkCtrlShowRemainPos" Content="控制机显示剩余车位" HorizontalAlignment="Left" Height="auto" Margin="20,99,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="chkCtrlShowCW" Content="控制机显示车位号" HorizontalAlignment="Left" Height="auto" Margin="20,151,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <CheckBox x:Name="chkShowPlate" Content="控制机播报多功能语音(需硬件支持)" HorizontalAlignment="Left" Height="auto" Margin="346,90,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                            <CheckBox x:Name="chkFeeLed" Content="自动发送预约预约(需硬件支持)" HorizontalAlignment="Left" Height="auto" Margin="346,133,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                            <Label Content="语音模式" HorizontalAlignment="Left" Height="auto" Margin="326,52,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <Label Content="固定车辆有效期少余" HorizontalAlignment="Left" Height="auto" Margin="326,9,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <ComboBox x:Name="cboIDNoticeDay" HorizontalAlignment="Left" Height="auto" Margin="487,11,0,0" VerticalAlignment="Top" Width="64" IsEditable="True" KeyDown="cboIDNoticeDay_KeyDown">
+                                                <ComboBoxItem Content="0"/>
+                                                <ComboBoxItem Content="5"/>
+                                                <ComboBoxItem IsSelected="true" Content="10"/>
+                                                <ComboBoxItem Content="15"/>
+                                                <ComboBoxItem Content="20"/>
+                                                <ComboBoxItem Content="30"/>
+                                                <ComboBoxItem Content="40"/>
+                                                <ComboBoxItem Content="50"/>
+                                            </ComboBox>
+                                            <Label Content="天提示" HorizontalAlignment="Left" Height="auto" Margin="561,8,0,0" VerticalAlignment="Top" Width="auto"/>
+                                            <ComboBox x:Name="cboCtrlVoiceMode"  HorizontalAlignment="Left" Height="auto" Margin="409,53,0,0" VerticalAlignment="Top" Width="196" Background="{x:Null}">
+                                                <ComboBoxItem IsSelected="True" Content="欢迎光临/一路顺风"/>
+                                                <ComboBoxItem Content="您好/一路平安"/>
+                                                <ComboBoxItem Content="欢迎光临/一路平安"/>
+                                                <ComboBoxItem Content="您好/一路顺风"/>
+                                            </ComboBox>
+                                            <Label Content="语音版本" HorizontalAlignment="Left" Height="auto" Margin="346,174,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                            <ComboBox x:Name="cboCtrlVoiceLedVer" HorizontalAlignment="Left" Height="auto" Margin="449,176,0,0" VerticalAlignment="Top" Width="187" Visibility="Collapsed">
+                                                <ComboBoxItem IsSelected="True" Content="3.0语音/显示屏"/>
+                                                <ComboBoxItem Content="4.1语音/显示屏"/>
+                                            </ComboBox>
+                                        </Grid>
+                                    </GroupBox>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="音量设置" Background="{x:Null}">
+                                <Grid>
+                                    <GroupBox Header="音量设置" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Height="180" Width="587">
+                                        <Grid Margin="0">
+                                            <StackPanel>
+                                                <WrapPanel Margin="10,10,0,0" >
+                                                    <Label Content="每日从" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" />
+                                                    <src:NumericBox x:Name="numHourStart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Value="7" Maximum="24" MinWidth="35" />
+                                                    <Label Content="点到" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
+                                                    <src:NumericBox x:Name="numHourEnd" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Value="21" Maximum="24" MinWidth="35"/>
+                                                    <Label Content="点的音量" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
+                                                    <src:NumericBox x:Name="numVol" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Minimum="1" Maximum="15" Value="15" MinWidth="35"/>
+                                                </WrapPanel>
+                                                <WrapPanel Margin="10,10,0,0">
+                                                    <Label Content="其余时间的音量" Margin="0"/>
+                                                    <src:NumericBox x:Name="numVolOth" Margin="0" Minimum="1" Maximum="15" Value="15" MinWidth="35"/>
+                                                    <src:ButtonSfm x:Name="btnSetVolume" Content="设置" HorizontalAlignment="Left" Margin="60,0,0,0" VerticalAlignment="Top" Click="btnSetVolume_Click" MinWidth="80"/>
+                                                </WrapPanel>
+                                                <WrapPanel Margin="10,10,0,0">
+                                                    <Label Content="连续多次设置音量后需要等待几分钟时间才会生效" Margin="0"/>
+                                                </WrapPanel>
+                                            </StackPanel>
+                                        </Grid>
+                                    </GroupBox>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="发布信息" Background="{x:Null}">
+                                <Grid>
+                                    <GroupBox Header="加载发布信息" HorizontalAlignment="Left" Margin="15,12,0,0" VerticalAlignment="Top" Height="251" Width="587">
+                                        <Grid >
+                                            <StackPanel>
+                                                <WrapPanel>
+                                                    <Label Content="发布的信息将在显示屏上循环显示" Margin="10,0,0,0"/>
+                                                </WrapPanel>
+                                                <WrapPanel>
+                                                    <Label Content="信息内容" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                                    <TextBox x:Name="txtPublishMsg" HorizontalAlignment="Left" Height="98" Margin="10,10,0,0" TextWrapping="Wrap" Text="欢迎光临" VerticalAlignment="Top" Width="351"/>
+                                                    <src:ButtonSfm x:Name="btnPublish" Content="发布" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnPublish_Click"/>
+                                                </WrapPanel>
+                                                <WrapPanel>
+                                                    <Label Content="有效期从" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                                    <DatePicker x:Name="dpValidStart" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                                                    <Label Content="到" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                                                    <DatePicker x:Name="dpValidEnd" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                                                </WrapPanel>
+                                            </StackPanel>
+                                        </Grid>
+                                    </GroupBox>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="剩余车位屏设置" Background="{x:Null}">
+                                <Grid>
+                                    <Grid>
+                                        <Label Content="显示屏机号" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top"/>
+                                        <src:NumericBox x:Name="numScreenNumber" HorizontalAlignment="Left" Margin="165,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Maximum="256" Minimum="1" Value="1"/>
+                                        <Label Content="测试车位数" HorizontalAlignment="Left" Margin="341,10,0,0" VerticalAlignment="Top"/>
+                                        <src:NumericBox x:Name="numCarPlaceNumber" HorizontalAlignment="Left" Margin="456,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Maximum="256" Minimum="1" Value="1"/>
+                                        <CheckBox x:Name="ckbShowFullWidth" Content="车位数显示全角数字" HorizontalAlignment="Left" Margin="629,15,0,0" VerticalAlignment="Top"/>
+                                        <Label Content="车位显示屏内容" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
+                                        <TextBox x:Name="txtScreenText" HorizontalAlignment="Left" Height="52" Margin="165,48,0,0" TextWrapping="Wrap" Text="剩余车位:" VerticalAlignment="Top" Width="351"/>
+                                        <Label Content="广告信息" HorizontalAlignment="Left" Margin="534,58,0,0" VerticalAlignment="Top"/>
+                                        <TextBox x:Name="txtAdText" HorizontalAlignment="Left" Height="52" Margin="629,48,0,0" TextWrapping="Wrap" Text="欢迎光临" VerticalAlignment="Top" Width="301" MouseDoubleClick="txtAdText_MouseDoubleClick"/>
+                                        <GroupBox Header="车位屏参数设置" Margin="0,105,0,0" VerticalAlignment="Top" Height="135">
+                                            <Grid Margin="0">
+                                                <CheckBox x:Name="ckbEmptyPlaceNumber" Content="空车位" HorizontalAlignment="Left" Margin="18,8,0,0" VerticalAlignment="Top"/>
+                                                <CheckBox x:Name="ckbCarPlateNumber" Content="车牌号" HorizontalAlignment="Left" Margin="179,8,0,0" VerticalAlignment="Top"/>
+                                                <CheckBox x:Name="ckbGreetings" Content="问候语" HorizontalAlignment="Left" Margin="341,8,0,0" VerticalAlignment="Top"/>
+                                                <CheckBox x:Name="ckbCharge" Content="收费金额" HorizontalAlignment="Left" Margin="521,8,0,0" VerticalAlignment="Top"/>
+                                                <CheckBox x:Name="ckbShowInHigher" Content="上层显示" HorizontalAlignment="Left" Margin="727,8,0,0" VerticalAlignment="Top"/>
+                                                <Label Content="滚动方式" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cbbRollType" HorizontalAlignment="Left" Margin="112,38,0,0" VerticalAlignment="Top" Width="229" Background="{x:Null}"/>
+                                                <Label Content="显示时间" HorizontalAlignment="Left" Margin="361,67,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cbbShowTime" HorizontalAlignment="Left" Margin="456,69,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}"/>
+                                                <Label Content="滚动速度" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cbbRollSpeed" HorizontalAlignment="Left" Margin="112,69,0,0" VerticalAlignment="Top" Width="50" Background="{x:Null}"/>
+                                                <Label Content="显示颜色" HorizontalAlignment="Left" Margin="361,36,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cbbColor" HorizontalAlignment="Left" Margin="456,38,0,0" VerticalAlignment="Top" Width="184" Background="{x:Null}"/>
+                                                <Label Content="静止时间" HorizontalAlignment="Left" Margin="179,67,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cbbStopTime" HorizontalAlignment="Left" Margin="274,69,0,0" VerticalAlignment="Top" Width="67" Background="{x:Null}"/>
+                                                <Label Content="问候语" HorizontalAlignment="Left" Margin="612,67,0,0" VerticalAlignment="Top"/>
+                                                <TextBox x:Name="txtGreetings" HorizontalAlignment="Left" Margin="687,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184"/>
+                                                <Label Content="显示模式" HorizontalAlignment="Left" Margin="682,36,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cbbShowType" HorizontalAlignment="Left" Margin="777,38,0,0" VerticalAlignment="Top" Width="94" Background="{x:Null}"/>
+                                                <src:ButtonSfm x:Name="btnShowNow" Content="即时显示" HorizontalAlignment="Left" Margin="876,69,0,0" VerticalAlignment="Top" Width="101" Click="btnShowNow_Click"/>
+                                            </Grid>
+                                        </GroupBox>
+                                        <DockPanel Margin="0,240,0,0">
+                                            <Grid x:Name="grdDefaultSet" Margin="0" Height="135" VerticalAlignment="Top" DockPanel.Dock="Top">
+                                                <GroupBox Header="车位屏出厂参数">
+                                                    <Grid Margin="0">
+                                                        <Label Content="模组数量" HorizontalAlignment="Left" Margin="361,2,0,0" VerticalAlignment="Top"/>
+                                                        <ComboBox x:Name="cbbModuleCount" HorizontalAlignment="Left" Margin="456,4,0,0" VerticalAlignment="Top" Width="184" Height="29" Background="{x:Null}"/>
+                                                        <Label Content="接口类型" HorizontalAlignment="Left" Margin="14,2,0,0" VerticalAlignment="Top"/>
+                                                        <ComboBox x:Name="cbbInterfaceType" HorizontalAlignment="Left" Margin="109,4,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}"/>
+                                                        <Label Content="显示模式" HorizontalAlignment="Left" Margin="677,2,0,0" VerticalAlignment="Top"/>
+                                                        <ComboBox x:Name="cbbShowMode" HorizontalAlignment="Left" Margin="772,4,0,0" VerticalAlignment="Top" Width="205" Background="{x:Null}"/>
+                                                        <Label Content="反相使能" HorizontalAlignment="Left" Margin="361,35,0,0" VerticalAlignment="Top"/>
+                                                        <ComboBox x:Name="cbbEnabled" HorizontalAlignment="Left" Margin="456,37,0,0" VerticalAlignment="Top" Width="184" Height="29" Background="{x:Null}"/>
+                                                        <Label Content="默认显示" HorizontalAlignment="Left" Margin="14,35,0,0" VerticalAlignment="Top"/>
+                                                        <ComboBox x:Name="cbbDefauleShow" HorizontalAlignment="Left" Margin="109,37,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}"/>
+                                                        <src:ButtonSfm x:Name="btnSetAd" Content="加载广告" HorizontalAlignment="Left" Margin="393,73,0,0" VerticalAlignment="Top" Width="103" Click="btnSetAd_Click"/>
+                                                        <src:ButtonSfm x:Name="btnSetDeviceNumber" Content="设置机号" HorizontalAlignment="Left" Margin="617,73,0,0" VerticalAlignment="Top" Width="103" Click="btnSetDeviceNumber_Click"/>
+                                                        <src:ButtonSfm x:Name="btnSetTime" Content="加载时间" HorizontalAlignment="Left" Margin="506,73,0,0" VerticalAlignment="Top" Width="103" Click="btnSetTime_Click"/>
+                                                        <src:ButtonSfm x:Name="btnSetPreCarPlace" Content="加载车位数前辍" HorizontalAlignment="Left" Margin="772,73,0,0" VerticalAlignment="Top" Width="205" Click="btnSetPreCarPlace_Click"/>
+                                                        <src:ButtonSfm x:Name="btnSetDefaultSet" Content="加载出厂参数" HorizontalAlignment="Left" Margin="772,37,0,0" VerticalAlignment="Top" Width="205" Click="btnSetDefaultSet_Click"/>
+                                                    </Grid>
+                                                </GroupBox>
+                                            </Grid>
+                                            <Grid Margin="0">
+                                                <src:ButtonSfm x:Name="btnAdd" Content="添加" HorizontalAlignment="Right" Margin="0,0,90,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+                                                <src:ButtonSfm x:Name="btnDelete" Content="删除" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
+                                                <DataGrid x:Name="dgScreenParam" Margin="0,34,10,0" HorizontalGridLinesBrush="#FFF4F4F4" VerticalGridLinesBrush="#FFF4F4F4" Background="{x:Null}" BorderThickness="0,1,0,0">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Binding="{Binding CtrID}" Header="控制机机号"/>
+                                                        <DataGridTextColumn Binding="{Binding SurplusID}" Header="显示屏机号"/>
+                                                        <DataGridTextColumn Binding="{Binding ShowWay}" Header="显示内容"/>
+                                                        <DataGridTextColumn Binding="{Binding Move}" Header="移动方式"/>
+                                                        <DataGridTextColumn Binding="{Binding Speed}" Header="移动速度"/>
+                                                        <DataGridTextColumn Binding="{Binding StopTime}" Header="单幅停止时间"/>
+                                                        <DataGridTextColumn Binding="{Binding Color}" Header="颜色"/>
+                                                        <DataGridTextColumn Binding="{Binding SumTime}" Header="总显示时间"/>
+                                                        <DataGridTextColumn Binding="{Binding CPHEndStr}" Header="问候语"/>
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+                                            </Grid>
+                                        </DockPanel>
+                                    </Grid>
+
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="广告信息" x:Name="tabWisdom" Background="{x:Null}">
+                                <Grid>
+                                    <Grid Margin="0,0,-19,8">
+                                        <GroupBox Header="显示类型" Margin="10,23,456,517">
+                                            <Grid Margin="0">
+                                                <RadioButton x:Name="rdbTwoTransverse" Content="双行横屏(每行四字)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rdbTwoTransverse_Checked"/>
+                                                <RadioButton x:Name="rdbFourTransverse" Content="四行横屏(每行四字)" HorizontalAlignment="Left" Margin="268,10,0,0" VerticalAlignment="Top" Checked="rdbFourTransverse_Checked"/>
+                                                <RadioButton x:Name="rdbTwoColumn" Content="双列竖屏(每列四字)" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Checked="rdbTwoColumn_Checked"/>
+                                                <CheckBox x:Name="ckbLower" Content="最下层广告信息" HorizontalAlignment="Left" Margin="268,50,0,0" VerticalAlignment="Top" Checked="ckbLower_Checked" Unchecked="ckbLower_Unchecked"/>
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox x:Name="gbxAd" Header="显示内容(提示：所有使用汉字, 字数8,16,24,32)" HorizontalAlignment="Left" Margin="10,160.389,0,0" VerticalAlignment="Top" Height="162" Width="546">
+                                            <Grid Margin="0">
+                                                <TextBox x:Name="txtAdvertisement1" HorizontalAlignment="Left" Height="80" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="534"/>
+                                                <src:ButtonSfm x:Name="btnSET2" Content="恢复默认显示" HorizontalAlignment="Left" Margin="253,93,0,0" VerticalAlignment="Top" Width="158" Click="btnSET2_Click"/>
+                                                <src:ButtonSfm x:Name="btnSET1" Content="加载" HorizontalAlignment="Left" Margin="429,93,0,0" VerticalAlignment="Top" Width="95" Click="btnSET1_Click"/>
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox Header="出厂参数" HorizontalAlignment="Left" Margin="10,355.389,0,0" VerticalAlignment="Top" Width="546" Height="134">
+                                            <Grid Margin="0">
+                                                <Label Content="参数1" HorizontalAlignment="Left" Margin="25,12,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cmbDefault0" HorizontalAlignment="Left" Margin="91,14,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}"/>
+                                                <Label Content="参数2" HorizontalAlignment="Left" Margin="25,59,0,0" VerticalAlignment="Top"/>
+                                                <ComboBox x:Name="cmbRP0" HorizontalAlignment="Left" Margin="91,61,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}"/>
+                                                <src:ButtonSfm x:Name="button2" Content="加载" HorizontalAlignment="Left" Margin="316,38.628,0,0" VerticalAlignment="Top" Width="91" Click="button2_Click"/>
+                                            </Grid>
+                                        </GroupBox>
+                                        <GroupBox Header="预览部分显示" Margin="580,23,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="466.389">
+                                            <StackPanel HorizontalAlignment="Center" Margin="64,0" VerticalAlignment="Center">
+                                                <StackPanel x:Name="spnVertical" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Visibility="Visible">
+                                                    <Label x:Name="lblScreenRow1" Content="自动识别" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" FontSize="42" FontWeight="Bold" Foreground="#FFFF0000"/>
+                                                    <Label x:Name="lblScreenRow2" Content="智慧停车" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" FontSize="42" FontWeight="Bold" Foreground="#FF00C000"/>
+                                                    <Label x:Name="lblScreenRow3" Content="无需取卡" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" FontSize="42" FontWeight="Bold" Foreground="#FF00C000"/>
+                                                    <Label x:Name="lblScreenRow4" Content="2016年8" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" FontSize="42" FontWeight="Bold" Foreground="#FFFF0000"/>
+                                                </StackPanel>
+                                                <StackPanel x:Name="spnHorizontal" Orientation="Horizontal" Visibility="Collapsed">
+                                                    <TextBlock x:Name="lblScreenCol1" Text="自动识别" TextWrapping="Wrap" FontSize="42" Width="55" Foreground="#FF00C000" FontWeight="Bold" IsEnabled="False"/>
+                                                    <TextBlock x:Name="lblScreenCol2" Text="自动识别" TextWrapping="Wrap" FontSize="42" Width="55" Foreground="#FF00C000" FontWeight="Bold" IsEnabled="False"/>
+                                                </StackPanel>
+                                                <Label x:Name="lblHorizontal" Content="2016年8月30日" HorizontalAlignment="Left" Visibility="Collapsed" Margin="0" VerticalAlignment="Top" FontSize="42" Foreground="#FFFF0000" FontWeight="Bold" Height="Auto"/>
+                                            </StackPanel>
+                                        </GroupBox>
+                                    </Grid>
+
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+
+                    </Grid>
+                </TabItem>
+
+
+                <TabItem Header="附加设置" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <!--<CheckBox Name="chkScanPay" Content="启用扫码支付" HorizontalAlignment="Left" Height="auto"  VerticalAlignment="Top" Width="auto" Margin="41,24,0,0" Click="chkScanPay_Click"/>-->
+                        <GroupBox Header="外接附加设备设置" HorizontalAlignment="Left" Height="193" Margin="41,33,0,0" VerticalAlignment="Top" Width="1023">
+                            <Grid>
+                                <CheckBox x:Name="ckbBillP" Content="收费票据打印[支持普通/微型/热敏/针式]" HorizontalAlignment="Left" Height="auto" Margin="18,21,0,0" VerticalAlignment="Top" Width="auto" Click="ckbBillP_Click"/>
+                                <CheckBox x:Name="chkBillPrintAuto" Content="自动打印收费票据" HorizontalAlignment="Left" Height="auto" Margin="43,57,0,0" VerticalAlignment="Top" Width="auto" />
+                                <CheckBox x:Name="chkReloginPrint" Content="换班登陆可打印小票" HorizontalAlignment="Left" Height="auto" Margin="18,95,0,0" VerticalAlignment="Top" Width="auto" Click="chkReloginPrint_Click"/>
+                                <Label Content="打印字体" HorizontalAlignment="Left" Height="auto" Margin="223,52,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox x:Name="cboPrintFontSize" HorizontalAlignment="Left" Height="auto" Margin="298,54,0,0" VerticalAlignment="Top" Width="80" IsEditable="True" KeyDown="cboPrintFontSize_KeyDown">
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem IsSelected="True" Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                </ComboBox>
+                                <src:ButtonSfm x:Name="btnPrintTest" Content="测试票据打印机" HorizontalAlignment="Left" Margin="347,15,0,0" VerticalAlignment="Top" Width="141" Click="btnPrintTest_Click"/>
+                                <CheckBox x:Name="chkBarcode" Content="入场打印条码" HorizontalAlignment="Left" Height="auto" Margin="246,100,0,0" VerticalAlignment="Top" Width="auto" Visibility="Collapsed"/>
+                                <RichTextBox x:Name="rtbPrint" HorizontalAlignment="Left" Height="auto" Margin="434,66,0,0" VerticalAlignment="Top" Width="110" Visibility="Hidden">
+                                    <FlowDocument>
+                                        <Paragraph>
+                                            <Run Text="RichTextBox"/>
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
+                                <CheckBox Name="ckbbOnlyLocation" Content="自动打印交接班小票" HorizontalAlignment="Left" Height="auto" Margin="43,126,0,0" VerticalAlignment="Top" Width="168" IsEnabled="False"/>
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="条码小票自定义" HorizontalAlignment="Left" Height="147" Margin="41,201,0,0" VerticalAlignment="Top" Width="807" Visibility="Collapsed">
+                            <Grid>
+                                <Label Content="打印机类型" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="117" RenderTransformOrigin="-2.271,0.288"/>
+                                <Label Content="打印机波特率" HorizontalAlignment="Left" Height="auto" Margin="322,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <ComboBox x:Name="cboBarPrintBaud" HorizontalAlignment="Left" Height="auto" Margin="457,10,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}">
+                                    <ComboBoxItem IsSelected="True" Content="4800"/>
+                                    <ComboBoxItem Content="9600"/>
+                                    <ComboBoxItem Content="19200"/>
+                                    <ComboBoxItem Content="38400"/>
+                                    <ComboBoxItem Content="57600"/>
+                                    <ComboBoxItem Content="115200"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cboPrintType" HorizontalAlignment="Left" Height="auto" Margin="127,10,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}">
+                                    <ComboBoxItem IsSelected="True" Content="0"/>
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                </ComboBox>
+                                <Label Content="条码小票标题" HorizontalAlignment="Left" Height="auto" Margin="10,47,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="txtBarPrintLoad0" HorizontalAlignment="Left" Height="31" Margin="152,48,0,0" TextWrapping="Wrap" Text="欢迎光临本车场" VerticalAlignment="Top" Width="391"/>
+                                <Label Content="条码小票标题" HorizontalAlignment="Left" Height="auto" Margin="10,85,0,0" VerticalAlignment="Top" Width="auto"/>
+                                <TextBox x:Name="txtBarPrintLoad1" HorizontalAlignment="Left" Height="31" Margin="152,87,0,0" TextWrapping="Wrap" Text="请保留此票，出场验票" VerticalAlignment="Top" Width="391"/>
+                                <src:ButtonSfm x:Name="btnLoadBarPrint" Content="加载" HorizontalAlignment="Left" Height="26" Margin="568,86,0,0" VerticalAlignment="Top" Width="118" Click="btnLoadBarPrint_Click"/>
+
+                            </Grid>
+                        </GroupBox>
+
+                        <RichTextBox Name="rbtPrint" HorizontalAlignment="Left" Height="98" Margin="1139,395,0,0" VerticalAlignment="Top" Width="95" Visibility="Collapsed">
+                        </RichTextBox>
+
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="下载管理" Name="tbOfflineCPHDownload" Background="{x:Null}" Style="{DynamicResource OfficeTabControlItemStyle}">
+                    <Grid>
+                        <TabControl x:Name="tcOfflineCPH" Background="{x:Null}" BorderBrush="#FFC3D2E5" BorderThickness="0,1,1,0">
+                            <TabItem Header="车牌下载" Background="{x:Null}">
+                                <Grid>
+                                    <DataGrid x:Name="dgvOutName" HorizontalAlignment="Left" Width="234" CanUserAddRows="False" AutoGenerateColumns="False" Background="{x:Null}" BorderThickness="0,1,0,0">
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn x:Name="chkSelect" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="选择"/>
+                                            <DataGridTextColumn Binding="{Binding CtrlNumber}" ClipboardContentBinding="{x:Null}" Header="机号" Width="auto" Visibility="Collapsed" IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding InOutName}" ClipboardContentBinding="{x:Null}" Header="车道名称" Width="*" IsReadOnly="True"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <SFMControls:ButtonSfm x:Name="btnCPHDown" Content="车牌下载" HorizontalAlignment="Left" Margin="253,10,0,0" VerticalAlignment="Top" Width="100" Click="btnCPHDown_Click"/>
+                                    <SFMControls:ButtonSfm x:Name="btnOverDown" Content="重新下载" HorizontalAlignment="Left" Margin="413,10,0,0" VerticalAlignment="Top" Width="100" Click="btnOverDown_Click"/>
+                                    <SFMControls:ButtonSfm x:Name="btnTKDown" Content="注销下载" HorizontalAlignment="Left" Margin="571,10,0,0" VerticalAlignment="Top" Width="100" Click="btnTKDown_Click"/>
+                                    <SFMControls:ButtonSfm x:Name="button9" Content="查    询" HorizontalAlignment="Left" Margin="728,10,0,0" VerticalAlignment="Top" Width="100" Click="button9_Click"/>
+                                    <ProgressBar x:Name="progressBar1" Height="28" Margin="239,57,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="lblStep" Content="0 / 0" Margin="234,55,0,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Center"/>
+                                    <ListBox x:Name="listBox2" Margin="239,90,0,10"/>
+                                </Grid>
+                            </TabItem>
+
+                            <TabItem x:Name="tiCamera" Header="摄像机下载及设置" Background="{x:Null}">
+                                <Grid>
+                                    <GroupBox Header="摄像机车牌下载" Margin="10,10,10,0" VerticalAlignment="Top" Height="117" RenderTransformOrigin="0.5,0.5">
+                                        <Grid Margin="0">
+                                            <SFMControls:ButtonSfm x:Name="listbt" Content="新增或延期下载" HorizontalAlignment="Left" Margin="73,10,0,0" VerticalAlignment="Top" Width="160" Click="listbt_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="listAllbt" Content="重新下载" HorizontalAlignment="Left" Margin="247.15,10,0,0" VerticalAlignment="Top" Width="160" Click="listAllbt_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="btnTK" Content="注销下载" HorizontalAlignment="Left" Margin="425.957,10,0,0" VerticalAlignment="Top" Width="160" Click="btnTK_Click"/>
+                                            <ProgressBar x:Name="progressBar3" Height="28" Margin="0,53,0,0" VerticalAlignment="Top"/>
+                                            <Label x:Name="lblStepCam" Content="0 / 0" Margin="0,50,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Background="{x:Null}"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <ListBox x:Name="listBox1" Height="147" Margin="10,128,10,0" VerticalAlignment="Top"/>
+                                    <GroupBox Header="参数设置" Margin="10,280,0,0">
+                                        <Grid Margin="0">
+                                            <GroupBox Header="摄像机类型" HorizontalAlignment="Left" VerticalAlignment="Top" Height="72" Width="536">
+                                                <Grid Margin="0">
+                                                    <RadioButton x:Name="rdbZNYKTY5" Content="ZNYKTY5" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True" Checked="rdbZNYKTY5_Checked"/>
+                                                    <RadioButton x:Name="rdbZNYKTY14" Content="ZNYKTY14" HorizontalAlignment="Left" Margin="159,10,0,0" VerticalAlignment="Top" Checked="rdbZNYKTY14_Checked"/>
+                                                    <RadioButton x:Name="rdbZNYKTY13" Content="ZNYKTY13" HorizontalAlignment="Left" Margin="319,10,0,0" VerticalAlignment="Top" Visibility="Hidden" Checked="rdbZNYKTY13_Checked"/>
+                                                </Grid>
+                                            </GroupBox>
+                                            <Label Content="设备IP" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top"/>
+                                            <TextBox x:Name="txtIP" HorizontalAlignment="Left" Height="33" Margin="84,77,0,0" TextWrapping="Wrap" Text="192.168.168.188" VerticalAlignment="Top" Width="174"/>
+                                            <Label Content="端口" HorizontalAlignment="Left" Margin="292,77,0,0" VerticalAlignment="Top"/>
+                                            <src:NumericBox x:Name="txtPort" HorizontalAlignment="Left" Margin="347,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Minimum="1" Maximum="65535" Value="80" Height="31"/>
+                                            <SFMControls:ButtonSfm x:Name="btnOpen" Content="登陆" HorizontalAlignment="Left" Margin="461,77,0,0" VerticalAlignment="Top" Width="75" Click="btnOpen_Click"/>
+                                            <Label Content="用户名" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top"/>
+                                            <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="33" Margin="85,115,0,0" TextWrapping="Wrap" Text="admin" VerticalAlignment="Top" Width="173"/>
+                                            <Label Content="密码" HorizontalAlignment="Left" Margin="292,115,0,0" VerticalAlignment="Top"/>
+                                            <PasswordBox x:Name="txtPwd" HorizontalAlignment="Left" Margin="347,113,0,0" VerticalAlignment="Top" Width="109" Height="35" Password="admin"/>
+                                            <SFMControls:ButtonSfm x:Name="btnClose" Content="结束" HorizontalAlignment="Left" Margin="461,115,0,0" VerticalAlignment="Top" Width="75" Click="btnClose_Click"/>
+                                            <Label Content="新机号" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top"/>
+                                            <ComboBox x:Name="comboBox8" HorizontalAlignment="Left" Margin="85,153,0,0" VerticalAlignment="Top" Width="60" Background="{x:Null}"/>
+                                            <SFMControls:ButtonSfm x:Name="button7" Content="设置屏机号" HorizontalAlignment="Left" Margin="150,153,0,0" VerticalAlignment="Top" Width="124" Click="button7_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="button3" Content="加载屏参数" HorizontalAlignment="Left" Margin="279,153,0,0" VerticalAlignment="Top" Width="127" Click="button3_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="button1" Content="白名单查询" HorizontalAlignment="Left" Margin="411,153,0,0" VerticalAlignment="Top" Width="125" Click="button1_Click"/>
+                                            <Label Content="音  量" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top"/>
+                                            <ComboBox x:Name="comboBox9" HorizontalAlignment="Left" Margin="85,190,0,0" VerticalAlignment="Top" Width="61" Background="{x:Null}"/>
+                                            <SFMControls:ButtonSfm x:Name="button8" Content="加载音量" HorizontalAlignment="Left" Margin="151,190,0,0" VerticalAlignment="Top" Width="123" Click="button8_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="button4" Content="加载时间" HorizontalAlignment="Left" Margin="279,190,0,0" VerticalAlignment="Top" Width="127" Click="button4_Click"/>
+                                            <SFMControls:ButtonSfm x:Name="button5" Content="加载广告" HorizontalAlignment="Left" Margin="411,190,0,0" VerticalAlignment="Top" Width="125" Click="button5_Click"/>
+                                            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="79" Margin="10,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="526"/>
+                                            <GroupBox Header="查找设备" Margin="541,0,0,0" VerticalAlignment="Top" Height="219">
+                                                <Grid Margin="0">
+                                                    <TreeView x:Name="dev_treeview" Margin="0,0,90,0" SelectedItemChanged="dev_treeview_SelectedItemChanged" BorderThickness="0"/>
+                                                    <SFMControls:ButtonSfm x:Name="startsearchdev" Content="开始" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Top" Width="75" Click="startsearchdev_Click"/>
+                                                    <SFMControls:ButtonSfm x:Name="stopsearchdev" Content="停止" HorizontalAlignment="Right" Margin="0,34,10,0" VerticalAlignment="Top" Width="75" Click="stopsearchdev_Click"/>
+                                                </Grid>
+                                            </GroupBox>
+                                            <TextBox IsReadOnly="True" Background="Transparent" Height="79" Margin="546,227,10,0" TextWrapping="Wrap" Text="温馨提示：A.需登录摄像机，然后再对该摄像机连接的显示屏设置参数，查询白名单；B.可通过【查找设备】，自动查找摄像机IP。" VerticalAlignment="Top"/>
+                                        </Grid>
+                                    </GroupBox>
+                                </Grid>
+                            </TabItem>
+
+                            <TabItem Header="U盘操作" Name="cmdUdiskOperator" Background="{x:Null}">
+                                <Grid>
+                                    <GroupBox Header="可移动磁盘" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="211" Width="267">
+                                        <ListBox x:Name="lbUdevices" Margin="0" SelectionChanged="lbUdevices_SelectionChanged" BorderThickness="0"/>
+                                    </GroupBox>
+                                    <GroupBox Header="文件" HorizontalAlignment="Left" Margin="282,10,0,0" VerticalAlignment="Top" Height="211" Width="534">
+                                        <ListBox x:Name="lbUdevcFiles" Margin="0" BorderThickness="0"/>
+                                    </GroupBox>
+                                    <src:ButtonSfm x:Name="btReadusb" Content="读取脱机记录" HorizontalAlignment="Left" Margin="839,43,0,0" VerticalAlignment="Top" Width="223" Click="btReadusb_Click"/>
+                                    <src:ButtonSfm x:Name="btDownLoadUSB_new" Content="下载车辆信息到U盘" HorizontalAlignment="Left" Margin="839,102,0,0" VerticalAlignment="Top" Width="223" Click="btDownLoadUSB_new_Click" Category="cccccc" FormName="fffffffff" ItemName="iiiiiiiiiiii"/>
+                                    <ListBox x:Name="lbInfo" Margin="10,226,10,10"/>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+
+            <Grid HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="702" Height="48" Margin="326,0,327,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <src:ButtonSfm x:Name="btnOK" Content="确  定" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="btnOK_Click"/>
+                <!--<Button x:Name="btnBack" Content="上一步" HorizontalAlignment="Center" Height="29" VerticalAlignment="Center" Width="119" Click="btnBack_Click" Grid.Column="1" Visibility="Collapsed"/>
+            <Button x:Name="btnNext" Content="下一步" HorizontalAlignment="Center" Height="29" VerticalAlignment="Center" Width="130" Click="btnNext_Click" Grid.Column="2" Visibility="Collapsed"/>-->
+                <src:ButtonSfm x:Name="btnCancel" Content="取  消" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="btnCancel_Click" Grid.Column="3"/>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</src:WindowBase>

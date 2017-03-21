@@ -1,0 +1,42 @@
+﻿<SFMControls:WindowBase x:Class="UI.frmPostpone"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="车辆延期" Height="375" Width="485" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize"  Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="车辆编号:" HorizontalAlignment="Left" Height="auto" Margin="16,10,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="人员姓名:" HorizontalAlignment="Left" Height="auto" Margin="265,10,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="车牌号:" HorizontalAlignment="Left" Height="auto" Margin="16,50,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="车辆类型:" HorizontalAlignment="Left" Height="auto" Margin="16,95,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblCharge" Content="收费规则:" HorizontalAlignment="Left" Height="auto" Margin="16,141,0,0" VerticalAlignment="Top" Width="auto"/>
+        <ComboBox Name="cmbRule" HorizontalAlignment="Left" Height="auto" Margin="96,141,0,0" VerticalAlignment="Top" Width="103" Background="{x:Null}" SelectionChanged="cmbRule_SelectionChanged"/>
+        <Label Content="人员编号:" HorizontalAlignment="Left" Height="auto" Margin="265,50,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblY" Content="余    额:" HorizontalAlignment="Left" Height="auto" Margin="265,95,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="收取金额:" HorizontalAlignment="Left" Height="auto" Margin="265,141,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtMoney" Text="0" HorizontalAlignment="Left" Height="auto" Margin="331,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" TextChanged="txtMoney_TextChanged" KeyDown="txtMoney_KeyDown" MouseLeave="txtMoney_MouseLeave">
+
+        </TextBox>
+        <Label Content="有效止日:" HorizontalAlignment="Left" Height="auto" Margin="265,185,0,0" VerticalAlignment="Top" Width="auto"/>
+        <DatePicker Name="dtpEndTime" HorizontalAlignment="Left" Height="25" Margin="331,186,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Content="有效起日:" HorizontalAlignment="Left" Height="auto" Margin="16,186,0,0" VerticalAlignment="Top" Width="auto"/>
+        <DatePicker Name="dtpStartTime" HorizontalAlignment="Left" Height="25" Margin="96,187,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Content="备注:" HorizontalAlignment="Left" Height="auto" Margin="16,223,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Name="txtRemarks" HorizontalAlignment="Left" Height="auto" Margin="96,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347"/>
+        <SFMControls:ButtonSfm Name="btnPrint" Content="打印收费小票" HorizontalAlignment="Left" Height="26" Margin="51,278,0,0" VerticalAlignment="Top" Width="113" Click="btnPrint_Click" IsEnabled="False"/>
+        <SFMControls:ButtonSfm Name="btnPostpone" Content="延  期" HorizontalAlignment="Left" Height="26" Margin="206,278,0,0" VerticalAlignment="Top" Width="80" Click="btnPostpone_Click"/>
+        <SFMControls:ButtonSfm Name="btnExit" Content="退  出" Height="26" Margin="367,278,34,0" VerticalAlignment="Top" Click="btnExit_Click"/>
+        <Label Name="lblCardNo" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="96,10,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Name="lblCPH" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="96,50,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Name="lblCardType" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="96,95,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Name="lblUserName" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="331,10,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Name="lblUserNo" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="331,50,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Name="lblBalance" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="331,95,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Name="lblInfo" HorizontalAlignment="Left" Height="auto" Margin="144,250,0,0" VerticalAlignment="Top" Width="auto" Visibility="Visible"/>
+        <RichTextBox Name="rtbPrint" HorizontalAlignment="Left" Height="106" Margin="450,260,-75,-37" VerticalAlignment="Top" Width="104" Visibility="Hidden">
+            
+        </RichTextBox>
+
+    </Grid>
+</SFMControls:WindowBase>

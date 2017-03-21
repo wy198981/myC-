@@ -1,0 +1,113 @@
+﻿<src:WindowBase x:Class="UI.Video.VideoCfg_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="视频参数配置" Height="487" Width="511" Style="{DynamicResource WindowStyle}" Loaded="WindowBase_Loaded" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="397" Margin="10,10,0,0" VerticalAlignment="Top" Width="483">
+            <TabItem Header="主码流">
+                <Grid>
+                    <Label Content="分辨率" HorizontalAlignment="Left" Height="auto" Margin="114,32,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="帧  率" HorizontalAlignment="Left" Height="auto" Margin="114,77,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="编码方式" HorizontalAlignment="Left" Height="auto" Margin="114,121,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="码流控制" HorizontalAlignment="Left" Height="auto" Margin="114,167,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="图像质量" HorizontalAlignment="Left" Height="auto" Margin="114,218,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="码流上限" HorizontalAlignment="Left" Height="auto" Margin="114,264,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <ComboBox Name="cmbFrameSize" HorizontalAlignment="Left" Height="26" Margin="183,32,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}">
+                        <ComboBoxItem>352*288</ComboBoxItem>
+                        <ComboBoxItem>704*576</ComboBoxItem>
+                        <ComboBoxItem>1280*720</ComboBoxItem>
+                        <ComboBoxItem>1920*1080</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="cmbFrameRate" HorizontalAlignment="Left" Height="26" Margin="183,77,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}">
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>21</ComboBoxItem>
+                        <ComboBoxItem>22</ComboBoxItem>
+                        <ComboBoxItem>23</ComboBoxItem>
+                        <ComboBoxItem>24</ComboBoxItem>
+                        <ComboBoxItem>25</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="cmbEncodeType" HorizontalAlignment="Left" Height="26" Margin="183,121,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}">
+                        <ComboBoxItem>H264</ComboBoxItem>
+                        <ComboBoxItem>JPEG</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="cmbCompressMode" HorizontalAlignment="Left" Height="26" Margin="183,167,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}">
+                        <ComboBoxItem>定码流</ComboBoxItem>
+                        <ComboBoxItem>变码流</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="cmbImgQuality" HorizontalAlignment="Left" Height="26" Margin="183,218,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}">
+                        <ComboBoxItem>最流畅</ComboBoxItem>
+                        <ComboBoxItem>较流畅</ComboBoxItem>
+                        <ComboBoxItem>流畅</ComboBoxItem>
+                        <ComboBoxItem>中等</ComboBoxItem>
+                        <ComboBoxItem>清晰</ComboBoxItem>
+                        <ComboBoxItem>较流畅</ComboBoxItem>
+                        <ComboBoxItem>最清晰</ComboBoxItem>
+                    </ComboBox>
+
+                    <src:ButtonSfm Name="btnSave" Content="确  定" HorizontalAlignment="Left" Height="26" Margin="273,317,0,0" VerticalAlignment="Top" Width="70" Click="btnSave_Click"/>
+                    <TextBox Name="txtRateval" HorizontalAlignment="Left" Height="26" Margin="183,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="视频源">
+                <Grid>
+                    <Label Content="亮   度" HorizontalAlignment="Left" Height="auto" Margin="44,23,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="对比度" HorizontalAlignment="Left" Height="auto" Margin="44,61,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="饱和度" HorizontalAlignment="Left" Height="auto" Margin="44,103,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="清晰度" HorizontalAlignment="Left" Height="auto" Margin="44,145,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="视频制式" HorizontalAlignment="Left" Height="auto" Margin="44,191,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="曝光时间" HorizontalAlignment="Left" Height="auto" Margin="44,236,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Content="图像翻转" HorizontalAlignment="Left" Height="auto" Margin="44,281,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <src:ButtonSfm Name="btnRecovery" Content="恢复默认" HorizontalAlignment="Left" Height="25" Margin="323,330,0,0" VerticalAlignment="Top" Width="101" Click="btnRecovery_Click"/>
+                    <Slider Name="sdBright" HorizontalAlignment="Left" Height="26" Margin="119,23,0,0" VerticalAlignment="Top" Width="292" Maximum="100" MouseLeftButtonUp="sdBright_MouseLeftButtonUp"/>
+                    <Slider Name="sdContrast" HorizontalAlignment="Left" Height="26" Margin="119,61,0,0" VerticalAlignment="Top" Width="292" Maximum="100" MouseLeftButtonUp="sdContrast_MouseLeftButtonUp"/>
+                    <Slider Name="sdSaturation" HorizontalAlignment="Left" Height="26" Margin="119,103,0,0" VerticalAlignment="Top" Width="292" Maximum="100" MouseLeftButtonUp="sdSaturation_MouseLeftButtonUp"/>
+                    <Slider Name="sdDefinition" HorizontalAlignment="Left" Height="26" Margin="119,145,0,0" VerticalAlignment="Top" Width="292" Maximum="100" MouseLeftButtonUp="sdDefinition_MouseLeftButtonUp"/>
+                    <ComboBox Name="cmbVideoStandard" HorizontalAlignment="Left" Margin="119,191,0,0" VerticalAlignment="Top" Width="152" Height="26" IsEditable="True" SelectionChanged="cmbVideoStandard_SelectionChanged">
+                        <ComboBoxItem>MaxOrZero</ComboBoxItem>
+                        <ComboBoxItem>50Hz</ComboBoxItem>
+                        <ComboBoxItem>60Hz</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="cmbExposureTime" HorizontalAlignment="Left" Margin="119,236,0,0" VerticalAlignment="Top" Width="152" Height="26" IsEditable="True" SelectionChanged="cmbExposureTime_SelectionChanged">
+                        <ComboBoxItem>0-8ms 停车场推荐</ComboBoxItem>
+                        <ComboBoxItem>0-4ms</ComboBoxItem>
+                        <ComboBoxItem>0-2ms 卡口推荐</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="cmbImgPos" HorizontalAlignment="Left" Margin="119,281,0,0" VerticalAlignment="Top" Width="152" Height="26" IsEditable="True" SelectionChanged="cmbImgPos_SelectionChanged">
+                        <ComboBoxItem>原始图像</ComboBoxItem>
+                        <ComboBoxItem>上下翻转</ComboBoxItem>
+                        <ComboBoxItem>左右翻转</ComboBoxItem>
+                        <ComboBoxItem>中心翻转</ComboBoxItem>
+                    </ComboBox>
+                    <Label Name="lblLD" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="416,23,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Name="lblDBD" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="416,61,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Name="lblBHD" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="416,103,0,0" VerticalAlignment="Top" Width="auto"/>
+                    <Label Name="lblQXD" Content="Label" HorizontalAlignment="Left" Height="auto" Margin="416,145,0,0" VerticalAlignment="Top" Width="auto"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</src:WindowBase>

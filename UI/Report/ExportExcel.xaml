@@ -1,0 +1,24 @@
+﻿<SFMControls:WindowBase x:Class="UI.Report.ExportExcel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="导出Excel" Height="373" Width="479" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <SFMControls:ButtonSfm Name="btnUp" Content="↑" HorizontalAlignment="Left" Height="28" Margin="408,76,0,0" VerticalAlignment="Top" Width="43" Click="btnUp_Click"/>
+        <SFMControls:ButtonSfm Name="btnDown" Content="↓" HorizontalAlignment="Left" Height="27" Margin="408,171,0,0" VerticalAlignment="Top" Width="43" Click="btnDown_Click"/>
+        <SFMControls:ButtonSfm Name="btnRight" Content=">" HorizontalAlignment="Left" Height="25" Margin="179,52,0,0" VerticalAlignment="Top" Width="48" Click="btnRight_Click"/>
+        <SFMControls:ButtonSfm Name="btnAllRight" Content=">>" HorizontalAlignment="Left" Height="25" Margin="179,106,0,0" VerticalAlignment="Top" Width="48" Click="btnAllRight_Click"/>
+        <SFMControls:ButtonSfm Name="btnLeft" Content="&lt;" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="48" Margin="179,152,0,0" Click="btnLeft_Click"/>
+        <SFMControls:ButtonSfm Name="btnAllLeft" Content="&lt;&lt;" HorizontalAlignment="Left" Height="24" Margin="179,210,0,0" VerticalAlignment="Top" Width="48" Click="btnAllLeft_Click"/>
+        <GroupBox Header="可选择字段" HorizontalAlignment="Left" Height="232" Margin="28,21,0,0" VerticalAlignment="Top" Width="135">
+            <ListBox Name="lstData" HorizontalAlignment="Left" Height="184" Margin="10,10,0,0" VerticalAlignment="Top" Width="109"/>
+        </GroupBox>
+        <GroupBox Header="已选择字段" HorizontalAlignment="Left" Height="232" Margin="245,21,0,0" VerticalAlignment="Top" Width="144">
+            <ListBox Name="lstSelectData" HorizontalAlignment="Left" Height="184"  VerticalAlignment="Top" Width="109" Margin="10,10,0,0"/>
+        </GroupBox>
+        <SFMControls:ButtonSfm Name="btnExport" Content="导    出" HorizontalAlignment="Left" Height="29" Margin="65,268,0,0" VerticalAlignment="Top" Width="98" Click="btnExport_Click"/>
+        <SFMControls:ButtonSfm Name="btnCancel" Content="取    消" HorizontalAlignment="Left" Height="29" Margin="292,268,0,0" VerticalAlignment="Top" Width="97" Click="btnCancel_Click"/>
+    </Grid>
+</SFMControls:WindowBase>

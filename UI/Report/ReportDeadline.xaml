@@ -1,0 +1,48 @@
+﻿<SFMControls:WindowBase x:Class="UI.Report.ReportDeadline"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="固定车期限查询" Height="459" Width="809" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <DataGrid Name="dgvDeadline" HorizontalAlignment="Left" Height="220" Margin="10,10,0,0" VerticalAlignment="Top" Width="781" CanUserAddRows="False" AutoGenerateColumns="False" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="车牌号码" Width="*" Binding="{Binding CPH}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="车辆编号" Width="*" Binding="{Binding CardNO}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="车辆类型" Width="*" Binding="{Binding CardType}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="车场有效起日" Width="2*" Binding="{Binding CarValidStartDate, StringFormat=yyyy-MM-dd}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="车场有效止日" Width="2*" Binding="{Binding CarValidEndDate, StringFormat=yyyy-MM-dd}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="剩余天数" Width="*" Binding="{Binding SurplusDays}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="人员姓名" Width="*" Binding="{Binding UserName}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="部门名称" Width="*" Binding="{Binding DeptName}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="手机号码" Width="2*" Binding="{Binding MobNumber}" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="85" Margin="10,246,0,0" VerticalAlignment="Top" Width="781">
+            <Grid>
+                <RadioButton Name="rbtSurplusDays" Content="固定车剩余天数:" HorizontalAlignment="Left" Height="auto" Margin="10,13,0,0" VerticalAlignment="Top" Width="auto" IsChecked="True"/>
+                <RadioButton Name="rbtTime" Content="到期时间段:" HorizontalAlignment="Left" Height="auto" Margin="10,49,0,0" VerticalAlignment="Top" Width="auto"/>
+                <TextBox Name="txtSurplusDays" Text="0" HorizontalAlignment="Left" Height="auto" Margin="118,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" KeyDown="txtSurplusDays_KeyDown"/>
+                <Label Content="到" HorizontalAlignment="Left" Height="auto" Margin="212,46,0,0" VerticalAlignment="Top" Width="auto"/>
+                <RadioButton Name="rbtCarNo" Content="车牌号码:" HorizontalAlignment="Left" Height="auto" Margin="481,13,0,0" VerticalAlignment="Top" Width="auto"/>
+                <RadioButton Name="rbtUserNo" Content="人员编号:" HorizontalAlignment="Left" Height="auto" Margin="481,52,0,0" VerticalAlignment="Top" Width="auto"/>
+                <TextBox Name="txtCarNo" HorizontalAlignment="Left" Height="auto" Margin="553,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" KeyUp="txtCarNo_KeyUp" CharacterCasing="Upper"/>
+                <TextBox Name="txtUserNo" HorizontalAlignment="Left" Height="auto" Margin="553,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" KeyUp="txtUserNo_KeyUp"/>
+                <Label Content="天内" HorizontalAlignment="Left" Height="auto" Margin="212,8,0,0" VerticalAlignment="Top" Width="auto"/>
+                <DatePicker Name="dtStartTime" HorizontalAlignment="Left" Height="auto" Margin="94,41,0,0" VerticalAlignment="Top" Width="113"  SelectedDate="{x:Static sys:DateTime.Now}"/>
+                <DatePicker Name="dtEndTime" HorizontalAlignment="Left" Height="auto" Margin="239,41,0,0" VerticalAlignment="Top" Width="121"  SelectedDate="{x:Static sys:DateTime.Now}"/>
+
+            </Grid>
+        </Border>
+        <StackPanel HorizontalAlignment="Left" Height="33" Margin="182,352,0,0" VerticalAlignment="Top" Width="401" Orientation="Horizontal">
+            <SFMControls:ButtonSfm Name="btnSelect" Content="查   询" Height="33" VerticalAlignment="Top" Width="100" Margin="0,0,50,0" Click="btnSelect_Click"/>
+            <SFMControls:ButtonSfm Name="btnExport" Content="导   出" Height="33"  VerticalAlignment="Top" Width="100" Margin="0,0,50,0" Click="btnExport_Click" FormName="固定车期限查询" ItemName="CmdExport"/>
+            <SFMControls:ButtonSfm Name="btnExit" Content="退   出" Height="33"  VerticalAlignment="Top" Width="100" Click="btnExit_Click"/>
+        </StackPanel>
+        <Label Content="查询数量:" HorizontalAlignment="Left" Height="auto" Margin="661,356,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblCount" Content="0" HorizontalAlignment="Left" Height="auto" Margin="727,355,0,0" VerticalAlignment="Top" Width="auto"/>
+
+    </Grid>
+</SFMControls:WindowBase>

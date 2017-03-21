@@ -1,0 +1,31 @@
+﻿<SFMControls:WindowBase  x:Class="UI.SelectDown"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="车牌号码下载查询" Height="525" Width="950" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Style="{DynamicResource WindowStyle}" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <DataGrid x:Name="dataGridView1" Margin="10,10,10,190" MouseDoubleClick="dataGridView1_MouseDoubleClick" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=CardNO}" ClipboardContentBinding="{x:Null}" Header="车辆编号"/>
+                <DataGridTextColumn Binding="{Binding Path=CPH}" ClipboardContentBinding="{x:Null}" Header="车牌号码"/>
+                <DataGridTextColumn Binding="{Binding Path=CardType}" ClipboardContentBinding="{x:Null}" Header="车辆类型"/>
+                <DataGridTextColumn Binding="{Binding Path=CardStateCaption}" ClipboardContentBinding="{x:Null}" Header="车辆状态"/>
+                <DataGridTextColumn Binding="{Binding Path=CarValidStartDate, StringFormat=yyyy-MM-dd}" ClipboardContentBinding="{x:Null}" Header="车场有效起日"/>
+                <DataGridTextColumn Binding="{Binding Path=CarValidEndDate, StringFormat=yyyy-MM-dd}" ClipboardContentBinding="{x:Null}" Header="车场有效止日"/>
+                <DataGridTextColumn Binding="{Binding Path=DownLoadState}" ClipboardContentBinding="{x:Null}" Header="下载标识"/>
+                <DataGridTextColumn Binding="{Binding Path=CarValidMachine}" ClipboardContentBinding="{x:Null}" Header="车场有效机号"/>
+                <DataGridTextColumn Binding="{Binding Path=CPHDownloadSignal}" ClipboardContentBinding="{x:Null}" Header="车牌下载标识"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="175" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="714"/>
+        <CheckBox x:Name="ckbOffLine" Content="脱机车牌下载" HorizontalAlignment="Left" Margin="811,285,0,0" VerticalAlignment="Top" IsChecked="True" IsEnabled="False"/>
+        <Label Content="车辆编号" HorizontalAlignment="Left" Margin="746,316,0,0" VerticalAlignment="Top"/>
+        <Label Content="车牌号码" HorizontalAlignment="Left" Margin="746,347,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCardNo" HorizontalAlignment="Left" Height="22" Margin="811,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="118" TextChanged="txtCardNo_TextChanged"/>
+        <TextBox x:Name="txtCPH" HorizontalAlignment="Left" Height="24" Margin="811,348,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="118" TextChanged="txtCPH_TextChanged"/>
+        <SFMControls:ButtonSfm x:Name="btnSelect" Content="查    询" HorizontalAlignment="Left" Margin="825,393,0,0" VerticalAlignment="Top" Width="75" Click="btnSelect_Click"/>
+
+    </Grid>
+</SFMControls:WindowBase>

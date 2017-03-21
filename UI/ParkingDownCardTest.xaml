@@ -1,0 +1,19 @@
+﻿<SFMControls:WindowBase
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MyUserControlLibrary="clr-namespace:MyUserControlLibrary;assembly=MyUserControlLibrary" x:Class="UI.ParkingDownCardTest"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        Title="车牌下载" Height="360" Width="780" Style="{DynamicResource WindowStyle}" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closed="Window_Closed" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF399ADE" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <MyUserControlLibrary:WaitingAndProgress x:Name="pgbShow" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="247" Width="747" ShowType="WaitingAndProgress"/>
+
+        <Label Name="lblShow" Content="有效车牌下载" HorizontalAlignment="Left" Height="auto" Margin="32,9,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Name="lblCount" Content="总数" HorizontalAlignment="Left" Height="auto" Margin="462,9,0,0" VerticalAlignment="Top" Width="auto"/>
+    </Grid>
+</SFMControls:WindowBase>

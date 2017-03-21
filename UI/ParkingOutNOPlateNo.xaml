@@ -1,0 +1,92 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingOutNOPlateNo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="无牌车出场" Height="804.313" Width="1007" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed" Closing="Window_Closing" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="时间范围:" HorizontalAlignment="Left" Height="auto" Margin="10,19,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <DatePicker Name="dtpStart" HorizontalAlignment="Left" Height="27" Margin="89,19,0,0" VerticalAlignment="Top" Width="160" SelectedDate="{x:Static sys:DateTime.Now}"/>
+        <Label Content="到" HorizontalAlignment="Left" Height="auto" Margin="263,17,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="车辆颜色:" HorizontalAlignment="Left" Height="auto" Margin="10,65,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="车辆类型:" HorizontalAlignment="Left" Height="auto" Margin="263,65,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="临时车牌:" HorizontalAlignment="Left" Height="auto" Margin="10,109,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="车辆品牌:" HorizontalAlignment="Left" Height="auto" Margin="263,109,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="打折地点:" HorizontalAlignment="Left" Height="auto" Margin="10,152,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="车道名称:" HorizontalAlignment="Left" Height="auto" Margin="263,152,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="免费原因:" HorizontalAlignment="Left" Height="auto" Margin="10,200,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <Label Content="应收金额:" HorizontalAlignment="Left" Height="auto" Margin="263,200,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <ComboBox Name="cmbColor" HorizontalAlignment="Left" Height="auto" Margin="89,70,0,0" VerticalAlignment="Top" Width="160" IsEditable="True"/>
+        <ComboBox Name="cmbGateName" HorizontalAlignment="Left" Height="auto" Margin="342,157,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}"/>
+        <ComboBox Name="cmbCarType" HorizontalAlignment="Left" Height="auto" Margin="342,114,0,0" VerticalAlignment="Top" Width="160" IsEditable="True"/>
+        <ComboBox Name="cmbCardType" HorizontalAlignment="Left" Height="auto" Margin="342,70,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}" SelectionChanged="cmbCardType_SelectionChanged"/>
+        <ComboBox Name="cmbJHDZ" HorizontalAlignment="Left" Height="auto" Margin="89,157,0,0" VerticalAlignment="Top" Width="160" SelectionChanged="cmbJHDZ_SelectionChanged" Background="{x:Null}"/>
+        <ComboBox Name="cmbFree" HorizontalAlignment="Left" Height="auto" Margin="89,205,0,0" VerticalAlignment="Top" Width="160" Background="{x:Null}"/>
+        <TextBox Name="txtCPH" HorizontalAlignment="Left" Height="auto" Margin="89,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Label Name="lblSFJE" Content="" HorizontalAlignment="Left" Height="30" Margin="342,200,0,0" VerticalAlignment="Top" Width="83" FontSize="15"/>
+        <DatePicker Name="dtpEnd" HorizontalAlignment="Left" Height="27" Margin="342,19,0,0" VerticalAlignment="Top" Width="160" SelectedDate="{x:Static sys:DateTime.Now}"/>
+        <SFMControls:ButtonSfm Name="btnSelect" Content="查    询" HorizontalAlignment="Left" Height="27" Margin="541,19,0,0" VerticalAlignment="Top" Width="99" FontSize="15" Click="btnSelect_Click" FormName="无牌车出场" ItemName="btnSelect"/>
+        <SFMControls:ButtonSfm Name="btnSF" Content="计算收费" HorizontalAlignment="Left" Height="27" Margin="541,56,0,0" VerticalAlignment="Top" Width="99" FontSize="15" Click="btnSF_Click" FormName="无牌车出场" ItemName="btnCharge"/>
+        <SFMControls:ButtonSfm Name="btnOpen" Content="开闸放行" HorizontalAlignment="Left" Height="27" Margin="541,93,0,0" VerticalAlignment="Top" Width="99" FontSize="15" Click="btnOpen_Click" FormName="无牌车出场" ItemName="btnOpen" IsEnabled="False"/>
+        <SFMControls:ButtonSfm Name="btnFree" Content="免费放行" HorizontalAlignment="Left" Height="27" Margin="541,132,0,0" VerticalAlignment="Top" Width="99" FontSize="15" Click="btnFree_Click" FormName="无牌车出场" ItemName="btnFreeOpen" IsEnabled="False"/>
+        <SFMControls:ButtonSfm Name="btnClose" Content="取    消" HorizontalAlignment="Left" Height="27" Margin="541,204,0,0" VerticalAlignment="Top" Width="99" FontSize="15" Click="btnClose_Click"/>
+        <GroupBox Name="grpScan" Header="扫描支付方式" HorizontalAlignment="Left" Height="67" Margin="10,235,0,0" VerticalAlignment="Top" Width="630" FontSize="15">
+            <Grid>
+                <RadioButton  Name="radWX" Content="微信" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <RadioButton Name="radZFB" Content="支付宝" HorizontalAlignment="Left" Height="auto" Margin="90,10,0,0" VerticalAlignment="Top" Width="auto"/>
+                <TextBox Name="txtAuth_code" HorizontalAlignment="Left" Height="auto" Margin="195,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="413" KeyDown="txtAuth_code_KeyDown"/>
+
+            </Grid>
+        </GroupBox>
+        <DataGrid Name="dgvCar" HorizontalAlignment="Left" Height="411" Margin="10,316,0,0" VerticalAlignment="Top" Width="630" FontSize="15" CanUserAddRows="False" AutoGenerateColumns="False" SelectionChanged="dgvCar_SelectionChanged"  IsReadOnly="True" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding CardNO}" Header="车辆编号"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding InUser}" Header="车辆颜色"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding SFGate}" Header="车辆品牌"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding CPH}" Header="车牌号码"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding ChineseName}" Header="车辆类型"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding InTime,StringFormat=yyyy-MM-dd HH:mm:ss}" Header="入场时间"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding InGateName}" Header="入场名称"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding UserNO}" Header="人员编号"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding UserName}" Header="人员姓名"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Balance}" Header="余额"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding CarparkNO}" Header="车场编号"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding BigSmall}" Header="大小标识"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding FreeReason}" Header="免费原因"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding InPic}" Header="入场图片"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding DeptName}" Header="部门名称"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding ZJPic}" Header="证件图片"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding InOperatorCard}" Header="入场操作编号"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding InOperator}" Header="入场操作员"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="收费:" HorizontalAlignment="Left" Height="auto" Margin="695,14,0,0" VerticalAlignment="Top" Width="auto" FontSize="30"/>
+        <Label Name="lblMoney" Content="0.00" HorizontalAlignment="Left" Height="auto" Margin="787,14,0,0" VerticalAlignment="Top" Width="auto" FontSize="30" Foreground="Red"/>
+        <Grid HorizontalAlignment="Left" Height="652" Margin="658,75,0,0" VerticalAlignment="Top" Width="331">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="入口图片:" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+            <Label Content="出口图片:" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" FontSize="15" Grid.Row="2"/>
+            <WindowsFormsHost Grid.Row="1">
+                <wf:PictureBox x:Name="picCarIn" Dock="Fill" BackColor="Black" SizeMode="StretchImage">
+                </wf:PictureBox>
+            </WindowsFormsHost>
+            <WindowsFormsHost Grid.Row="3">
+                <wf:PictureBox x:Name="picCarOut" Dock="Fill" BackColor="Black" SizeMode="StretchImage">
+                </wf:PictureBox>
+            </WindowsFormsHost>
+        </Grid>
+        <Label Name="lblInDateTime" HorizontalAlignment="Left" Height="28" Margin="658,14,0,0" VerticalAlignment="Top" Width="16" Visibility="Hidden"/>
+        <src:ButtonSfm x:Name="btnPrint" Content="打印小票" HorizontalAlignment="Left" Height="27" Margin="541,168,0,0" VerticalAlignment="Top" Width="99" FontSize="15" IsEnabled="False" Click="btnPrint_Click"/>
+        <RichTextBox Name="rtbPrint" HorizontalAlignment="Left" Height="100" Margin="425,556,0,0" VerticalAlignment="Top" Width="100" Visibility="Collapsed">
+           
+        </RichTextBox>
+    </Grid>
+</SFMControls:WindowBase>

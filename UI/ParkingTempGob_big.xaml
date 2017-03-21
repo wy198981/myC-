@@ -1,0 +1,74 @@
+﻿<SFMControls:WindowBase
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        x:Class="UI.ParkingTempGob_big"
+        Title="临时车出场收费" FontFamily="Microsoft YaHei" FontSize="20" Loaded="Window_Loaded" Height="700" Width="810" ShowInTaskbar="False" ResizeMode="NoResize" Closing="Window_Closing" HorizontalAlignment="Left" VerticalAlignment="Top" Closed="Window_Closed">
+    <Grid x:Name="grdMain">
+        <StackPanel Margin="0">
+            <Grid x:Name="gridPhoto" Margin="0" VerticalAlignment="Top" Height="299" >
+                <Image x:Name="imgIn" HorizontalAlignment="Left" Height="299" VerticalAlignment="Top" Width="399" Source="pack://siteoforigin:,,,/Resources/car2.jpg" Stretch="Fill"/>
+                <Image x:Name="imgOut" HorizontalAlignment="Left" Height="299" VerticalAlignment="Top" Width="399" Source="pack://siteoforigin:,,,/Resources/car2.jpg" Margin="403,0,0,0" Stretch="Fill"/>
+            </Grid>
+            <Grid x:Name="gridCharge" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="560" Visibility="Visible" Height="360">
+                <Label Content="车牌号码：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblCPH" Content="粤B12345" HorizontalAlignment="Left" Margin="130,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblCardType" Content="无效卡" HorizontalAlignment="Left" Margin="269,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="入场时间：" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" />
+                <Label x:Name="lblInDateTime" Content="2015-01-01 10:01:01" HorizontalAlignment="Left" Margin="130,44,0,0" VerticalAlignment="Top"/>
+                <Label Content="出场时间：" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblOutDateTime" Content="2015-01-01 10:01:01" HorizontalAlignment="Left" Margin="130,73,0,0" VerticalAlignment="Top"/>
+                <Label Content="停车时间：" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblTime" Content="123天23小时45分" HorizontalAlignment="Left" Margin="130,107,0,0" VerticalAlignment="Top"/>
+                <Label Content="停车费用：" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblSFJE" Content="0" HorizontalAlignment="Left" Margin="130,141,0,0" VerticalAlignment="Top" Width="118" HorizontalContentAlignment="Center" Foreground="Blue"/>
+                <Label Content="元" HorizontalAlignment="Left" Margin="248,141,0,0" VerticalAlignment="Top" Width="38"/>
+                <Label Content="实收费用：" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
+                <SFMControls:NumericBox x:Name="txtSFJE" HorizontalAlignment="Left" Margin="130,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" HorizontalContentAlignment="Center" Background="White" Foreground="Red" IsReadOnly="True" DecimalPlaces="2"/>
+                <Label Content="元" HorizontalAlignment="Left" Margin="248,175,0,0" VerticalAlignment="Top" Width="38"/>
+                <SFMControls:ButtonSfm x:Name="btnPrint" Content="打印小票" HorizontalAlignment="Left" Margin="286,157,0,0" VerticalAlignment="Top" Width="100" Click="btnPrint_Click"/>
+                <SFMControls:ButtonSfm x:Name="btnFavorable" Content="优惠" HorizontalAlignment="Left" Margin="286,177,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.47,1.594" Visibility="Collapsed"/>
+                <Label Content="打折地点：" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbJHDZ" HorizontalAlignment="Left" Margin="130,211,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="cmbJHDZ_SelectionChanged" Background="{x:Null}"/>
+                <Label Content="免费原因：" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbFree" HorizontalAlignment="Left" Margin="130,245,0,0" VerticalAlignment="Top" Width="256" Background="{x:Null}"/>
+                <Border  BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="72" Margin="2,281,0,0" VerticalAlignment="Top" Width="384">
+                </Border>
+                <Label Content="电子支付：" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radWX" Content="微信" HorizontalAlignment="Left" Margin="130,282,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="radZFB" Content="支付宝" HorizontalAlignment="Left" Margin="214,282,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtAuth_code" HorizontalAlignment="Left" Height="38" Margin="10,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="371" KeyDown="txtAuth_code_KeyDown"/>
+                <Label Content="车辆类型" HorizontalAlignment="Left" Margin="401,10,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbCardType" HorizontalAlignment="Left" Margin="401,44,0,0" VerticalAlignment="Top" Width="147" SelectionChanged="cmbCardType_SelectionChanged" Background="{x:Null}"/>
+                <SFMControls:ButtonSfm x:Name="button3" Content="取消收费" HorizontalAlignment="Left" Margin="401,89,0,0" VerticalAlignment="Top" Width="147" Click="btnCancelCharge_Click"/>
+                <SFMControls:ButtonSfm x:Name="btnVoice" Content="语音报价" HorizontalAlignment="Left" Margin="401,135,0,0" VerticalAlignment="Top" Width="147" Click="btnVoice_Click"/>
+                <SFMControls:ButtonSfm x:Name="btnCutOff" Content="开闸放行" HorizontalAlignment="Left" Margin="401,181,0,0" VerticalAlignment="Top" Width="147" Click="btnCutOff_Click" KeyUp="btnCutOff_KeyUp"/>
+                <SFMControls:ButtonSfm x:Name="btnPapers" Content="证件抓拍" HorizontalAlignment="Left" Margin="401,227,0,0" VerticalAlignment="Top" Width="147" Click="btnPapers_Click"/>
+                <SFMControls:ButtonSfm x:Name="btnFree" Content="免费放行" HorizontalAlignment="Left" Margin="401,273,0,0" VerticalAlignment="Top" Width="147" Click="btnFree_Click"/>
+                <SFMControls:ButtonSfm x:Name="btnGiveUp" Content="放弃开闸" HorizontalAlignment="Left" Margin="401,319,0,0" VerticalAlignment="Top" Width="147" Click="btnGiveUp_Click"/>
+            </Grid>
+            <Grid x:Name="gridCPH" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="340" Visibility="Collapsed">
+                <Label Content="确认车牌" HorizontalAlignment="Left" Margin="149,17,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtCPH0" HorizontalAlignment="Left" Height="36" Margin="244,17,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238" KeyDown="txtCPH0_KeyDown" KeyUp="txtCPH0_KeyUp"/>
+                <SFMControls:ButtonSfm x:Name="button1" Content="确定" HorizontalAlignment="Left" Margin="487,17,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+                <DataGrid x:Name="dgvFX" HorizontalAlignment="Left" Margin="149,62,0,0" VerticalAlignment="Top" Height="210" Width="194" SelectionChanged="dgvFX_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding CPH}" ClipboardContentBinding="{x:Null}" Header="发行车牌"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid x:Name="dgvCarIn" HorizontalAlignment="Left" Margin="368,62,0,0" VerticalAlignment="Top" Height="210" Width="194" SelectionChanged="dgvCarIn_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding CPH}" ClipboardContentBinding="{x:Null}" Header="场内车牌"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Content="操作提示:" HorizontalAlignment="Left" Margin="31,282,0,0" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="131,287,0,0" TextWrapping="Wrap" Text="请在发行车牌栏或场内车牌栏选择正确入场记录,或者手动修改车牌结果.手动输入车牌可以模糊查询." VerticalAlignment="Top" Width="585"/>
+            </Grid>
+            <RichTextBox Name="rtbPrint" HorizontalAlignment="Left" Height="69" Margin="727,0,0,0" Width="77" Visibility="Collapsed">
+            </RichTextBox>
+
+        </StackPanel>
+    </Grid>
+</SFMControls:WindowBase>

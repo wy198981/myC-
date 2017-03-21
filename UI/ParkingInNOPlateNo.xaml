@@ -1,0 +1,86 @@
+﻿<SFMControls:WindowBase x:Class="UI.ParkingInNOPlateNo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:code="clr-namespace:UI"
+        xmlns:SFMControls="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:src="clr-namespace:SFMControls;assembly=SFMControls"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="无牌车入场" Height="490" Width="570" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize" Style="{DynamicResource WindowStyle}">
+    <Grid>
+        <Label Content="车辆颜色:" HorizontalAlignment="Left" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <ComboBox Name="cmbColor" HorizontalAlignment="Left" Height="30" Margin="89,10,0,0" VerticalAlignment="Top" Width="137" IsEditable="True" FontSize="15">
+            <ComboBoxItem>银色</ComboBoxItem>
+            <ComboBoxItem>黑色</ComboBoxItem>
+            <ComboBoxItem>白色</ComboBoxItem>
+            <ComboBoxItem>蓝色</ComboBoxItem>
+            <ComboBoxItem>红色</ComboBoxItem>
+            <ComboBoxItem>棕色</ComboBoxItem>
+        </ComboBox>
+        <Label Content="车辆品牌:" HorizontalAlignment="Left" Height="auto" Margin="242,10,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <ComboBox Name="cmbCarType" HorizontalAlignment="Left" Height="30" Margin="321,10,0,0" VerticalAlignment="Top" Width="137" IsEditable="True" FontSize="15">
+            <ComboBoxItem>丰田</ComboBoxItem>
+            <ComboBoxItem>广本</ComboBoxItem>
+            <ComboBoxItem>奇瑞</ComboBoxItem>
+            <ComboBoxItem>奔驰</ComboBoxItem>
+            <ComboBoxItem>宝马</ComboBoxItem>
+            <ComboBoxItem>奥迪</ComboBoxItem>
+            <ComboBoxItem>长安</ComboBoxItem>
+            <ComboBoxItem>富康</ComboBoxItem>
+            <ComboBoxItem>尼桑</ComboBoxItem>
+            <ComboBoxItem>红旗</ComboBoxItem>
+            <ComboBoxItem>捷达</ComboBoxItem>
+            <ComboBoxItem>卡迪拉客</ComboBoxItem>
+            <ComboBoxItem>劳斯莱斯</ComboBoxItem>
+            <ComboBoxItem>凌肯</ComboBoxItem>
+            <ComboBoxItem>三菱</ComboBoxItem>
+            <ComboBoxItem>蓝鸟</ComboBoxItem>
+            <ComboBoxItem>富豪</ComboBoxItem>
+            <ComboBoxItem>吉普</ComboBoxItem>
+            <ComboBoxItem>桑塔纳</ComboBoxItem>
+            <ComboBoxItem>其它</ComboBoxItem>
+        </ComboBox>
+        <SFMControls:ButtonSfm Name="btnAdd" Content="添   加" HorizontalAlignment="Left" Height="28" Margin="472,12,0,0" VerticalAlignment="Top" Width="80" FontSize="15" Click="btnAdd_Click"/>
+        <Label Content="临时车牌:" HorizontalAlignment="Left" Height="auto" Margin="10,55,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <ComboBox Name="cmbCPH" HorizontalAlignment="Left" Height="30" Margin="89,55,0,0" VerticalAlignment="Top" Width="46" IsEditable="True" FontSize="15">
+            <ComboBoxItem>京</ComboBoxItem>
+            <ComboBoxItem>津</ComboBoxItem>
+            <ComboBoxItem>冀</ComboBoxItem>
+            <ComboBoxItem>晋</ComboBoxItem>
+            <ComboBoxItem>蒙</ComboBoxItem>
+            <ComboBoxItem>辽</ComboBoxItem>
+            <ComboBoxItem>吉</ComboBoxItem>
+            <ComboBoxItem>黑</ComboBoxItem>
+            <ComboBoxItem>沪</ComboBoxItem>
+            <ComboBoxItem>苏</ComboBoxItem>
+            <ComboBoxItem>浙</ComboBoxItem>
+            <ComboBoxItem>皖</ComboBoxItem>
+            <ComboBoxItem>闽</ComboBoxItem>
+            <ComboBoxItem>赣</ComboBoxItem>
+            <ComboBoxItem>鲁</ComboBoxItem>
+            <ComboBoxItem>豫</ComboBoxItem>
+            <ComboBoxItem>鄂</ComboBoxItem>
+            <ComboBoxItem>湘</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">粤</ComboBoxItem>
+            <ComboBoxItem>桂</ComboBoxItem>
+            <ComboBoxItem>琼</ComboBoxItem>
+            <ComboBoxItem>渝</ComboBoxItem>
+            <ComboBoxItem>川</ComboBoxItem>
+            <ComboBoxItem>贵</ComboBoxItem>
+            <ComboBoxItem>云</ComboBoxItem>
+            <ComboBoxItem>藏</ComboBoxItem>
+            <ComboBoxItem>陕</ComboBoxItem>
+            <ComboBoxItem>甘</ComboBoxItem>
+            <ComboBoxItem>青</ComboBoxItem>
+            <ComboBoxItem>宁</ComboBoxItem>
+            <ComboBoxItem>新</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="txtCPH" HorizontalAlignment="Left" Height="31" Margin="140,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" FontSize="15" TextChanged="txtCPH_TextChanged" KeyDown="txtCPH_KeyDown"/>
+        <Label Content="车道名称:" HorizontalAlignment="Left" Height="auto" Margin="242,55,0,0" VerticalAlignment="Top" Width="auto" FontSize="15"/>
+        <ComboBox Name="cmbGateName" HorizontalAlignment="Left" Height="30" Margin="321,55,0,0" VerticalAlignment="Top" Width="137" IsEditable="True" FontSize="15"/>
+        <SFMControls:ButtonSfm Name="btnCancel" Content="取   消" HorizontalAlignment="Left" Height="28" Margin="472,57,0,0" VerticalAlignment="Top" Width="80" FontSize="15" Click="btnCancel_Click"/>
+        <WindowsFormsHost Canvas.Left="438" Canvas.Top="59" Margin="10,101,10,10">
+            <wf:PictureBox x:Name="picInPic"  Dock="Fill" BackColor="Black" SizeMode="StretchImage">
+            </wf:PictureBox>
+        </WindowsFormsHost>
+    </Grid>
+</SFMControls:WindowBase>
