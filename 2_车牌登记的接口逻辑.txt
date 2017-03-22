@@ -1,0 +1,239 @@
+1,当 url请求错误之后，应该记录这种错误的情况；
+  还是用最原始的开线程的方式，对于功能完成后，再来作优化处理；
+
+2，逻辑上，还是需要区分，每一步所作的操作；
+
+3，还是需要向 MVP 的方式靠近；
+
+4，对于布局而言，还是最大可能的使用 c#相似的名称，方便进行更进一步的编写；
+
+Window_Loaded：
+	1，获取记号，更新ui界面；
+	2，初始化所有的sum;
+	3，更新卡片的种类，使用String列表来存储；
+	4，注意人员编号是自动的下拉列表
+	5，显示权限；(这部分较简单)
+
+##只要涉及到界面的操作，都放到view中，对于所有的线程的操作，放在新的线程来作；
+
+addClick 操作；
+
+在子线程中，是否可以获取TextView中获取
+
+主线程和子线程的相互切换；利用子线程来获取数据，线程最要是利用handler句柄来传递数据；
+
+需要频繁的切换主线和子线程，
+
+5，那些ui请求会更新ui,那些请求不会更新ui;关联的部分组成一个任务；
+
+
+
+// 其实看看大致也没有很多的操作
+private void chkSubSelect_Click(object sender, RoutedEventArgs e)
+{
+	1，点击 checkBox 按钮后，计算机号；
+	2，获取sum的值和count的机号统计数
+}
+
+btnAdd_Click（）
+{
+	1，设置标记flag;
+	2，设置界面的值；
+	3，根据 chkAutoCardNo.IsChecked，获取txtCarNo
+	4，根据 chkAutoUserNo.IsChecked，获取cmbUserNO
+}
+
+void Bin(Dictionary<string, object> dic = null)
+{
+	1，获取dataGridView 信息，更新ui
+}
+
+private void Window_Loaded(object sender, RoutedEventArgs e)
+{
+	1，请求机号，更新ui
+	2，获取 CardType 车辆类型，存储本地
+	3，获取 dataGridView 信息，更新ui
+	4，获取用户编号，更新ui
+	5，获取指定的月卡 免费 储值车的车类型，更新ui
+	6，根据model之前请求权限，来指定ui按钮的有效性
+	
+	flag = "add"; 表示可以添加了，即可以直接点击save,但是会有提示信息；
+}
+
+注销
+btnCancel_Click（）// 将并发的代码写的如串行；
+{
+	//下表的操作存在相互的关联；(可以采用标记)
+	1，查询url，是否存在车辆；
+		存在即请求服务器更新车牌信息；
+	2，确定是否注销车牌；弹出对话框
+		注销则，请求更新url, 更新 ui dataGridView数据；
+}
+
+//保存
+btnSave_Click
+{
+	1，检查界面数据
+	2，获取有效机号 
+	
+	3，界面上 chkDCWDC.IsChecked == true,多车位多车(这里还是单独开条线程来做)
+		遍历所有车牌号
+			1，请求url,获取自动填充carNo的卡片信息；获取cardNO的标记；
+			2，请求url,判断车牌重复；
+			3，请求url,判断是否是临时车，是则请求url把入场记录改为发卡行类；
+			4，判断ui界面的chkAutoCardNo.IsChecked == true,
+					获取界面userInfo信息；更新url的处理，(判断userInfo信息的重复)
+			5，注册车牌，请求url的请求信息；插入money 操作员等信息；
+				成功之后，更新界面ui信息；
+			
+		界面上 chkDCWDC.IsChecked == false
+			1，界面检查数据；
+			2, flag == add，表示已经可以用来保存数据
+				根据 txtCarNo，请求url判断卡片号码是否重复;
+					如果重复是否覆盖，不覆盖则返回
+					覆盖则
+						根据车牌号判断车牌号是否重复，否返回
+					是
+						判断车牌是否是已入场的临时车,如果是,则把入场记录改为发行卡类
+				flag == edit
+					没有操作
+				chkAutoCardNo.IsChecked == true,即表示车辆编号是否自动
+				请求url,添加信息
+			3，注册车牌，请求url的请求信息；插入money 操作员等信息；
+				成功后，更新界面数据				
+}
+btnExit_Click(object sender, RoutedEventArgs e)
+{
+	退出
+}
+btnAddCPH_Click(object sender, RoutedEventArgs e)
+{
+	注意：这里的添加是多车位多车的添加按钮
+	1，检测更新界面数据
+}
+
+chkDCWDC_Click（）
+{
+	设置界面关联其它按钮的使能情况
+}
+
+private void CarValidMachine()
+{
+	机号的sum的获取，疑问，如果是多个选中呢?
+}
+
+public CardIssue BinModel()
+{
+	从界面上获取CardIssue的数据
+}
+
+GetPersonnel（）
+{
+	获取界面数据
+}
+
+private CardIssue BindCardIssue()
+{
+	对于dataGridView点击哪行发行信息
+}
+
+dgvCardIssue_MouseDoubleClick
+{
+	进入车牌延期画面
+}
+
+private void txtCarCount_KeyDown(object sender, KeyEventArgs e)
+{
+	只能选择数字
+}
+
+private void chkAllSelect_Click(object sender, RoutedEventArgs e)
+{
+点击全选按钮，全部选中
+}
+
+private void btnAddPerson_Click(object sender, RoutedEventArgs e)
+{
+//进入【人事添加]界面，采用委托，可以用来更新界面数据
+}
+
+private void btnSelect_Click(object sender, RoutedEventArgs e)
+{
+进入查询界面
+}
+
+private void txtCarNumber_KeyDown(object sender, KeyEventArgs e) txtCarNumber_KeyDown
+{
+	不能输入0,和i，因为识别时存在的问题；
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

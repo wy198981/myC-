@@ -1,0 +1,121 @@
+类：
+	login
+功能：
+	提供用户登录
+	
+成员变量：
+	GetServiceData：提供网络获取数据
+	boolean IsClear ：退出时使用，在 Android 的关闭是一样的，所以不考虑；
+	String curStationID：记录当前的工作站点，切换站点时使用
+	
+	void updConfig(List<Operators>lstOper,List<StationSet>lstSt)
+	{
+		1，根据 lstOper 列表数据，显示 UI【用户姓名】
+		2，根据 lstSt 列表数据，显示 UI【工作站点】
+	}
+	
+	Window_Loaded()
+	{
+		// 功能描述：显示界面之前的数据加载工作
+		 try
+		 {
+			判断文件 【StartupPath】 是否存在（该文件存放了ServiceIP、ServicePort、StationID）
+				是：
+					1，取ServiceIP、ServicePort放到Model的全局变量中
+					2，检查 StationID是否是数字字符串，否则默认为“”
+					3，检测ServiceIP是否为IP地址，ServicePort是否数字的端口号
+							否，提示错误，提示：服务IP或端口格式不正确,请重新配置
+							是，1，请求服务器，获取【用户信息】列表，(这里在Android上使用异步加载，防止界面阻塞)
+								2，请求服务器，获取【工作站点信息】列表
+								3，设置3s的延时，并请求两者数据成功后，即设置加载标记
+							判断加载标记，如果不成功，进入【服务器参数配置页面】
+										  成功，设置【用户姓名】；且使用上次登录时使用的站点，即 curStationID
+				否：
+					提示：配置文件丢失，请联系管理员
+		 }
+		 catch(Exception ex)
+		 {
+			1，提交错误报告到服务器	@方便调试
+			2，弹出对话框显示错误信息；@ 界面提示
+		 }	
+	}
+	
+	private void btnLogin_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			// 点击【登录】按钮时触发的操作
+			1，检测当前【用户姓名】和【工作站点】有效性
+			2，根据【用户信息】中的用户编号和输入的md5加密的密码请求获取 token(注意，30秒回失效，所以还是用KeepAlive来维护)
+			3，如果密码token有效，保存到【全局Model】,同时保存【stationId工作站点】,[CarparkNO车场编号]、【md5加密的用户密码】
+						3.1，配置文件【StartupPath】存在，且文件中保存站点有效，判断站点是否是同一个（默认是站点时选择第一个）
+										同一个站点，忽略；
+										不同站点，提示对话框，是否切换，如果是，则保存新切换的站点，保存新站点到文件，并本地内存存储
+																			否，根据文件中站定，更新UI【工作站名】
+							 配置文件【StartupPath】不存在文件中保存站点无效，即保存站点到文件，并本地内存储存（默认是站点时选择第一个）
+						3.2，初始化本地时间格式，（在传递json包含有时间的字符串时，可以做到统一修改）；
+						3.3，参数初始化
+							Model.DataInit()
+							ParkingCommunication.Config.HeadIndex = Model.iXieYi； 写死协议
+							gs.DataSourceToPubVar 请求公共数据
+							Model.bOut485 = !Model.bIsKZB;
+							Model.bVideoCamera = !Model.bIsKZB;
+						3.4，从服务器获取时间，进行本地设置 CR.SetSysTime(gsd.GetSysTime())
+						3.5，【StartupPath】还存放【UserCode用户编号】，比较文件的【UserCode】和【Model.sUserCard】是否一致；
+									一致，则将【StartupPath】的loginTime事件，保存本地Model内存中
+									不一致，更新文件中的UserCode和登陆时间loginTime,并保存到本地Model内存中
+						3.6，通过界面【用户信息】的用户编号，请求服务器获取操作员的具体信息，并保存第一个下标某些信息到本地的Model内存中，
+							再根据权限GroupNo请求服务器，获取权限信息；
+						3.7，权限消息无效时，弹出提示无权限的提示并返回
+								     有效时，获取[在线监控 CmdView]的具体列表，判断第一个列表索引，是否能canOperator
+										如果能，则显示【车辆下载记录】对话框，这里是有动画；
+												再显示在线监控界面，并显示视频画面；
+												注意加上Addlog信息；
+										不能，且提示，并返回
+			  如果密码token无效，提示：用户名或者密码输入错误，请重新登陆
+		}
+		catch()
+		{
+			1，提交错误报告到服务器	@方便调试
+			2，弹出对话框显示错误信息；@ 界面提示
+		}			
+	}
+	
+	btnSet_Click
+	{
+		// 进入服务器设置界面
+	}
+	
+	private void btnParkSet_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+		// 进入车场之前需要一系列的准备工作
+		1，检测当前【用户姓名】和【工作站点】有效性
+		2，根据【用户信息】中的用户编号和输入的md5加密的密码请求获取 token(注意，30秒回失效，所以还是用KeepAlive来维护)
+		3，如果密码token有效，保存到【全局Model】,同时保存【stationId工作站点】,[CarparkNO车场编号]、【md5加密的用户密码】
+						3.1，配置文件【StartupPath】存在，且文件中保存站点有效，判断站点是否是同一个（默认是站点时选择第一个）
+										同一个站点，忽略；
+										不同站点，提示对话框，是否切换，如果是，则保存新切换的站点，保存新站点到文件，并本地内存存储
+																			否，根据文件中站定，更新UI【工作站名】
+							 配置文件【StartupPath】不存在文件中保存站点无效，即保存站点到文件，并本地内存储存（默认是站点时选择第一个）
+						3.2，资源的初始化
+							Model.bOut485 = !Model.bIsKZB;
+							Model.bVideoCamera = !Model.bIsKZB;
+						3.3，判断app是否使能
+						3.4，通过界面【用户信息】的用户编号，请求服务器获取操作员的具体信息，并保存第一个下标某些信息到本地的Model内存中，
+							再根据权限GroupNo请求服务器，获取权限信息；
+						3.5，权限消息无效时，弹出提示无权限的提示并返回
+								     有效时，获取[车场设置]的具体列表，判断第一个列表索引，是否能canOperator
+						               如果canOperator能，则显示【车场设置】界面		
+												          注意加上Addlog信息；
+										              不能，且提示，并返回
+		}
+		catch
+		{
+			1，提交错误报告到服务器	@方便调试
+			2，弹出对话框显示错误信息；@ 界面提示
+		}	
+	}
+	
+	
