@@ -1,0 +1,149 @@
+﻿@charset "utf-8";
+/* CSS Document */
+ body {
+            background-color: #dbdbdb;
+            color: #505050;
+        }
+
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 3px #999;
+}
+
+       .con ul {
+            margin-top: 80px;
+        }
+
+        .con    ul li {
+                height: auto;
+                overflow: hidden;
+                background-color: #ffffff;
+                margin-bottom: 2px;
+                position: relative;
+                list-style-type: none;
+                padding-top: 2px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 8px;
+                font-size: 12px;
+            }
+
+       .con li label {
+            color: #303030;
+            font-size: 12px;
+            display: block;
+            line-height: 28px;
+        }
+
+        .distance {
+            position: absolute;
+            right: 18px;
+            top: 5px;
+        }
+
+       .con li .parkinfo {
+            text-align: left;
+            height: 20px;
+            line-height: 20px;
+            width: 50%;
+            float: left;
+        }
+
+         .con   li .parkinfo span {
+                display: block;
+            }
+
+       .con li .but {
+            color: #9c9c9c;
+            text-align: right;
+            line-height: 20px;
+            float: right;
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+
+
+        .con    li .but a {
+                margin-left: 10px;
+                margin-right: 5px;
+                text-decoration: none;
+                color: #FFF;
+                padding: 5px 14px;
+                border-radius: 3px;
+
+            }
+
+        .location {
+            font-size: 12px;
+            line-height: 36px;
+            text-align: right;
+            position: relative;
+            padding-right: 30px;
+            background-color: #00bf70;
+            color: #FFF;
+            
+        }
+
+        .search {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            background-color: #ffffff;
+            text-align: left;
+            padding-bottom: 2px;
+            position: relative;
+        }
+
+        .search img{ position: absolute;float: left;top: 9px;left: 12px; }
+
+        #txtsearch {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            border-bottom-color: #F0F0F0;
+            height: 24px;
+            width: 100%;
+            padding-left: 26px;
+            padding-right: 38px;
+        }
+
+        .search a {
+            text-decoration: none;
+            color: #00bf70;
+            line-height: 24px;
+            top: 8px;
+            right: 10px;
+            position: absolute;
+            float: right;
+            font-size: 14px;
+            padding-left: 4px;
+            padding-right: 4px;
+            outline:none;
+        }
+        .icon_location {
+            position: absolute;
+            top: 9px;
+            right: 12px;
+        }
+        .address {
+            clear: both;
+            
+        }
+
+        input::-webkit-input-placeholder {
+            color: #999;
+            -webkit-transition: color.5s;
+        }
+
+        input:focus::-webkit-input-placeholder, input:hover::-webkit-input-placeholder {
+            color: #c2c2c2;
+            -webkit-transition: color.5s;
+        }
+

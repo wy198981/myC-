@@ -1,0 +1,3 @@
+CHANGED,E:\Android_studio_workspaces001\zhpark\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\zbar\lib\DecodeThread$1$override.class
+CHANGED,E:\Android_studio_workspaces001\zhpark\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\zbar\lib\DecodeThread$override.class
+CHANGED,E:\Android_studio_workspaces001\zhpark\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class

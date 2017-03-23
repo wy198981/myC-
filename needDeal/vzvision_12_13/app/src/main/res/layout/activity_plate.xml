@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_andorid"
+    tools:context="com.example.vzvision.PlateActivity" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/imageView_aboutImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_title_bar" />
+
+            <TextView
+                android:id="@+id/textView_wlistTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imageView_aboutImg"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignTop="@id/imageView_aboutImg"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="车牌识别结果"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listView_plate"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp" >
+
+        </ListView>
+
+    </LinearLayout>
+
+</RelativeLayout>

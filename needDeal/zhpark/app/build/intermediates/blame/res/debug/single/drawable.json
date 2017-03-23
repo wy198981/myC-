@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wechat_btn_login.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\wechat_btn_login.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\main_btn_parkfind.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\main_btn_parkfind.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sanqr_btn_closelight.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\sanqr_btn_closelight.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\main_btn_scanpay.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\main_btn_scanpay.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\all_btn_back.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\all_btn_back.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\point.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\point.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\main_btn_parkorder.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\main_btn_parkorder.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sanqr_btn_openlight.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\drawable\\sanqr_btn_openlight.xml"
+    }
+]

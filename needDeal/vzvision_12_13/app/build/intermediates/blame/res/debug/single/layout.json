@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vedioset.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\vedioset.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\voice.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\voice.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_decor_include.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_decor_include.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_device.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_device.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wlist_group_child.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\wlist_group_child.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_screen.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\test.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_time.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\dialog_time.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_mode_close_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wlist_edit.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_wlist_edit.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gate.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\gate.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\slidermenu.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\slidermenu.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wlist.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_wlist.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_include.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_activity_chooser_view_include.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_home.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_home.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_title_bar.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\layout_title_bar.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\wlist_group.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\wlist_group.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_snap_image.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_snap_image.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_video_config.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_video_config.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_surface.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_surface.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\serial.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\serial.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_decor_overlay.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_decor_overlay.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\snap_image_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\snap_image_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_plate.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_plate.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\list.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_tab.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_tab.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\timepicker.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\layout\\timepicker.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_tabbar.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_tabbar.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    }
+]

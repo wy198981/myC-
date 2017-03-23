@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+
+		<link rel="stylesheet" href="css/ydui.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ydui.js"></script>
+		<script src="js/ydui.flexible.js"></script>
+		<script src="js/jquery.tmpl.min.js"></script>
+		<link rel="stylesheet" href="dist/dropload.css">
+
+
+		<style>
+			.color-green1 {
+				color: #04BE02;
+			}
+			
+			.color-yellow {
+				color: #FFA700;
+			}
+			
+			.ordertitle {
+				background-color: #fff;
+			}
+			
+			.m-celltitle {
+				padding: .15rem .24rem 0.3rem;
+			}
+			
+			.g-doc {
+				padding-bottom: 0rem;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<section class="g-doc">
+
+			<div class="content">
+				<div class="listbox" style=" margin-top: -20px;">
+
+				</div>
+			</div>
+			<script id="data-tmpl" type="text/x-jquery-tmpl">
+				<div class="m-celltitle"></div>
+				<div class="m-cell ordertitle">
+					<div class="cell-item">
+						<div class="cell-left">
+							<span class="badge badge-primary">${ParkOrder_CarType_Name_head }</span>&nbsp;<strong class="color-green1">${ParkOrder_CarNo }</strong>
+						</div>
+						<div class="cell-right">
+							{{if PayOrder_Status==0}}
+							<img src='img/icon_dengdai.svg'><span class="color-yellow">等待支付</span> {{else PayOrder_Status==1}}
+							<img src='img/icon_payed.svg'><span class="color-green1">&nbsp;已支付</span> {{/if}}
+						</div>
+					</div>
+				</div>
+				<div class="m-cell">
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left">
+							<i class="cell-icon demo-icons-like"></i>停车场名称
+						</div>
+						<div class="cell-right">${Parking_Name }</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left">
+							<i class="cell-icon demo-icons-like"></i>入场时间
+						</div>
+						<div class="cell-right">${ParkOrder_EnterTime }</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left">
+							<i class="cell-icon demo-icons-like"></i>停车时长
+						</div>
+						<div class="cell-right">${Parking_TimeCount }</div>
+					</a>
+					<div class="cell-item">
+						<div class="cell-left">
+							锁车&nbsp; {{if ParkOrder_Lock==0}}
+							<input type="checkbox" class="checkbox-ios" onclick="pager.LockCar(this, '${ParkOrder_OrderNo }', '${Parking_Key}')"> {{else ParkOrder_Lock==1}}
+							<input type="checkbox" class="checkbox-ios" checked="checked" onclick="pager.LockCar(this, '${ParkOrder_OrderNo }', '${Parking_Key}')"> {{/if}}
+						</div>
+						<div class="cell-right">
+							<a onclick="PayOrder( '${ParkOrder_OrderNo}','${Parking_Key}')" class="btn btn-primary">￥去缴费</a>
+						</div>
+					</div>
+				</div>
+			</script>
+		</section>
+
+		<script>
+//			var miniheight = document.body.clientHeight + 1; //加1像素，使.content大于页面高度
+//			$(".content").css("min-height", miniheight + 'px');
+			window.onload = function() { //页面打开的时候去获取数据
+
+ 
+				var json = $.parseJSON(window.jsObject.onload()); //JSON.parse(window.jsObject.onload());
+				 
+				if(json.relustcode == 1) {
+
+					if(json.orderlt.length > 0) {
+
+						$(".listbox").html("");
+						$('#data-tmpl').tmpl(json.orderlt).appendTo('.listbox');
+					} else {
+						$(".listbox").html("");
+						$('.listbox').html("<div style='text-align:center;font-size:0.5rem;margin-top:0.6rem;' >暂无订单</div>");
+					}
+
+				} else {
+ 
+ 
+				}
+
+			}
+
+			function PayOrder(orderNo,parkKey) {
+				window.jsObject.orderPay(orderNo,parkKey);
+
+			}
+			var pager = {
+
+				LockCar: function(e, orderNo, parkKey) {
+					var status = $(e).get(0).checked;
+					if(status === true) {
+						status = 1;
+					}
+					if(status === false) {
+						status = 0;
+					}
+
+					 
+					var jsonlock = $.parseJSON(window.jsObject.LockCar(parkKey, orderNo, status));
+				
+					if(jsonlock.relustcode == 1) {
+
+				} else {
+						$(e).get(0).checked = !status;
+					}
+ 
+				}
+			};
+		</script>
+
+	</body>
+
+</html>

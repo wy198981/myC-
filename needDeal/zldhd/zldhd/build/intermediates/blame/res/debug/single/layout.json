@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\car_detail_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\car_detail_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\vedioset.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\vedioset.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\cash_operation.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\cash_operation.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_restart.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\dialog_restart.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\account_droplist_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\account_droplist_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\hello_activity.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\hello_activity.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\relogin_activity.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\relogin_activity.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\work_station.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\work_station.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\login_activity.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\login_activity.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\discount_page.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\discount_page.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\linelocal_dialog_restart.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\linelocal_dialog_restart.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\input_car_number_item.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\input_car_number_item.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\account_droplist.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\account_droplist.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\background_web.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\background_web.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_reward.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\dialog_reward.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\entrance_page.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\entrance_page.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\input_car_number_number.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\input_car_number_number.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\pulltorefreshlistview.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\pulltorefreshlistview.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\park_info.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\park_info.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\network_progressbar_right.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\network_progressbar_right.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\keyboard_page_gridview_zone.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\keyboard_page_gridview_zone.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\input_car_number_police.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\input_car_number_police.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\zld_new_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\zld_new_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\more_set_workstation.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\more_set_workstation.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\stationdialog.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\stationdialog.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\title.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\title.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\order_details.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\order_details.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\park_record.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\park_record.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\pay_before_layout.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\pay_before_layout.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\update.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\update.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\exit_page.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\exit_page.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\workstation_type.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\workstation_type.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\layout\\input_car_number_province.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\layout\\input_car_number_province.xml"
+    }
+]

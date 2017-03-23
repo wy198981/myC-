@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">一体机工具</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_surface">SurfaceActivity</string>
+    <string name="title_activity_plate">PlateActivity</string>
+    <string name="title_activity_wlist">WlistActivity</string>
+    <string name="title_activity_device">DeviceActivity</string>
+    <string name="title_activity_video_config">VideoConfigActivity</string>
+    <string name="title_activity_snap_image">SnapImageActivity</string>
+    <string name="title_activity_wlist_edit">WListEditActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+</resources>

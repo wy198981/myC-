@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\anim\\head_in.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\anim\\wb_loading_frame.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\anim\\wb_loading_frame.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\anim\\head_out.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\anim\\head_out.xml"
+    }
+]

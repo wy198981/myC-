@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="#00bf70" >
+
+            <include layout="@layout/page_header" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="8.0dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/strMain_CarManager"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+       <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+            <com.znykt.zhpark.pull.PullToRefreshView
+                android:id="@+id/pull_view_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" 
+                       />
+                </ScrollView>
+            </com.znykt.zhpark.pull.PullToRefreshView>
+    </LinearLayout>
+
+</LinearLayout>

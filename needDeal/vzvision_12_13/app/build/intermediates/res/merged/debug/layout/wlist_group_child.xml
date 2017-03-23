@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/TextVie01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车辆编号:"
+            android:textColorLink="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textView_plateID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextVie21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车牌号:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textView_plateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="川A12345"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否启用:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/TextView_plateEnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生效时间:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/TextView_plateStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017年"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过期时间:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/TextView_plateOverTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020年"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否为黑名单:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/TextView_plateBlackList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="否"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+    </LinearLayout>
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车辆颜色:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textView_plateColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="黄色"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车辆类型:"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/TextView_plateType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="蓝牌小汽车"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车辆代码:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/TextView_plateCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="川B"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车辆备注:"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/TextView_plateComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备注测试"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否启用时间段:"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/TextView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="否"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+    </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TextView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间段:"
+            android:textColorLink="@android:color/black" 
+             android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/TextView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="星期二"
+            android:textColorLink="@android:color/black"
+             android:textColor="@android:color/black"
+            android:textSize="17sp" />
+    </LinearLayout>
+</LinearLayout>

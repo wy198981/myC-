@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\scanning.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\scanning.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_banner.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\view_banner.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_personmanger.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_personmanger.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wxlogin.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_wxlogin.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_error.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_error.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_carmanager.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_carmanager.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_webview.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_webview.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\page_header.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\page_header.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_qr_scan.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_qr_scan.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_cycle_viewpager_contet.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\view_cycle_viewpager_contet.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_header.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\main_header.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_cycle_viewpager_indicator.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\view_cycle_viewpager_indicator.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\pull_to_refresh_header.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\imageshower.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\imageshower.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_imageloading.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\dialog_imageloading.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_parklist.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_parklist.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\page_loding.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\page_loding.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zhpark\\app\\build\\intermediates\\res\\merged\\debug\\layout\\db.xml",
+        "source": "E:\\Android_studio_workspaces001\\zhpark\\app\\src\\main\\res\\layout\\db.xml"
+    }
+]

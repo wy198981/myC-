@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="#00bf70" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="8.0dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/strMain_scanPay"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="8.0dp" >
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dip"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/all_btn_back"
+                    android:paddingRight="2dp"
+                    android:src="@drawable/back_normal" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/capture_containter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <SurfaceView
+                android:id="@+id/capture_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/top_mask"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/scan_mask"
+                android:contentDescription="@string/app_name" />
+
+            <RelativeLayout
+                android:id="@+id/capture_crop_layout"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/top_mask"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/capture"
+                android:contentDescription="@string/app_name" >
+
+                <ImageView
+                    android:id="@+id/capture_scan_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/scan_line"
+                    android:contentDescription="@string/app_name" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/bottom_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/capture_crop_layout"
+                android:background="@drawable/scan_mask"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/left_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottom_mask"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/top_mask"
+                android:layout_toLeftOf="@id/capture_crop_layout"
+                android:background="@drawable/scan_mask"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/right_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottom_mask"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/top_mask"
+                android:layout_toRightOf="@id/capture_crop_layout"
+                android:background="@drawable/scan_mask"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/capture_crop_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:text="@string/scan_tips"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/ib_openligth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/capture_crop_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/sanqr_btn_closelight"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

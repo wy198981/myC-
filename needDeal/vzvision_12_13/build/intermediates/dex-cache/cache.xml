@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="25.0.1"
+        sha1="accdb64e13b9117bcd98f7d18dc1090057984cf3">
+        <dex dex="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\pre-dexed\debug\instant-run_d0290a527a0d02089f0dfef6bbe38b6e66ad8668.jar" />
+    </item>
+    <item
+        jar="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="25.0.1"
+        sha1="01083e61275971a483d4719cbf34b327f068698f">
+        <dex dex="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_a9d82bdb26782a780a3ef6bd839ec3fd43f20640.jar" />
+    </item>
+    <item
+        jar="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\18.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.1"
+        sha1="dafab6ae358e6c801605d50ff1fa761e77200c1a">
+        <dex dex="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\pre-dexed\debug\com.android.support-gridlayout-v7-18.0.0_87329b67866db1e59d48806c3104986e48567c0e.jar" />
+    </item>
+    <item
+        jar="D:\Android_SDK\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="25.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_0dc3c5209b6f61bc99745dc8f5bf8733ccc86ece.jar" />
+    </item>
+    <item
+        jar="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.1"
+        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
+        <dex dex="E:\Android_studio_workspaces001\vzvision_12_13\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-18.0.0_6226205a8aec978a0143303fc0b6adea06e1fb0d.jar" />
+    </item>
+
+</items>

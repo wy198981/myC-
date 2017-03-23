@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\wlist_edit.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\wlist_edit.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\about.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\about.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\device.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\device.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\snap_image.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\snap_image.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\plate.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\plate.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\wlist.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\wlist.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\surface.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\surface.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\build\\intermediates\\res\\merged\\debug\\menu\\video_config.xml",
+        "source": "E:\\Android_studio_workspaces001\\vzvision_12_13\\app\\src\\main\\res\\menu\\video_config.xml"
+    }
+]

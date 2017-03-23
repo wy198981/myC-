@@ -1,0 +1,28 @@
+[
+    {
+        "outputFile": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 3,
+                    "endColumn": 8,
+                    "endOffset": 138
+                },
+                "from": {
+                    "file": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 310,
+                        "endLine": 10,
+                        "endColumn": 8,
+                        "endOffset": 393
+                    }
+                }
+            }
+        ]
+    }
+]

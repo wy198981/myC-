@@ -1,0 +1,383 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:1:1-239:12
+	package
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:2:11-37
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:4:11-36
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:3:11-34
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.CAMERA
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:9:5-64
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:9:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:10:5-68
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:10:22-66
+uses-permission#android.permission.VIBRATE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:11:22-63
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:12:5-83
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:12:22-81
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:13:22-78
+uses-feature#android.hardware.camera.autofocus
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:15:5-69
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:15:19-67
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:22:5-78
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:22:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:23:5-75
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:23:22-73
+uses-permission#android.permission.CHANGE_CONFIGURATION
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:24:5-78
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:24:22-76
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:25:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:26:5-74
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:26:22-72
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:34:5-75
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:34:22-73
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:36:5-67
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:36:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:37:5-80
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:37:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:42:5-67
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:42:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:43:5-73
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:43:22-71
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:45:5-78
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:45:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:46:5-80
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:46:22-78
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:48:5-77
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:48:22-75
+uses-permission#getui.permission.GetuiService.com.znykt.zhpark
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:50:5-85
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:50:22-83
+permission#getui.permission.GetuiService.com.znykt.zhpark
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:52:5-55:18
+	android:protectionLevel
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:54:9-41
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:53:9-70
+uses-sdk
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:59:5-61:40
+MERGED from [com.android.support:support-v4:22.2.1] E:\Android_studio_workspaces001\zhpark\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:61:9-38
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:60:9-35
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml
+application
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:63:5-237:19
+MERGED from [com.android.support:support-v4:22.2.1] E:\Android_studio_workspaces001\zhpark\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:66:9-41
+	android:allowBackup
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:64:9-35
+	android:icon
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:65:9-37
+	android:theme
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:67:9-40
+activity#com.znykt.zhpark.SplashActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:88:9-67
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:88:19-65
+activity#com.znykt.zhpark.ErrorActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:89:9-66
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:89:19-64
+activity#com.znykt.zhpark.WebviewActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:90:9-68
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:90:19-66
+activity#com.zbar.lib.CaptureActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:93:9-103:20
+	android:screenOrientation
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:96:13-49
+	android:label
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:95:13-45
+	android:windowSoftInputMode
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:97:13-70
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:94:13-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:99:13-102:29
+action#android.intent.action.MAIN
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:100:17-68
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:100:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:101:17-76
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:101:27-74
+activity#com.znykt.zhpark.Test
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:105:9-57
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:105:19-55
+activity#com.znykt.zhpark.wxapi.WXEntryActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:106:9-111:84
+	android:screenOrientation
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:110:13-49
+	android:launchMode
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:109:13-43
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:108:13-36
+	android:windowSoftInputMode
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:111:13-82
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:107:13-66
+activity#com.znykt.zhpark.PersonMangerActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:112:9-73
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:112:19-71
+activity#com.znykt.zhpark.ParkListActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:113:9-69
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:113:19-67
+activity#com.znykt.zhpark.MyCarManagerActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:114:9-73
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:114:19-71
+activity#com.znykt.zhpark.ParkOrderPayActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:115:9-73
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:115:19-71
+activity#com.znykt.zhpark.wxapi.WeiXinLogin
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:116:9-70
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:116:19-68
+activity#com.znykt.zhpark.Image.ImageShower
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:117:9-119:48
+	android:theme
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:119:13-46
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:118:13-62
+meta-data#PUSH_APPID
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:123:9-125:53
+	android:value
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:125:13-51
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:124:13-38
+meta-data#PUSH_APPKEY
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:126:9-128:53
+	android:value
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:128:13-51
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:127:13-39
+meta-data#PUSH_APPSECRET
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:129:9-131:53
+	android:value
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:131:13-51
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:130:13-42
+receiver#com.znykt.zhpark.Notice.PushDemoReceiver
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:134:9-140:20
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:136:13-37
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:135:13-68
+intent-filter#com.igexin.sdk.action.twPuw6KnYl7ptKF2siBGD2
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:137:13-139:29
+action#com.igexin.sdk.action.twPuw6KnYl7ptKF2siBGD2
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:138:17-86
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:138:25-84
+service#com.igexin.sdk.PushService
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:143:9-151:19
+	android:process
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:147:13-43
+	android:label
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:146:13-47
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:145:13-36
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:144:13-54
+intent-filter#com.igexin.sdk.action.service.message
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:148:13-150:29
+action#com.igexin.sdk.action.service.message
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:149:17-79
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:149:25-77
+service#com.igexin.sdk.PushServiceUser
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:152:9-156:19
+	android:label
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:155:13-51
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:154:13-36
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:153:13-58
+receiver#com.igexin.sdk.PushReceiver
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:158:9-169:20
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:158:19-61
+intent-filter#android.intent.action.ACTION_POWER_CONNECTED+android.intent.action.ACTION_POWER_DISCONNECTED+android.intent.action.BOOT_COMPLETED+android.intent.action.MEDIA_MOUNTED+android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE+com.igexin.sdk.action.refreshls
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:159:13-168:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:160:17-78
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:160:25-76
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:161:17-78
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:161:25-76
+action#android.intent.action.USER_PRESENT
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:162:17-76
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:162:25-74
+action#com.igexin.sdk.action.refreshls
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:163:17-73
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:163:25-71
+action#android.intent.action.MEDIA_MOUNTED
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:165:17-77
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:165:25-75
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:166:17-86
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:166:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:167:17-89
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:167:25-87
+receiver#com.igexin.sdk.PushManagerReceiver
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:170:9-176:20
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:172:13-37
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:171:13-62
+intent-filter#com.igexin.sdk.action.pushmanager
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:173:13-175:29
+action#com.igexin.sdk.action.pushmanager
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:174:17-75
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:174:25-73
+activity#com.igexin.sdk.PushActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:178:9-185:20
+	android:process
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:182:13-43
+	android:excludeFromRecents
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:180:13-46
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:181:13-37
+	android:theme
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:184:13-72
+	android:taskAffinity
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:183:13-67
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:179:13-55
+service#com.igexin.download.DownloadService
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:187:9-189:45
+	android:process
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:189:13-43
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:188:13-63
+receiver#com.igexin.download.DownloadReceiver
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:191:9-195:20
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:191:19-70
+intent-filter#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:192:13-194:29
+provider#com.igexin.download.DownloadProvider
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:197:9-201:45
+	android:authorities
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:199:13-61
+	android:process
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:201:13-43
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:200:13-36
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:198:13-64
+activity#com.igexin.sdk.GActivity
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:203:9-209:74
+	android:process
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:207:13-43
+	android:excludeFromRecents
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:205:13-46
+	android:exported
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:206:13-36
+	android:theme
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:209:13-72
+	android:taskAffinity
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:208:13-67
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:204:13-52
+uses-permission#com.android.vending.BILLING
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:215:9-71
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:215:26-68
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:216:9-84
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:216:26-81
+uses-permission#android.permission.READ_LOGS
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:222:9-72
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:222:26-69
+meta-data#BUGLY_APPID
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:225:9-227:41
+	android:value
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:227:13-38
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:226:13-39
+meta-data#BUGLY_APP_VERSION
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:229:9-231:35
+	android:value
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:231:13-32
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:230:13-45
+meta-data#BUGLY_ENABLE_DEBUG
+ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:234:9-236:37
+	android:value
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:236:13-34
+	android:name
+		ADDED from E:\Android_studio_workspaces001\zhpark\app\src\main\AndroidManifest.xml:235:13-46

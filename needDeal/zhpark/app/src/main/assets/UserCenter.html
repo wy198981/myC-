@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户中心</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+
+		<link rel="stylesheet" href="css/ydui.css" />
+		<script src="js/ydui.flexible.js"></script>
+
+		<style>
+			.grids-txt {
+				overflow: hidden;
+				text-align: center;
+				color: #585858;
+				padding: 0.2rem;
+			}
+			
+			.m-celltitle {
+				padding: .30rem .24rem 0.15rem;
+				font-size: .25rem;
+			}
+			
+			.user-tip {
+				color: #FFFFFF;
+				font-size: .24rem;
+				padding: .4rem .4rem .55rem;
+				position: relative;
+				background-color: #09B39C;
+				background-image: url(img/u_bg.svg);
+				background-repeat: no-repeat;
+				background-position: 40% 70%;
+			}
+			
+			.user-tip:after {
+				content: '';
+				position: absolute;
+				bottom: .2rem;
+				left: 0;
+				width: 100%;
+				-webkit-transform: scaleY(0.5);
+				transform: scaleY(0.5);
+				-webkit-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+			}
+			
+			.user_img {
+				float: left;
+				padding-right: 20px;
+			}
+			
+			.user_img img {
+				border-radius: 34px;
+				border: 1px solid #FFFFFF;
+				height: 68px;
+			}
+			
+			.user_info {
+				line-height: 0.42rem;
+			}
+			
+			.copyright {
+				color: #CCCCCC;
+				position: absolute;
+				bottom: 0.2rem;
+				width: 100%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<script type="text/javascript">
+		window.onload = function() {
+			var perjson = JSON.parse(window.jsObject.onload());
+			document.getElementById("wx_nikename").innerText = perjson.wx_nikename;
+			document.getElementById("wx_openid").innerText = perjson.wx_openid;
+			document.getElementById("wx_sex").innerText = perjson.wx_sex;
+			document.getElementById("wx_userimg").src = perjson.wx_userimg;
+
+			//			$("#parkOrderlt").click(function(event) { //我的订单
+			//			window.jsObject.onClickParkOrder();
+			//		});
+		}
+
+		function clickParkOrder() {
+			window.jsObject.onClickParkOrder();
+
+		}
+
+		function clickMyCarManager() {
+			window.jsObject.onClickMyCarManager();
+
+		}
+	</script>
+	<!-- js代码通过webView调用其插件中的java代码 -->
+
+	<body>
+		<section class="g-doc">
+			<aside class="user-tip">
+				<div class="user_img"><img id="wx_userimg" src="http://wx.qlogo.cn/mmopen/jUWsYeiaiaI4BxH9RwIs5eXB6nPicVI7ib8kibrdtQ1iaMicy3T7pymYauY9TPQiagcBdQrdAg802VV3nzdS6gpgnFU2icQJhuwJVzM4ia/0"></div>
+				<div class="user_info">
+					<p>昵称：
+						<a id="wx_nikename">xx</a>
+					</p>
+					<p>ID：
+						<a id="wx_openid">xx</a>
+					</p>
+					<p>性别：
+						<a id="wx_sex">xx</a>
+					</p>
+				</div>
+			</aside>
+
+			<div class="m-celltitle">用户服务</div>
+
+			<div class="m-grids-3">
+				<a class="grids-item" onclick="clickParkOrder()" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_dingdan.svg">
+					</div>
+					<div class="grids-txt">我的订单</div>
+				</a>
+				<a class="grids-item" onclick="clickMyCarManager()" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_cheliang.svg">
+					</div>
+					<div class="grids-txt">我的车辆</div>
+				</a>
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_yueka.svg">
+					</div>
+					<div class="grids-txt">月卡充值</div>
+				</a>
+
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_yuyue.svg" style="height:90%;">
+					</div>
+					<div class="grids-txt">车位预定</div>
+				</a>
+
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_lockset.svg" style="height:90%;">
+					</div>
+					<div class="grids-txt">自锁车设定</div>
+				</a>
+
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_youhuiquan.svg">
+					</div>
+					<div class="grids-txt">优惠券/码</div>
+				</a>
+
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon ss">
+						<img src="img/u_dingdanlis.svg">
+					</div>
+					<div class="grids-txt">缴费记录</div>
+				</a>
+
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_help.svg?12">
+					</div>
+					<div class="grids-txt">帮助与反馈</div>
+				</a>
+
+				<a class="grids-item" href="javascript:;;">
+					<div class="grids-icon">
+						<img src="img/u_more.svg">
+					</div>
+					<div class="grids-txt">更多服务 >></div>
+				</a>
+
+			</div>
+
+		</section>
+		<div class="copyright">Copyright @ 深圳市赛菲姆科技有限公司</div>
+	</body>
+
+</html>

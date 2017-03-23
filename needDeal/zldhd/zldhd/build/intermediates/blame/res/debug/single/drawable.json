@@ -1,0 +1,582 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\login_button_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\login_button_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\login_bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\login_bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\btn_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\account.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\account.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\history_order_last.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\history_order_last.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\pole_up_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\pole_up_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\close_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\close_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\dialog_bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\dialog_bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_end.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\seekbar_end.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\leave_finish.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\leave_finish.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\more_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\more_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_bar_bg.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_bar_bg.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_common_gradient_green.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_common_gradient_green.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\gv_province_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\gv_province_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\charge_finish_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\charge_finish_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_gradient_green.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_gradient_green.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_recommend_edittext.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\shape_recommend_edittext.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\droplist_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\droplist_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_gray_frame.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_gray_frame.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\thumb_1.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\thumb_1.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\keyboard_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\search_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\search_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\history_order_today_button_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\history_order_today_button_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_conversation_bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_conversation_bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_common_gradient_orange.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_common_gradient_orange.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_back_selected.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_back_selected.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\switch_account.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\switch_account.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\charge_finish_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\charge_finish_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\pay.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\pay.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\more_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\more_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\histery_order_yesterday_white.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\histery_order_yesterday_white.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_back_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_back_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_big_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\btn_big_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_point_new.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_point_new.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\charge_finish_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\charge_finish_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\home_nomonthcar_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\home_nomonthcar_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\money_setting_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\money_setting_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\home_car_outdate_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\home_car_outdate_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\recommend_code_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\recommend_code_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\more_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\more_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_tick_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_tick_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\history_order.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\history_order.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\into_background_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\into_background_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_write_pressed.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_write_pressed.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\small_login_bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\small_login_bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\yes_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\yes_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\small_billing.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\small_billing.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_write_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_write_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\number_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\number_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\editbackgrund.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\editbackgrund.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_gradient_orange.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_gradient_orange.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_pressed.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\btn_pressed.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\search_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\search_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\title.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\title.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\setting_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\setting_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\yes_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\yes_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\plate_sample.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\plate_sample.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_write_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_write_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_list_item_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_list_item_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\recommend.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\recommend.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\payment_detail_blueshape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\payment_detail_blueshape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\photo_back.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\photo_back.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\addaccount.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\addaccount.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_common_gradient_red.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_common_gradient_red.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_big_pressed.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\btn_big_pressed.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_btn_bg_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_btn_bg_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\home_edit_bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\home_edit_bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_tick_selected.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_tick_selected.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_see_list_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_see_list_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_arrow_right.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_arrow_right.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\btn_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_top_banner.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_top_banner.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\number_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\number_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_see_list_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_see_list_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\search_pressed.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\search_pressed.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\pay_finish.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\pay_finish.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_load_more.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\shape_load_more.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\pole_up_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\pole_up_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\reward.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\reward.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\app_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\app_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_submit_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_submit_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_anim.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\progress_anim.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\default_car_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\default_car_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_list_item_pressed.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_list_item_pressed.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\bt_bgnomal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\bt_bgnomal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\histery_order_yesterday_blue.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\histery_order_yesterday_blue.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_recommend.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\shape_recommend.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_list_item.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_list_item.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_see_list_pressed.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_see_list_pressed.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_user_bubble.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_user_bubble.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\car_bigsmall_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\car_bigsmall_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_recharge_quickinput_bg.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\selector_recharge_quickinput_bg.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\into_background_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\into_background_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\home_car_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\home_car_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\recommend_warn_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\recommend_warn_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\histery_order_today_white.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\histery_order_today_white.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\bt_delete_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\bt_delete_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\yuandian.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\yuandian.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\login_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\login_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\number_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\number_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\histery_order_today_blue.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\histery_order_today_blue.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\input_car_number.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\input_car_number.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\payment_detail_grayshape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\payment_detail_grayshape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\current_order_shape.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\current_order_shape.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_reply_right_bg.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_reply_right_bg.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\sb_free_thrumb_1.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\sb_free_thrumb_1.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\logo.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\number.jpg",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\number.jpg"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_share_thumb.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\seekbar_share_thumb.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\bt_delete_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\bt_delete_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_share.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\seekbar_share.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\takephotoselect.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\takephotoselect.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\shade_item.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\shade_item.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_big_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\btn_big_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_point_normal.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_point_normal.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_statusbar_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_statusbar_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\droplist_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\droplist_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\yes_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\yes_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\big_billing.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\big_billing.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\bt_bgselect.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\bt_bgselect.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\loading.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\loading.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\keyboard_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\app_icon_32.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\app_icon_32.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\bt_delete_pressed.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\bt_delete_pressed.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\login_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\login_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\hello_tcb.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\hello_tcb.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_nfc_finish_button.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\shape_nfc_finish_button.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\into_background_select.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\into_background_select.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\pole_up_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\pole_up_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_back_normal.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_back_normal.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_reply_left_bg.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_reply_left_bg.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\finishorder.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\finishorder.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_tick_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_tick_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\switch_account_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\switch_account_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_recharge_quickinput_text.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\selector_recharge_quickinput_text.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\password.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\password.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_fb_logo.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\umeng_fb_logo.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\home_month2car_icon.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\home_month2car_icon.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\rmb.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\rmb.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\popwindow_bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\popwindow_bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\login_selector.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\login_selector.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable\\dialog_background.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable\\dialog_background.xml"
+    }
+]

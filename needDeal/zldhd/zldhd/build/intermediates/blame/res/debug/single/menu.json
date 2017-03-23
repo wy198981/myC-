@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\menu\\current_order_search.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\menu\\current_order_search.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\menu\\history_only_lost_order.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\menu\\history_only_lost_order.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\menu\\change_my_info.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\menu\\change_my_info.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\menu\\leave_actionbar.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\menu\\leave_actionbar.xml"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\menu\\leave.xml",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\menu\\leave.xml"
+    }
+]

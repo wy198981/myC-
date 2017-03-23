@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>支付</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" href="css/ydui.css?rev=@@hash" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ydui.flexible.js"></script>
+		<script src="js/jquery.tmpl.min.js"></script>
+		<style>
+			.ordertitle {
+				background-color: #F6FFFA;
+			}
+			
+			.color-green1 {
+				color: #04BE02;
+			}
+			
+			.color-red {
+				color: #FF0000;
+			}
+			
+			.fz03 {
+				font-size: 0.3rem
+			}
+			
+			.fz04 {
+				font-size: 0.4rem
+			}
+			
+			.icon_car {
+				margin-top: -2px;
+				margin-right: 5px;
+			}
+			
+			.carimg img {
+				border-radius: 10px;
+				border: 1px solid #C3C3C3;
+			}
+			 .g-doc {
+            padding-bottom: 0rem;
+        }
+		</style>
+	</head>
+
+	<body>
+		<section class="g-doc">
+
+			<div class="content">
+				<div class="listbox" >
+
+				</div>
+			</div>
+
+			<script id="data-tmpl" type="text/x-jquery-tmpl">
+				<div class="m-cell ordertitle" >
+					<div class="cell-item">
+						<div class="cell-left"><img class="icon_car" src="img/icon_car.svg"><strong class="color-green1">${ParkOrder_CarNo }</strong></div>
+						<div class="cell-right color-green1"><span class="badge badge-primary"> &nbsp; ${ParkOrder_CarType_Name_head }&nbsp; </span></div>
+					</div>
+				</div>
+				<div class="m-cell">
+
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>停车场名称</div>
+						<div class="cell-right">${Parking_Name }</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>入场时间</div>
+						<div class="cell-right">${ParkOrder_EnterTime }</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>停车时长</div>
+						<div class="cell-right">${Parking_TimeCount }</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>入口车道</div>
+						<div class="cell-right">${ParkOrder_EnterGateName }</div>
+					</a>
+					<a class="cell-item" href="javascript:;" onclick="ShowImg('${ParkOrder_EnterImgPath}')">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>入场图片</div>
+						<div class="cell-right">
+							<div class="carimg"><img src=${ParkOrder_EnterImgPath} width="45" height="40" id="myCarEntImg" /></div>
+						</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>订单号</div>
+						<div class="cell-right">${ParkOrder_OrderNo}</div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>优惠金额</div>
+						<div class="cell-right">￥ <strong class="fz03">${ParkOrder_DiscountMoney}</strong></div>
+					</a>
+					<a class="cell-item" href="javascript:;">
+						<div class="cell-left"><i class="cell-icon demo-icons-like"></i>应付金额</div>
+						<div class="cell-right">￥ <strong class="color-red fz04">${ParkOrder_TotalMoney}</strong></div>
+					</a>
+				</div>
+				<div class="m-button demo-small-pitch">
+
+					<button type="button" class="btn-block btn-primary">现在支付</button>
+
+				</div>
+			</script>
+		</section>
+
+		<script>
+		
+			function ShowImg(picth) {
+				window.jsObject.ShowImg(picth);
+			}
+			
+			window.onload = function() { //页面打开的时候去获取数据
+				var json = $.parseJSON(window.jsObject.onload()); //JSON.parse(window.jsObject.onload());
+				if(json.relustcode == 1) {
+ 
+					$(".listbox").html("");
+					$('#data-tmpl').tmpl(json.order).appendTo('.listbox');
+					
+					
+				} else {
+
+				}
+
+			}
+		</script>
+
+	</body>
+
+</html>

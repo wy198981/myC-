@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\indicator_arrow.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\drawable-hdpi-v4\\indicator_arrow.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_recharge_quickinput_selected.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\bg_recharge_quickinput_selected.9.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\app_icon_32.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\app_icon_32.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\monthusersec.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\monthusersec.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\monthuser.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\monthuser.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\bg.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\viewpage.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\viewpage.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\default_ptr_rotate.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\drawable-hdpi-v4\\default_ptr_rotate.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\default_ptr_flip.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\exploded-aar\\zldhd\\library\\unspecified\\res\\drawable-hdpi-v4\\default_ptr_flip.png"
+    },
+    {
+        "merged": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_recharge_quickinput_nomal.9.png",
+        "source": "E:\\Android_studio_workspaces001\\zldhd\\zldhd\\src\\main\\res\\drawable-hdpi\\bg_recharge_quickinput_nomal.9.png"
+    }
+]

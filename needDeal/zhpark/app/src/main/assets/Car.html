@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>车辆</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" href="css/ydui.css" />
+		<link rel="stylesheet" href="css/temp.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ydui.flexible.js"></script>
+		<script src="layer_mobile/layer.js"></script>
+		<script src="js/jquery.tmpl.min.js"></script>
+		<style>
+			.icon_car {
+				margin-top: -3px;
+				margin-right: 5px;
+			}
+			
+			.m-celltitle {
+				padding: .35rem .24rem 0.15rem;
+				font-size: .25rem;
+			}
+			
+			.a_del {
+				display: none;
+			}
+		</style>
+
+	</head>
+
+	<body >
+		<section class="g-doc">
+
+			<div class="m-celltitle">新增车辆</div>
+			<div class="m-cell">
+				<div class="cell-item cphtool">
+					<div class="cell-left">
+
+						<div class="cp_pai">
+							<span id="cp_pai"><span>粤</span><span>B</span></span><i>▼</i>
+						</div>
+					</div>
+					<div class="cell-right">
+						<input type="text" class="cell-input" id="cp_pai_suffix" placeholder="输入车牌后5位" autocomplete="off">
+						<a href="javascript:;" class="btn btn-primary cp_btn">&nbsp; 新 增 &nbsp;</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="m-celltitle tip">我的车辆 <span style="float: right;font-size: 0.22rem">选中车辆可解除绑定</span></div>
+			<div class="m-cell">
+				<div class="content">
+					<div class="listbox" id="listbox">
+
+					</div>
+				</div>
+				<script id="data-tmpl" type="text/x-jquery-tmpl">
+					<label class="cell-item">
+                            <span class="cell-left"><img class="icon_car" src="img/icon_car.svg">${TempCar_CarNO}</span>
+                            <span class="cell-right">
+                                <input type="radio" name="radio" id="${TempCar_CarNO}">
+                                <i class="cell-radio-icon"></i>
+                            </span>
+                        </label>
+				</script>
+
+			</div>
+
+			<div class="m-button demo-small-pitch">
+				<button type="button" class="btn-block btn-warning a_del">解除绑定</button>
+			</div>
+
+			<div class="cp_pull" id="pull_city">
+				<div class="sharp"></div>
+				<div class="cpcon">
+					<ul class="pulllist city_name clf">
+						<li>京</li>
+						<li>津</li>
+						<li>沪</li>
+						<li>冀</li>
+						<li>豫</li>
+						<li>云</li>
+						<li>辽</li>
+						<li>黑</li>
+						<li>湘</li>
+						<li>皖</li>
+						<li>鲁</li>
+						<li>新</li>
+						<li>苏</li>
+						<li>浙</li>
+						<li>赣</li>
+						<li>鄂</li>
+						<li>桂</li>
+						<li>甘</li>
+						<li>晋</li>
+						<li>蒙</li>
+						<li>陕</li>
+						<li>吉</li>
+						<li>闽</li>
+						<li>贵</li>
+						<li>粤</li>
+						<li>川</li>
+						<li>青</li>
+						<li>藏</li>
+						<li>琼</li>
+						<li>宁</li>
+						<li>渝</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="cp_pull" id="pull_word">
+				<div class="sharp"></div>
+				<div class="cpcon">
+					<ul class="pulllist city_letter clf">
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+						<li>E</li>
+						<li>F</li>
+						<li>G</li>
+						<li>H</li>
+						<li>I</li>
+						<li>J</li>
+						<li>K</li>
+						<li>L</li>
+						<li>M</li>
+						<li>N</li>
+						<li>O</li>
+						<li>P</li>
+						<li>Q</li>
+						<li>R</li>
+						<li>S</li>
+						<li>T</li>
+						<li>U</li>
+						<li>V</li>
+						<li>W</li>
+						<li>X</li>
+						<li>Y</li>
+						<li>Z</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript">
+			//$("body").css("height", AudioDestinationNode.height);
+
+			window.onload = function() { //页面打开的时候去获取数据
+
+				var json = $.parseJSON(window.jsObject.onload()); //JSON.parse(window.jsObject.onload());
+
+				if(json.relustcode == 1) {
+
+					if(json.carlt.length > 0) {
+
+						$(".listbox").html("");
+						$('#data-tmpl').tmpl(json.carlt).appendTo('.listbox');
+					} else {
+						$(".listbox").html("");
+						$('.listbox').html("<div style='text-align:center;font-size:0.5rem;margin-top:0.6rem;' >暂无车辆</div>");
+					}
+
+				} else {
+
+				}
+
+			}
+
+			var reg_car_no_pattern = /^[\u4e00-\u9fa5]{1}[A-Za-z]{1}[A-Za-z_0-9]{5}$/;
+
+			function checkCardNo(carNo) {
+				if(carNo.search(reg_car_no_pattern) == -1) {
+					layer.open({
+						content: '<i class="icon-warn-crt"></i><br/>' + '车牌号码不正确',
+						skin: 'msg',
+						time: 2
+					});
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			function pullpos() {
+				var postop = $(".cphtool").offset().top;
+				$(".cp_pull").css("top", postop + 50);
+			}
+
+			var pager = {
+				init: function() {
+					this.bindEvent();
+				},
+				bindEvent: function() {
+
+					$("body").click(function() {
+						$(".cp_pull").hide();
+						$("body").height("auto");
+						$(".cp_pai").find("i").html("▼");
+					});
+					$(".cp_pull").click(function(event) {
+						event.stopPropagation();
+					});
+					$(".cp_pai").click(function(event) {
+						if($(this).find("i").html() == "▼") {
+							$(this).find("i").html("▲");
+						} else {
+							$(this).find("i").html("▼");
+						};
+						$("#pull_word").hide();
+						pullpos();
+						$("#pull_city").toggle();
+						event.stopPropagation();
+					});
+
+					$("#pull_city li,.dqxz span").each(
+						function(index, item) {
+							if($(this).html() == $("#cp_pai span:nth-child(1)").html()) $(item).addClass('cur');
+						}
+					);
+					$("#pull_word li,.dqxz span").each(
+						function(index, item) {
+							if($(this).html() == $("#cp_pai span:nth-child(2)").html()) $(item).addClass('cur');
+						}
+					);
+					$("#pull_city li,.dqxz span").click(function(event) {
+						$(this).addClass("cur").siblings().removeClass("cur");
+						$("#pull_city").hide();
+						$("#pull_word").show();
+						$("#cp_pai span:nth-child(1)").html($(this).html());
+						$('#cp_pai_prefix').val($(this).html());
+					});
+					$("#pull_word li").click(function(event) {
+						$(this).addClass("cur").siblings().removeClass("cur");
+						$(".cp_pull").hide();
+						$("body").height("auto");
+						$("#cp_pai span:nth-child(2)").html($(this).html());
+						$(".cp_pai").find("i").html("▼");
+						$('#cp_pai_prefix').val($('#cp_pai_prefix').val() + $(this).html());
+					});
+
+					$('#cp_pai_suffix').on('keyup', function(e) {
+						$(this).val($(this).val().trim());
+					});
+					$('#cp_pai_suffix').on('blur', function(e) {
+						$('.cp_btn a').addClass('gray');
+					});
+					$('#cp_pai_suffix').on('focus', function(e) {
+						$('.cp_btn a').removeClass('gray');
+					});
+
+					$("label").live("click", function() {
+						$(".a_del").show();
+					});
+
+					//绑定车牌
+					$('.cp_btn').bind("click", function() {
+
+						var carNo = ($("#cp_pai span:nth-child(1)").html() + $("#cp_pai span:nth-child(2)").html() + $('#cp_pai_suffix').val()).toUpperCase();
+						if(!checkCardNo(carNo)) {
+							return;
+						}
+
+						var listCar = $("#CarList input[type='radio']");
+
+						if(listCar.length >= 5) {
+							layer.open({
+								content: '<i class="icon-warn-crt"></i><br/> 最多绑定5辆车',
+								skin: 'msg',
+								time: 2
+							});
+							return;
+						}
+
+						for(var i = 0; i < listCar.length; i++) {
+							if(listCar[i].id == carNo) {
+								layer.open({
+									content: '<i class="icon-warn-crt"></i><br/> 车辆已存在',
+									skin: 'msg',
+									time: 2
+								});
+								return;
+							}
+						}
+
+						var jsonbind = $.parseJSON(window.jsObject.bindCar(carNo));
+						if(jsonbind.relustcode == 1) {
+							 
+														 							
+							var html = '<label class="cell-item"><span class="cell-left"><img class="icon_car" src="img/icon_car.svg">' + carNo +
+								'</span><span class="cell-right"><input type="radio" name="radio" id="' + carNo +
+								'"><i class="cell-radio-icon"></i></span></label>';
+							$(".listbox").append(html);
+							//alert(carNo);
+						} else {
+
+						}
+ 
+					});
+
+					//解除绑定
+					$('.a_del').bind('click', function() {
+						
+						var carNo = $("#listbox input:radio:checked").get(0).id;
+						 
+						 var jsonbind = $.parseJSON(window.jsObject.unbindCar(carNo));
+						if(jsonbind.relustcode == 1) {
+							
+							 $("#listbox input[id='" + carNo + "']").closest("label").remove();
+							$(".a_del").hide();
+							 
+						}
+						 
+//						$.post('/Temp/Unbind/', {
+//								carNo: carNo
+//							},
+//							function(response) {
+//								layer.closeAll();
+//								if(response.success == 1) {
+//									$("#listbox input[id='" + carNo + "']").closest("label").remove();
+//									$(".a_del").hide();
+//									layer.open({
+//										content: '<i class="icon-checkoff"></i><br/> 删除成功',
+//										skin: 'msg',
+//										time: 2
+//									});
+//								} else {
+//									layer.open({
+//										content: '<i class="icon-warn"></i><br/>' + response.msg,
+//										skin: 'msg',
+//										time: 2
+//									});
+//								}
+//							}, 'json');
+						//return false;
+					});
+				}
+			}
+
+			$(function() {
+				pager.init();
+
+				//				var cars = $("#listbox input[type='radio']");
+				//				if(cars.length <= 0) {
+				//					layer.open({
+				//						content: '<i class="icon-warn"></i><br/> 请绑定车辆',
+				//						skin: 'msg',
+				//						time: 3
+				//					});
+				//				}
+			});
+		</script>
+	</body>
+
+</html>

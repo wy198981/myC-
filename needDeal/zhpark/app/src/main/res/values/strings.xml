@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="app_name">智慧停车</string>
+    <string name="strPoint">小圆点</string>
+    <string name="strMain_scanPay">扫码缴费</string>
+    <string name="strMain_orderNo">停车记录</string>
+    <string name="strMain_PersonManger">用户中心</string>
+    <string name="strMain_ParkList">我的订单</string>
+    <string name="strMain_CarManager">我的车辆</string>
+
+    <string name="strMain_parkNavigation">停车导航</string>
+    <string name="strMain_parkfindcw">找车位</string>
+    <string name="strMain_parkfreepark">免费停车</string>
+    <string name="scan_tips">扫码二维码/条形码支付停车费</string>
+    <string name="scan">扫描</string>
+    <string name="strlogin_weChat">微信登录</string>
+    <string name="auth_success">授权成功</string>
+    <string name="auth_failure">授权失败</string>
+    <string name="auth_cancel">取消授权</string>
+    <string name="auth_deny">取消拒绝</string>
+
+
+    <string name="pull_to_refresh_pull_down_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_down_label">释放更新</string>
+    <string name="pull_to_refresh_refreshing_down_label">正在刷新…</string>
+    <string name="pull_to_refresh_pull_up_label">上拉查看更多</string>
+    <string name="pull_to_refresh_release_up_label">释放加载更多</string>
+    <string name="pull_to_refresh_refreshing_up_label">正在加载…</string>
+
+</resources>

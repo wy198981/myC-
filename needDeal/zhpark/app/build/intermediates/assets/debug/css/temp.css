@@ -1,0 +1,90 @@
+﻿
+.clf:before, .clf:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clf:after {
+    clear: both;
+}
+
+.cp_pai{    
+	background-color: #00bf70;
+    line-height: 0.7rem;
+    padding-left: 0.15rem;
+    padding-right: 0.13rem;
+    border-radius: 3px;
+	margin-right:0.15rem;
+	color:#ffffff;
+}
+
+.cp_pull {
+    display: none;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	
+	font-size:0.3rem;
+}
+
+.cp_pull .sharp {
+    position: absolute;
+    left: 40px;
+    top: -10px;
+    border: 10px solid #fbfbfb;
+    border-color: transparent transparent #fbfbfb transparent;
+    border-width: 0 10px 10px 10px;
+}
+
+.cp_pull .cpcon {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.cp_pull .cpcon .dqxz {
+    padding: 0 5px;
+}
+
+.cp_pull .cpcon .dqxz span {
+    display: inline-block;
+    border: 1px solid #888;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.cp_pull .cpcon ul.pulllist {
+    list-style: none;
+}
+
+.cp_pull .cpcon ul.pulllist li {
+    float: left;
+    margin: 5px;
+    border: 1px solid #e5e5e5;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.cp_pull .cpcon ul.pulllist li.cur {
+    background-color: #00bf70;
+    color: #fff;
+    border-color: #00bf70;
+}
+
+
+
+
+
