@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/parkMontior_noPlateInColor"
+            />
+
+        <com.example.administrator.myparkingos.myUserControlLibrary.niceSpinner.NiceSpinner
+            android:id="@+id/spinnerColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/parkMontior_noPlateCarBrand"
+            />
+
+        <com.example.administrator.myparkingos.myUserControlLibrary.niceSpinner.NiceSpinner
+            android:id="@+id/spinnerCarBrand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            />
+
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/parkMontior_noPlateInAdd"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/parkMontior_noPlateInTempCar"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:enabled="false"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/spinnerProvince"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="鄂"
+                />
+
+            <EditText
+                android:id="@+id/etInputCarNo"
+                style="@style/styleTextEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/parkMontior_noPlateInRoadName"
+            />
+
+        <com.example.administrator.myparkingos.myUserControlLibrary.niceSpinner.NiceSpinner
+            android:id="@+id/spinnerRoadName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/parkMontior_noPlateInCancel"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imagePicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/parkmonitor_background"
+        android:scaleType="fitXY"
+        />
+</LinearLayout>
